@@ -1,3 +1,6 @@
+$base_color: #282c34;
+$red_color: red;
+
 .App {
   text-align: center;
 }
@@ -14,7 +17,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: $base_color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +28,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: $red_color;
 }
 
 @keyframes App-logo-spin {
