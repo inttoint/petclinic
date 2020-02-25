@@ -1,39 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import './header.scss';
+import logo from './noun_primary50_.png';
 
 const Header = () => {
   return (
-    <header className="header">
-      <Link to="#" className="header__logo">
-        P|C
-      </Link>
-      <nav>
-        <ul className="header__menu">
-          <li>
-            <Link to="#" className="link">
-              Услуги и цены
+    <div className="bg-full">
+      <div className="inner-shadow">
+        <header className="header">
+          <div className="header__logo">
+            <Link to="#" className="header__logo--link">
+              <img src={logo} alt="" />
             </Link>
-          </li>
-          <li>
-            <Link to="#" className="link">
-              Галерея
-            </Link>
-          </li>
-          <li>
-            <Link to="#" className="link">
-              Контакты
-            </Link>
-          </li>
-          <li>
-            <Link to="#" className="link">
-              Войти
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+          </div>
+          <div className="header__burger" />
+          <nav className="header__menu">
+            <ul>
+              <li>
+                <Link to="#" className="header__menu--link">
+                  О нас
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="header__menu--link">
+                  Услуги
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="header__menu--link">
+                  Отзывы
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="header__menu--link">
+                  Контакты
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div className="intro">
+          <h3>Pet Clinic</h3>
+          <p>
+            Что такое по-настоящему хорошая ветеринарная клиника? <br />
+            Это место, в котором вы всегда можете рассчитывать на эффективную
+            помощь специалиста, квалифицированную консультацию и грамотное
+            лечение животного.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
