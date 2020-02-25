@@ -64,10 +64,12 @@ div.bg-full {
 
     background: $color-grey;
     border-radius: 1px;
+    box-shadow: 2px 2px 3px fade_out($color-primary-dark, 0.7);
     z-index: 99;
 
     &:nth-child(2n) {
       right: 5px;
+      background-color: $color-secondary-light;
     }
 
     &:last-child {
