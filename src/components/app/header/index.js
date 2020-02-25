@@ -36,6 +36,9 @@ const Header = () => {
                   Контакты
                 </Link>
               </li>
+              <li>
+                <button className="btn red-btn">Вход</button>
+              </li>
             </ul>
           </nav>
         </header>
