@@ -1,17 +1,17 @@
 import React from 'react';
 import Header from '../app/header';
 import catWithMac from '../../img/PajdTsgda.jpg';
-import LoginForm from '../forms/login-form';
+import SignInForm from '../forms/sign-in-form';
 
-const LoginPage = () => {
+const SignInPage = () => {
   return (
     <div>
       <Header backgroundImage={catWithMac}>
-        <LoginForm />
+        <SignInForm />
       </Header>
-      <h4>LoginPage</h4>
+      <h4>SignIn Page</h4>
     </div>
   );
 };
 
-export default LoginPage;
+export default SignInPage;

@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from './header';
 import { Route, Switch } from 'react-router-dom';
-import LoginPage from '../pages/LoginPage';
+import SignInPage from '../pages/SignInPage';
 import HomePage from '../pages/HomePage';
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/login" component={LoginPage} />
+        <Route path="/sign-in" component={SignInPage} />
       </Switch>
       <p>App component here</p>
     </div>

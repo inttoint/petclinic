@@ -39,7 +39,7 @@ const HeaderNavigation = () => {
             </Link>
           </li>
           <li>
-            <Link to="/login" className="header__menu--link">
+            <Link to="/sign-in" className="header__menu--link">
               Вход
             </Link>
           </li>

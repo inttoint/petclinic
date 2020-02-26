@@ -1,6 +1,5 @@
 import React from 'react';
 import HeaderNavigation from './header-navigation';
-import HeaderIntro from './header-intro';
 import './header.scss';
 
 const Header = ({ backgroundImage, children }) => {
