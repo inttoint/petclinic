@@ -7,7 +7,7 @@ const HeaderNavigation = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <Link to="#" className="header__logo--link">
+        <Link to="/" className="header__logo--link">
           <img src={logo} alt="" />
         </Link>
       </div>

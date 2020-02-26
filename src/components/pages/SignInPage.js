@@ -9,7 +9,6 @@ const SignInPage = () => {
       <Header backgroundImage={catWithMac}>
         <SignInForm />
       </Header>
-      <h4>SignIn Page</h4>
     </div>
   );
 };
