@@ -1,9 +1,5 @@
 @import '../../../scss/index';
 
-div.bg-full {
-  background-image: url('britan.jpg');
-}
-
 .bg-full {
   position: relative;
   background: center center no-repeat;
@@ -31,31 +27,4 @@ div.bg-full {
   height: 100vh;
   position: relative;
   box-shadow: inset 0 -43px 34px -34px rgba(88, 88, 88, 0.2);
-}
-
-.intro {
-  position: absolute;
-  transform: translate(-10%, -50%);
-  top: 50%;
-  left: 10%;
-  z-index: 1;
-  width: 50%;
-
-  & h1 {
-    line-height: 1.1;
-    color: $color-grey-light;
-  }
-
-  & h5 {
-    line-height: 1.5;
-    color: $color-grey;
-    letter-spacing: 1.3px;
-  }
-
-  & .divider {
-    margin: 22px 0;
-    width: 40px;
-    height: 2px;
-    background-color: rgba(232, 232, 232, 0.26);
-  }
 }

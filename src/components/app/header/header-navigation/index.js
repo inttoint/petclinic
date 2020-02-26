@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../noun_primary50_.png';
+import logo from './noun_primary50_.png';
 import './header-navigation.scss';
 
 const HeaderNavigation = () => {
@@ -39,7 +39,9 @@ const HeaderNavigation = () => {
             </Link>
           </li>
           <li>
-            <button className="btn red-btn">Вход</button>
+            <Link to="/login" className="header__menu--link">
+              Вход
+            </Link>
           </li>
         </ul>
       </nav>

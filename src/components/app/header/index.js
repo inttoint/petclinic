@@ -1,21 +1,16 @@
 import React from 'react';
-import './header.scss';
 import HeaderNavigation from './header-navigation';
+import HeaderIntro from './header-intro';
+import './header.scss';
 
-const Header = () => {
+const Header = ({ backgroundImage, children }) => {
+  const bgStyles = { backgroundImage: `url(${backgroundImage})` };
+
   return (
-    <div className="bg-full">
+    <div className="bg-full" style={bgStyles}>
       <div className="inner-shadow">
         <HeaderNavigation />
-        <div className="intro">
-          <h1>Что такое по-настоящему хорошая ветеринарная клиника?</h1>
-          <div className="divider" />
-          <h5>
-            Это место, в котором вы всегда можете рассчитывать на эффективную
-            помощь специалиста, квалифицированную консультацию и грамотное
-            лечение животного
-          </h5>
-        </div>
+        {children}
       </div>
     </div>
   );
