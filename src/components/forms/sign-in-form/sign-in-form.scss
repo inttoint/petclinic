@@ -13,12 +13,13 @@
   flex-direction: column;
 
   &__group {
+    margin-bottom: 20px;
+
     & input {
       @include box-shadow();
 
       width: 100%;
       padding: 16px;
-      margin-bottom: 20px;
       border-radius: 7px;
       border: none;
       background: fade_out($color-primary-dark, 0.2);
@@ -29,6 +30,11 @@
         background-color: $color-primary-darker;
         color: $color-grey;
       }
+    }
+
+    & .invalid-feedback {
+      padding-left: 16px;
+      color: $color-secondary-lightest;
     }
   }
 

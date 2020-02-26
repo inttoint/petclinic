@@ -1,12 +1,23 @@
 import React from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
 import './sign-in-form.scss';
 
 const SignInForm = () => {
   return (
     <div className="container">
-      <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}}>
+      <Formik
+        initialValues={{ email: '', password: '' }}
+        onSubmit={() => {}}
+        validationSchema={Yup.object({
+          email: Yup.string()
+            .email('Введён некорректный email')
+            .required('Поле должно быть заполнено'),
+          password: Yup.string()
+            .min(6, 'Минимальная длина пароля - 6 символов')
+            .required('Поле должно быть заполнено')
+        })}>
         <Form className="signIn-form">
           <div className="signIn-form__group">
             <Field name="email" type="email" placeholder="E-mail" />
