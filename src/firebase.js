@@ -1,4 +1,4 @@
-import fb from 'firebase';
+import fb from 'firebase/app';
 
 export const appName = 'petclinic';
 

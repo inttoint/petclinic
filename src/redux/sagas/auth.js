@@ -7,7 +7,8 @@ import {
   signInUserSuccess,
   signOutUserRequest
 } from '../ac';
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 const fbAuth = firebase.auth();
 
@@ -18,7 +19,13 @@ export const signInFlow = function*() {
         payload: { email, password }
       } = yield take(signInUserRequest);
 
-      yield call([fbAuth, fbAuth.signInWithEmailAndPassword], email, password);
+      const s = yield call(
+        [fbAuth, fbAuth.signInWithEmailAndPassword],
+        email,
+        password
+      );
+
+      console.log(s);
 
       yield put(replace('/'));
     } catch (error) {
