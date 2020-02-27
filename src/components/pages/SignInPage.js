@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../app/header';
 import catWithMac from '../../img/PajdTsgda.jpg';
 import SignInForm from '../forms/sign-in-form';
+import { signInUserRequest } from '../../redux/ac';
+import { connect } from 'react-redux';
 
 class SignInPage extends Component {
   render() {
@@ -14,9 +16,7 @@ class SignInPage extends Component {
     );
   }
 
-  handleSignIn = ({ email, password }) => {
-    console.log(email, password);
-  };
+  handleSignIn = values => this.props.signInUserRequest(values);
 }
 
-export default SignInPage;
+export default connect(state => ({}), { signInUserRequest })(SignInPage);
