@@ -16,7 +16,7 @@ class SignInPage extends Component {
     );
   }
 
-  handleSignIn = values => this.props.signInUserRequest(values);
+  handleSignIn = user => this.props.signInUserRequest(user);
 }
 
-export default connect(state => ({}), { signInUserRequest })(SignInPage);
+export default connect(null, { signInUserRequest })(SignInPage);
