@@ -1,5 +1,4 @@
 import { Record } from 'immutable';
-import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 import { signInUserFailure, signInUserRequest, signInUserSuccess } from '../ac';
 
@@ -17,6 +16,8 @@ const ReducerRecord = Record({
   isLoaded: false,
   error: null
 });
+
+export const moduleName = 'auth';
 
 const actions = {
   [signInUserRequest]: state => state.set('isLoading', true),

@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './noun_primary50_.png';
 import './header-navigation.scss';
+import { connect } from 'react-redux';
+import { isUserAuthorizedSelector } from '../../../../redux/selectors';
 
-const HeaderNavigation = () => {
+const HeaderNavigation = ({ isUserAuthorized }) => {
   return (
     <header className="header">
       <div className="header__logo">
@@ -39,9 +41,13 @@ const HeaderNavigation = () => {
             </Link>
           </li>
           <li>
-            <Link to="/sign-in" className="header__menu--link">
-              Вход
-            </Link>
+            {isUserAuthorized ? (
+              <button className="header__menu--button">Выход</button>
+            ) : (
+              <Link to="/sign-in" className="header__menu--link">
+                Вход
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
@@ -49,4 +55,6 @@ const HeaderNavigation = () => {
   );
 };
 
-export default HeaderNavigation;
+export default connect(state => ({
+  isUserAuthorized: isUserAuthorizedSelector(state)
+}))(HeaderNavigation);
