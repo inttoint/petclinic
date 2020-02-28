@@ -1,7 +1,8 @@
 import { fork } from 'redux-saga/effects';
-import { authorizeStatusWatcher, signInFlow } from './auth';
+import { authorizeStatusWatcher, signInWatcher, signOutWatcher } from './auth';
 
 export default function*() {
   yield fork(authorizeStatusWatcher);
-  yield fork(signInFlow);
+  yield fork(signInWatcher);
+  yield fork(signOutWatcher);
 }

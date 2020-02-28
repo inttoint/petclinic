@@ -11,11 +11,13 @@ export const {
   signInUserRequest,
   signInUserSuccess,
   signInUserFailure,
-  signOutUserRequest
+  signOutUserRequest,
+  signOutUserSuccess
 } = createActions(
   SIGN_IN_USER + REQUEST,
   SIGN_IN_USER + SUCCESS,
   SIGN_IN_USER + FAILURE,
 
-  SIGN_OUT_USER + REQUEST
+  SIGN_OUT_USER + REQUEST,
+  SIGN_OUT_USER + SUCCESS
 );

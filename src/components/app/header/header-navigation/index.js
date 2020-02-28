@@ -4,8 +4,9 @@ import logo from './noun_primary50_.png';
 import './header-navigation.scss';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../redux/selectors';
+import { signOutUserRequest } from '../../../../redux/ac';
 
-const HeaderNavigation = ({ isUserAuthorized }) => {
+const HeaderNavigation = ({ isUserAuthorized, signOutUserRequest }) => {
   return (
     <header className="header">
       <div className="header__logo">
@@ -42,7 +43,11 @@ const HeaderNavigation = ({ isUserAuthorized }) => {
           </li>
           <li>
             {isUserAuthorized ? (
-              <button className="header__menu--button">Выход</button>
+              <button
+                className="header__menu--button"
+                onClick={signOutUserRequest}>
+                Выход
+              </button>
             ) : (
               <Link to="/sign-in" className="header__menu--link">
                 Вход
@@ -55,6 +60,9 @@ const HeaderNavigation = ({ isUserAuthorized }) => {
   );
 };
 
-export default connect(state => ({
-  isUserAuthorized: isUserAuthorizedSelector(state)
-}))(HeaderNavigation);
+export default connect(
+  state => ({
+    isUserAuthorized: isUserAuthorizedSelector(state)
+  }),
+  { signOutUserRequest }
+)(HeaderNavigation);

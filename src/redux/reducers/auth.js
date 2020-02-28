@@ -1,6 +1,11 @@
 import { Record } from 'immutable';
 import { handleActions } from 'redux-actions';
-import { signInUserFailure, signInUserRequest, signInUserSuccess } from '../ac';
+import {
+  signInUserFailure,
+  signInUserRequest,
+  signInUserSuccess,
+  signOutUserSuccess
+} from '../ac';
 
 const UserRecord = Record({
   uid: null,
@@ -20,7 +25,7 @@ const ReducerRecord = Record({
 export const moduleName = 'auth';
 
 const actions = {
-  [signInUserRequest]: state => state.set('isLoading', true),
+  [signInUserRequest]: state => state.set('isLoading', true).set('error', null),
 
   [signInUserSuccess]: (state, action) =>
     state
@@ -29,7 +34,9 @@ const actions = {
       .set('isLoading', false),
 
   [signInUserFailure]: (state, action) =>
-    state.set('isLoading', false).set('error', action.error)
+    state.set('isLoading', false).set('error', action.payload),
+
+  [signOutUserSuccess]: () => new ReducerRecord()
 };
 
 export default handleActions(actions, new ReducerRecord());

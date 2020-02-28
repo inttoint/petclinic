@@ -1,42 +1,47 @@
-import { put, take, call, select } from 'redux-saga/effects';
+import {
+  put,
+  take,
+  call,
+  select,
+  takeEvery,
+  takeLatest
+} from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga';
 import { replace } from 'connected-react-router';
 import {
   signInUserFailure,
   signInUserRequest,
   signInUserSuccess,
-  signOutUserRequest
+  signOutUserRequest,
+  signOutUserSuccess
 } from '../ac';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
+import { isUserAuthorizedSelector } from '../selectors';
 
 const fbAuth = firebase.auth();
 
-export const signInFlow = function*() {
-  while (true) {
-    try {
-      const {
-        payload: { email, password }
-      } = yield take(signInUserRequest);
+const signInFlow = function*(action) {
+  try {
+    const {
+      payload: { email, password }
+    } = action;
 
-      const s = yield call(
-        [fbAuth, fbAuth.signInWithEmailAndPassword],
-        email,
-        password
-      );
+    yield call([fbAuth, fbAuth.signInWithEmailAndPassword], email, password);
 
-      console.log(s);
-
-      yield put(replace('/'));
-    } catch (error) {
-      yield put(signInUserFailure(error));
-    }
+    yield put(replace('/'));
+  } catch (error) {
+    yield put(signInUserFailure(error));
   }
 };
 
-export const signUpFlow = function*() {};
+const signUpFlow = function*() {};
 
-export const logoutFlow = function*() {};
+const signOutFlow = function*() {
+  try {
+    yield call([fbAuth, fbAuth.signOut]);
+  } catch (_) {}
+};
 
 export const authorizeStatusWatcher = function*() {
   const channel = yield call(createAuthChannel);
@@ -47,9 +52,20 @@ export const authorizeStatusWatcher = function*() {
     if (user) {
       yield put(signInUserSuccess(user));
     } else {
-      yield put(signOutUserRequest());
+      if (yield select(isUserAuthorizedSelector)) {
+        yield put(signOutUserSuccess());
+        yield put(replace('/sign-in'));
+      }
     }
   }
+};
+
+export const signInWatcher = function*() {
+  yield takeLatest(signInUserRequest, signInFlow);
+};
+
+export const signOutWatcher = function*() {
+  yield takeEvery(signOutUserRequest, signOutFlow);
 };
 
 const createAuthChannel = () =>
