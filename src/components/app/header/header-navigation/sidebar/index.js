@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './sidebar.scss';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen }) => {
+  const style = { opacity: isOpen ? 1 : 0 };
+
   return (
-    <div className="sidebar__container">
+    <div className="sidebar__container" style={style}>
       <nav className="sidebar__menu">
         <ul>
           <li>

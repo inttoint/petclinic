@@ -1,4 +1,4 @@
-@import '../../../../scss/index';
+@import '../../../../../scss/index';
 
 .sidebar__container {
   position: fixed;
@@ -10,6 +10,7 @@
   font-size: 18px;
   background-color: fade_out($color-primary, 0.005);
   z-index: 1;
+  opacity: 0;
 }
 
 .sidebar__menu {
@@ -27,13 +28,12 @@
     align-items: center;
 
     & li {
-      margin-bottom: 20px;
+      padding: 15px;
       display: block;
     }
   }
 
   &--link {
-    padding: 15px;
     color: $color-grey-light;
     letter-spacing: 2px;
     text-decoration: none;
