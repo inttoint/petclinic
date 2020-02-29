@@ -35,7 +35,7 @@ const signInFlow = function*(action) {
   }
 };
 
-const signUpFlow = function*() {};
+// const signUpFlow = function*() {};
 
 const signOutFlow = function*() {
   try {

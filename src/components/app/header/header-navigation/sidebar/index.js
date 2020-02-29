@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './sidebar.scss';
+import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
+import { signOutUserRequest } from '../../../../../redux/ac';
 
-const Sidebar = ({ isOpen }) => {
-  const style = { opacity: isOpen ? 1 : 0 };
+const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
+  const style = { opacity: isOpen ? 1 : 0, display: isOpen ? 'block' : 'none' };
 
   return (
     <div className="sidebar__container" style={style}>
@@ -30,17 +33,17 @@ const Sidebar = ({ isOpen }) => {
             </Link>
           </li>
           <li>
-            {/*{isUserAuthorized ? (*/}
-            {/*  <button*/}
-            {/*    className="header__menu--button"*/}
-            {/*    onClick={signOutUserRequest}>*/}
-            {/*    Выход*/}
-            {/*  </button>*/}
-            {/* ) : (*/}
-            <Link to="/sign-in" className="sidebar__menu--link">
-              Вход
-            </Link>
-            {/*)}*/}
+            {isUserAuthorized ? (
+              <button
+                className="header__menu--button"
+                onClick={signOutUserRequest}>
+                Выход
+              </button>
+            ) : (
+              <Link to="/sign-in" className="sidebar__menu--link">
+                Вход
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
@@ -48,4 +51,9 @@ const Sidebar = ({ isOpen }) => {
   );
 };
 
-export default Sidebar;
+export default connect(
+  state => ({
+    isUserAuthorized: isUserAuthorizedSelector(state)
+  }),
+  { signOutUserRequest }
+)(Sidebar);
