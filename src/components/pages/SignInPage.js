@@ -6,6 +6,7 @@ import { signInUserRequest } from '../../redux/ac';
 import { connect } from 'react-redux';
 import { authLoadingSelector } from '../../redux/selectors';
 import Spinner from '../common/spinner';
+import SignUpForm from '../forms/sign-up-form';
 
 class SignInPage extends Component {
   render() {
@@ -14,7 +15,8 @@ class SignInPage extends Component {
     return (
       <div>
         <Header backgroundImage={catWithMac}>
-          <SignInForm handleSubmit={this.handleSignIn} />
+          {/*<SignInForm handleSubmit={this.handleSignIn} />*/}
+          <SignUpForm />
           {isLoading && <Spinner />}
         </Header>
       </div>

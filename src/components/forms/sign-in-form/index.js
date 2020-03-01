@@ -16,6 +16,7 @@ const SignInValidation = Yup.object({
 const SignInForm = ({ handleSubmit }) => {
   return (
     <div className="container">
+      <h2>Вход</h2>
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={SignInValidation}
