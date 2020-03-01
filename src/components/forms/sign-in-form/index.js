@@ -43,7 +43,7 @@ const SignInForm = ({ handleSubmit }) => {
             Войти
           </button>
 
-          <Link to="/sign-up" className="signIn-form--link">
+          <Link to="/auth/sign-up" className="signIn-form--link">
             Зарегистрироваться ⟶
           </Link>
         </Form>

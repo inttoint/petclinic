@@ -40,7 +40,7 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
                 Выход
               </button>
             ) : (
-              <Link to="/sign-in" className="sidebar__menu--link">
+              <Link to="/auth/sign-in" className="sidebar__menu--link">
                 Вход
               </Link>
             )}

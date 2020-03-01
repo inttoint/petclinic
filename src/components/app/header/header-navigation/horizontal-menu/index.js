@@ -37,7 +37,7 @@ const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
               Выход
             </button>
           ) : (
-            <Link to="/sign-in" className="header__menu--link">
+            <Link to="/auth/sign-in" className="header__menu--link">
               Вход
             </Link>
           )}

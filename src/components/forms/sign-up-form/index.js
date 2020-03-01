@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './sign-up-form.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Link } from 'react-router-dom';
@@ -18,82 +18,81 @@ const signUpValidation = Yup.object({
     .required('Поле должно быть заполнено')
 });
 
-class SignUpForm extends Component {
-  render() {
-    return (
-      <div className="container">
-        <h2>Регистрация</h2>
-        <Formik
-          initialValues={{
-            firstName: '',
-            lastName: '',
-            email: '',
-            password: ''
-          }}
-          validationSchema={signUpValidation}
-          onSubmit={() => {}}>
-          <Form className="signUp-form">
-            <div className="signUp-form__group">
-              <Field name="firstName" type="text" placeholder="Имя" />
-              <ErrorMessage
-                name="firstName"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
-            <div className="signUp-form__group">
-              <Field name="lastName" type="text" placeholder="Фамилия" />
-              <ErrorMessage
-                name="lastName"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
-            <div className="signUp-form__group">
-              <Field name="email" type="email" placeholder="E-mail" />
-              <ErrorMessage
-                name="email"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
-            <div className="signUp-form__group">
-              <Field
-                name="password"
-                type="password"
-                placeholder="Придумайте пароль"
-              />
-              <ErrorMessage
-                name="password"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
-            <div className="signUp-form__group">
-              <Field
-                name="passwordConfirm"
-                type="password"
-                placeholder="Повторите пароль"
-              />
-              <ErrorMessage
-                name="passwordConfirm"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
+const SignUpForm = ({ handleSubmit }) => {
+  return (
+    <div className="container">
+      <h2>Регистрация</h2>
+      <Formik
+        initialValues={{
+          firstName: '',
+          lastName: '',
+          email: '',
+          password: '',
+          passwordConfirm: ''
+        }}
+        validationSchema={signUpValidation}
+        onSubmit={handleSubmit}>
+        <Form className="signUp-form">
+          <div className="signUp-form__group">
+            <Field name="firstName" type="text" placeholder="Имя" />
+            <ErrorMessage
+              name="firstName"
+              className="invalid-feedback"
+              component="div"
+            />
+          </div>
+          <div className="signUp-form__group">
+            <Field name="lastName" type="text" placeholder="Фамилия" />
+            <ErrorMessage
+              name="lastName"
+              className="invalid-feedback"
+              component="div"
+            />
+          </div>
+          <div className="signUp-form__group">
+            <Field name="email" type="email" placeholder="E-mail" />
+            <ErrorMessage
+              name="email"
+              className="invalid-feedback"
+              component="div"
+            />
+          </div>
+          <div className="signUp-form__group">
+            <Field
+              name="password"
+              type="password"
+              placeholder="Придумайте пароль"
+            />
+            <ErrorMessage
+              name="password"
+              className="invalid-feedback"
+              component="div"
+            />
+          </div>
+          <div className="signUp-form__group">
+            <Field
+              name="passwordConfirm"
+              type="password"
+              placeholder="Повторите пароль"
+            />
+            <ErrorMessage
+              name="passwordConfirm"
+              className="invalid-feedback"
+              component="div"
+            />
+          </div>
 
-            <button className="red-btn" type="submit">
-              Регистрация
-            </button>
+          <button className="red-btn" type="submit">
+            Регистрация
+          </button>
 
-            <Link to="/sign-in" className="signUp-form--link">
-              У меня уже есть аккаунт ⟶
-            </Link>
-          </Form>
-        </Formik>
-      </div>
-    );
-  }
-}
+          <Link to="/auth/sign-in" className="signUp-form--link">
+            У меня уже есть аккаунт ⟶
+          </Link>
+        </Form>
+      </Formik>
+    </div>
+  );
+};
 
 export default SignUpForm;
