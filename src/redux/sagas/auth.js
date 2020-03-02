@@ -13,7 +13,10 @@ import {
   signInUserRequest,
   signInUserSuccess,
   signOutUserRequest,
-  signOutUserSuccess
+  signOutUserSuccess,
+  signUpUserFailure,
+  signUpUserRequest,
+  signUpUserSuccess
 } from '../ac';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
@@ -23,9 +26,7 @@ const fbAuth = firebase.auth();
 
 const signInFlow = function*(action) {
   try {
-    const {
-      payload: { email, password }
-    } = action;
+    const { email, password } = action.payload;
 
     yield call([fbAuth, fbAuth.signInWithEmailAndPassword], email, password);
 
@@ -35,7 +36,21 @@ const signInFlow = function*(action) {
   }
 };
 
-// const signUpFlow = function*() {};
+const signUpFlow = function*(action) {
+  try {
+    const { firstName, lastName, email, password } = action.payload;
+
+    yield call(
+      [fbAuth, fbAuth.createUserWithEmailAndPassword],
+      email,
+      password
+    );
+
+    yield put(signUpUserSuccess({ firstName, lastName, email }));
+  } catch (error) {
+    yield put(signUpUserFailure(error));
+  }
+};
 
 const signOutFlow = function*() {
   try {
@@ -54,7 +69,7 @@ export const authorizeStatusWatcher = function*() {
     } else {
       if (yield select(isUserAuthorizedSelector)) {
         yield put(signOutUserSuccess());
-        yield put(replace('/sign-in'));
+        yield put(replace('/auth/sign-in'));
       }
     }
   }
@@ -62,6 +77,10 @@ export const authorizeStatusWatcher = function*() {
 
 export const signInWatcher = function*() {
   yield takeLatest(signInUserRequest, signInFlow);
+};
+
+export const signUpWatcher = function*() {
+  yield takeLatest(signUpUserRequest, signUpFlow);
 };
 
 export const signOutWatcher = function*() {

@@ -32,7 +32,7 @@ class AuthPage extends Component {
   }
 
   handleSignIn = user => this.props.signInUserRequest(user);
-  handleSignUp = user => console.log(user);
+  handleSignUp = user => this.props.signUpUserRequest(user);
 }
 
 export default connect(

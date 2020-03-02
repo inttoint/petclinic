@@ -1,9 +1,12 @@
 import { Record } from 'immutable';
-import { handleActions } from 'redux-actions';
+import { combineActions, handleActions } from 'redux-actions';
 import {
   signInUserFailure,
   signInUserRequest,
   signInUserSuccess,
+  signUpUserRequest,
+  signUpUserSuccess,
+  signUpUserFailure,
   signOutUserSuccess
 } from '../ac';
 
@@ -33,8 +36,12 @@ const actions = {
       .set('isAuthorized', true)
       .set('isLoading', false),
 
-  [signInUserFailure]: (state, action) =>
+  [combineActions(signInUserFailure, signUpUserFailure)]: (state, action) =>
     state.set('isLoading', false).set('error', action.payload),
+
+  [signUpUserRequest]: state => state.set('isLoading', true).set('error', null),
+
+  [signUpUserSuccess]: state => state.set('isLoading', false),
 
   [signOutUserSuccess]: () => new ReducerRecord()
 };
