@@ -2,12 +2,10 @@ import React from 'react';
 import whiteCat from '../../img/britan.jpg';
 import Header from '../app/header';
 import HeaderIntro from '../app/header/header-intro';
-import titles from '../../mocks/titles';
+import { getTitles } from '../../mocks/titles';
 
 const HomePage = () => {
-  const { firstTitle, secondTitle } = titles.find(
-    title => title.location === 'home'
-  );
+  const { firstTitle, secondTitle } = getTitles('home');
   return (
     <div>
       <Header backgroundImage={whiteCat}>
