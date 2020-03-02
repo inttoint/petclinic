@@ -30,7 +30,7 @@ const signInFlow = function*(action) {
 
     yield call([fbAuth, fbAuth.signInWithEmailAndPassword], email, password);
 
-    yield put(replace('/'));
+    yield put(replace('/profile'));
   } catch (error) {
     yield put(signInUserFailure(error));
   }
@@ -89,3 +89,13 @@ export const signOutWatcher = function*() {
 
 const createAuthChannel = () =>
   eventChannel(emitter => fbAuth.onAuthStateChanged(user => emitter({ user })));
+
+// const profile = {
+//   displayName: firstName
+// };
+// const a = yield call(
+//   [fbAuth.currentUser, fbAuth.currentUser.updateProfile],
+//   profile
+// );
+//
+// console.log(fbAuth.currentUser);
