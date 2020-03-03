@@ -1,4 +1,8 @@
 import React from 'react';
+import { ReactComponent as CatIcon } from './svg/cat.svg';
+import { ReactComponent as ReportIcon } from './svg/registration.svg';
+import { ReactComponent as MedIcon } from './svg/vaccine.svg';
+import { ReactComponent as HandIcon } from './svg/veterinary.svg';
 import './profile.scss';
 
 const Profile = () => {
@@ -7,6 +11,7 @@ const Profile = () => {
       <div className="main-controls">
         <div className="main-controls__left">
           <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <div className="divider-line" />
           <p>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
@@ -22,10 +27,18 @@ const Profile = () => {
         <div className="main-controls__right">
           <div className="outer-shadow">
             <div className="icon-box">
-              <div className="icon-box__item" />
-              <div className="icon-box__item" />
-              <div className="icon-box__item" />
-              <div className="icon-box__item" />
+              <div className="icon-box__item">
+                <CatIcon />
+              </div>
+              <div className="icon-box__item">
+                <ReportIcon />
+              </div>
+              <div className="icon-box__item">
+                <MedIcon />
+              </div>
+              <div className="icon-box__item">
+                <HandIcon />
+              </div>
             </div>
           </div>
         </div>

@@ -1,1 +1,52 @@
 @import '../../scss/index';
+
+.wrapper {
+  background-color: $color-secondary;
+  color: $color-white;
+}
+
+.main-controls {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__right {
+    flex: 1;
+    width: 100%;
+  }
+
+  &__left {
+    flex: 1;
+    width: 100%;
+
+    padding: 50px 35px;
+
+    box-shadow: 9px 0 5px 0 rgba(0, 0, 0, 0.03);
+    border-right: 1px solid rgba(116, 53, 45, 0.4);
+
+    h4 {
+      margin-top: 0;
+      color: $color-grey-light;
+    }
+
+    p {
+      color: $color-grey;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .divider-line {
+      @include dividerLine();
+    }
+  }
+}
+
+.icon-box {
+  &__item {
+    svg {
+      width: 80px;
+      height: auto;
+      fill: $color-grey;
+    }
+  }
+}
