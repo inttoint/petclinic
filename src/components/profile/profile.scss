@@ -8,6 +8,7 @@
 .main-controls {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   &__right {
     flex: 1;
@@ -18,17 +19,20 @@
     flex: 1;
     width: 100%;
 
-    padding: 50px 35px;
+    padding: 20px 40px 60px 70px;
 
     box-shadow: 9px 0 5px 0 rgba(0, 0, 0, 0.03);
-    border-right: 1px solid rgba(116, 53, 45, 0.4);
+    border-right: 1px solid $color-secondary-more-darkness;
 
     h4 {
       margin-top: 0;
+      font-size: 24px;
+      padding-top: 100px;
       color: $color-grey-light;
     }
 
     p {
+      font-size: 18px;
       color: $color-grey;
       &:last-child {
         margin-bottom: 0;
@@ -41,12 +45,95 @@
   }
 }
 
+.outer-shadow {
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.03);
+}
+
 .icon-box {
+  position: relative;
+  border-top: 1px solid $color-secondary-more-darkness;
+  margin-right: 0;
+  margin-left: 0;
+
   &__item {
+    position: relative;
+    width: 50%;
+    padding: 35px 30px;
+    display: inline-block;
+    margin: 1px 0;
+    text-align: center;
+    background-color: $color-secondary-darker;
+
+    &:hover {
+      background-color: $color-secondary-dark;
+    }
+    &:nth-child(2n) {
+      border-left: 1px solid $color-secondary-more-darkness;
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $color-grey;
+
+      svg {
+        width: 80px;
+        height: auto;
+        fill: $color-grey;
+
+        &:hover {
+          fill: $color-grey-dark;
+          cursor: pointer;
+        }
+      }
+
+      h5 {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        &:hover {
+          color: $color-grey-dark;
+          cursor: pointer;
+        }
+      }
+    }
+
     svg {
       width: 80px;
       height: auto;
       fill: $color-grey;
     }
+
+    h5 {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.icon-box > div {
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-color: $color-secondary-more-darkness;
+  }
+
+  &:before {
+    height: 100%;
+    top: 0;
+    left: -1px;
+    border-left: 1px solid $color-secondary-more-darkness;
+  }
+
+  &:after {
+    width: 100%;
+    height: 0;
+    top: auto;
+    left: 0;
+    bottom: -1px;
+    border-bottom: 1px solid $color-secondary-more-darkness;
   }
 }

@@ -4,6 +4,7 @@ import { ReactComponent as ReportIcon } from './svg/registration.svg';
 import { ReactComponent as MedIcon } from './svg/vaccine.svg';
 import { ReactComponent as HandIcon } from './svg/veterinary.svg';
 import './profile.scss';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
   return (
@@ -28,16 +29,28 @@ const Profile = () => {
           <div className="outer-shadow">
             <div className="icon-box">
               <div className="icon-box__item">
-                <CatIcon />
+                <Link to="#" className="icon-box__item--link">
+                  <CatIcon />
+                  <h5>Мои животные</h5>
+                </Link>
               </div>
               <div className="icon-box__item">
-                <ReportIcon />
+                <Link to="#" className="icon-box__item--link">
+                  <ReportIcon />
+                  <h5>Мои обращения</h5>
+                </Link>
               </div>
               <div className="icon-box__item">
-                <MedIcon />
+                <Link to="#" className="icon-box__item--link">
+                  <MedIcon />
+                  <h5>Назначения</h5>
+                </Link>
               </div>
               <div className="icon-box__item">
-                <HandIcon />
+                <Link to="#" className="icon-box__item--link">
+                  <HandIcon />
+                  <h5>Настройки</h5>
+                </Link>
               </div>
             </div>
           </div>
