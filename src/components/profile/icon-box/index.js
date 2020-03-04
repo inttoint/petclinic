@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as CatIcon } from '../svg/cat.svg';
+import { ReactComponent as CatIcon } from '../svg/pet.svg';
 import { ReactComponent as ReportIcon } from '../svg/registration.svg';
 import { ReactComponent as MedIcon } from '../svg/vaccine.svg';
 import { ReactComponent as HandIcon } from '../svg/veterinary.svg';
