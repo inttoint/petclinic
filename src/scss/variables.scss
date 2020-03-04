@@ -2,17 +2,17 @@ $color-black: #000;
 $color-white: #fff;
 
 //Primary
-$color-primary: #333; //rgba(51, 51, 51, 1)
-$color-primary-dark: #212121; //rgba(33, 33, 33, 1)
-$color-primary-darker: rgba(18, 18, 18, 1);
+$color-primary: #333; //rgb(51, 51, 51)
+$color-primary-dark: #212121; //rgb(33, 33, 33)
+$color-primary-darker: rgb(18, 18, 18);
 
 //Secondary
-$color-secondary-lightest: rgba(231, 100, 95, 1);
-$color-secondary-lighter: rgba(201, 113, 99, 1);
-$color-secondary-light: rgba(153, 85, 74, 1);
-$color-secondary: rgba(139, 63, 54, 1);
-$color-secondary-dark: rgba(133, 63, 54, 1);
-$color-secondary-darker: rgba(129, 60, 52, 1);
+$color-secondary-lightest: rgb(231, 100, 95);
+$color-secondary-lighter: rgb(201, 113, 99);
+$color-secondary-light: rgb(153, 85, 74);
+$color-secondary: rgb(139, 63, 54);
+$color-secondary-dark: rgb(133, 63, 54);
+$color-secondary-darker: rgb(129, 60, 52);
 $color-secondary-more-darkness: rgba(116, 53, 45, 0.6);
 
 //Neutral
