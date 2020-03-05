@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as ProfileIcon } from '../profile.svg';
 import './horizontal-menu.scss';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
@@ -31,11 +32,10 @@ const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
         </li>
         <li>
           {isUserAuthorized ? (
-            <button
-              className="header__menu--button"
-              onClick={signOutUserRequest}>
-              Выход
-            </button>
+            <Link to="/profile" className=" secondary-link">
+              <ProfileIcon />
+              Личный кабинет
+            </Link>
           ) : (
             <Link to="/auth/sign-in" className="header__menu--link">
               Вход
