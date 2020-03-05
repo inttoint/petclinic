@@ -32,7 +32,7 @@ const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
         </li>
         <li>
           {isUserAuthorized ? (
-            <Link to="/profile" className=" secondary-link">
+            <Link to="/profile" className="header__menu--secondary-link">
               <ProfileIcon />
               Личный кабинет
             </Link>

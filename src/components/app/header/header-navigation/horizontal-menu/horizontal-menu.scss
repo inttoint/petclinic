@@ -28,7 +28,7 @@
     }
   }
 
-  .secondary-link {
+  &--secondary-link {
     @include create-red-button();
     width: 165px;
     display: flex;

@@ -45,4 +45,27 @@
       transition: all 300ms ease-in-out;
     }
   }
+
+  &--secondary-link {
+    @include create-red-button();
+    width: 165px;
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+
+    text-decoration: none;
+    font-size: 14px;
+
+    svg {
+      fill: $color-grey-light;
+      margin-right: 5px;
+      transition: 0.25s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        fill: $color-secondary;
+      }
+    }
+  }
 }

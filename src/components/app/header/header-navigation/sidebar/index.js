@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './sidebar.scss';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
 import { signOutUserRequest } from '../../../../../redux/ac';
+import { ReactComponent as ProfileIcon } from '../profile.svg';
 
 const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
   const style = { opacity: isOpen ? 1 : 0, display: isOpen ? 'block' : 'none' };
@@ -34,11 +35,10 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
           </li>
           <li>
             {isUserAuthorized ? (
-              <button
-                className="header__menu--button"
-                onClick={signOutUserRequest}>
-                Выход
-              </button>
+              <Link to="/profile" className="sidebar__menu--secondary-link">
+                <ProfileIcon />
+                Личный кабинет
+              </Link>
             ) : (
               <Link to="/auth/sign-in" className="sidebar__menu--link">
                 Вход
