@@ -63,8 +63,5 @@
 }
 
 .red-btn {
-  @include create-red-button();
-
-  width: 100%;
-  height: 47px;
+  @include create-red-button(100%, 47px);
 }

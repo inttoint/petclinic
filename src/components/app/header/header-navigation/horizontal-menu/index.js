@@ -11,33 +11,37 @@ const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
     <nav className="header__menu">
       <ul>
         <li>
-          <Link to="#" className="header__menu--link">
+          <Link to="#" className="header__menu--link primary-link">
             О нас
           </Link>
         </li>
         <li>
-          <Link to="#" className="header__menu--link">
+          <Link to="#" className="header__menu--link primary-link">
             Услуги
           </Link>
         </li>
         <li>
-          <Link to="#" className="header__menu--link">
+          <Link to="#" className="header__menu--link primary-link">
             Отзывы
           </Link>
         </li>
         <li>
-          <Link to="#" className="header__menu--link">
+          <Link to="#" className="header__menu--link primary-link">
             Контакты
           </Link>
         </li>
         <li>
           {isUserAuthorized ? (
-            <Link to="/profile" className="header__menu--secondary-link">
+            <Link
+              to="/profile"
+              className="header__menu--secondary-link secondary-link">
               <ProfileIcon />
               Личный кабинет
             </Link>
           ) : (
-            <Link to="/auth/sign-in" className="header__menu--link">
+            <Link
+              to="/auth/sign-in"
+              className="header__menu--link primary-link">
               Вход
             </Link>
           )}

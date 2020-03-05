@@ -34,11 +34,9 @@
   }
 
   &--link {
-    color: $color-grey-light;
+    @include common-text-styles();
     letter-spacing: 2px;
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
 
     &:hover {
       color: $color-secondary-lighter;
@@ -47,14 +45,11 @@
   }
 
   &--secondary-link {
-    @include create-red-button();
-    width: 165px;
+    @include create-secondary-link(165px);
+
+    padding: 0 3px;
     display: flex;
     align-items: center;
-    padding: 0 3px;
-
-    text-decoration: none;
-    font-size: 14px;
 
     svg {
       fill: $color-grey-light;
@@ -68,4 +63,8 @@
       }
     }
   }
+}
+
+.red-btn {
+  @include create-red-button(140px);
 }

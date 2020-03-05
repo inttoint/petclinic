@@ -9,23 +9,61 @@
   border-radius: 7px;
 }
 
-@mixin create-red-button() {
+@mixin create-red-button(
+  $width: 100px,
+  $height: 40px,
+  $font-size: 14px,
+  $font-weight: 600
+) {
   @include box-shadow();
   @include border-and-border-radius($color-secondary);
+  @include common-text-styles($font-size, $font-weight);
+  @include common-nav-el-styles();
 
+  font-family: inherit;
+  width: $width;
+  height: $height;
+  background-color: $color-secondary;
+
+  &:disabled {
+    background-color: $color-grey-darkest;
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: $color-secondary;
+  }
+}
+
+@mixin common-text-styles($size: 14px, $weight: 600) {
   text-transform: uppercase;
-  width: 100px;
-  height: 40px;
-  font-size: 12px;
-  //line-height: 30px;
-  cursor: pointer;
+  font-size: $size;
   font-weight: 600;
+  color: $color-grey-light;
+}
 
+@mixin common-nav-el-styles() {
+  cursor: pointer;
   outline: none;
   transition: 0.25s ease-in-out;
+}
 
+@mixin create-secondary-link(
+  $width: 100px,
+  $height: 40px,
+  $font-size: 14px,
+  $font-weight: 600
+) {
+  @include box-shadow();
+  @include border-and-border-radius($color-secondary);
+  @include common-text-styles($font-size, $font-weight);
+  @include common-nav-el-styles();
+
+  width: $width;
+  height: $height;
   background-color: $color-secondary;
-  color: $color-white;
+  text-decoration: none;
 
   &:disabled {
     background-color: $color-grey-darkest;

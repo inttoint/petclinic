@@ -45,6 +45,13 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
               </Link>
             )}
           </li>
+          {isUserAuthorized && (
+            <li>
+              <button className="red-btn" onClick={signOutUserRequest}>
+                Выход
+              </button>
+            </li>
+          )}
         </ul>
       </nav>
     </div>
