@@ -2,7 +2,7 @@ import React from 'react';
 import IconBox from './icon-box';
 import TextContent from './text-content';
 import './profile.scss';
-import PetCard from '../pet-list/pet-card';
+import PetList from '../pet-list';
 
 const Profile = () => {
   return (
@@ -10,7 +10,7 @@ const Profile = () => {
       <div className="main-controls">
         <div className="main-controls__left">
           {/*<TextContent />*/}
-          <PetCard />
+          <PetList />
         </div>
         <div className="main-controls__right">
           <div className="outer-shadow">

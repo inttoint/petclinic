@@ -1,10 +1,14 @@
 import React from 'react';
-import './pet-card.scss';
+import './pet-list.scss';
+import PetCard from './pet-card';
 
 const PetList = () => {
   return (
-    <div>
-      <h1>pets</h1>
+    <div className="container">
+      <h1>Мои животные</h1>
+      <PetCard />
+      <PetCard />
+      <PetCard />
     </div>
   );
 };
