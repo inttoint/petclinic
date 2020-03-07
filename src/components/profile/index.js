@@ -1,6 +1,5 @@
 import React from 'react';
 import IconBox from './icon-box';
-import TextContent from './text-content';
 import './profile.scss';
 import PetList from '../pet-list';
 
@@ -9,7 +8,6 @@ const Profile = () => {
     <div className="wrapper">
       <div className="main-controls">
         <div className="main-controls__left">
-          {/*<TextContent />*/}
           <PetList />
         </div>
         <div className="main-controls__right">
