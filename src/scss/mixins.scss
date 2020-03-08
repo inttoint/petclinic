@@ -82,3 +82,9 @@
   height: 2px;
   background-color: rgba(232, 232, 232, 0.26);
 }
+
+@mixin title-h1-styles() {
+  margin-bottom: 50px;
+  color: $color-grey-light;
+  letter-spacing: 2.5px;
+}

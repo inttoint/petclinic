@@ -33,7 +33,7 @@ const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
         <li>
           {isUserAuthorized ? (
             <Link
-              to="/profile"
+              to="/profile/pets"
               className="header__menu--secondary-link secondary-link">
               <ProfileIcon />
               Личный кабинет

@@ -1,5 +1,12 @@
 @import '../../scss/index';
 
-button {
-  @include create-red-button();
+.container {
+  h1 {
+    @include title-h1-styles();
+  }
+
+  .btn.sign-out {
+    @include create-red-button();
+    border-color: $color-secondary-more-darkness;
+  }
 }

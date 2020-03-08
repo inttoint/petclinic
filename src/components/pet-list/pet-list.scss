@@ -2,8 +2,6 @@
 
 .container {
   h1 {
-    margin-bottom: 50px;
-    color: $color-grey-light;
-    letter-spacing: 2.5px;
+    @include title-h1-styles();
   }
 }
