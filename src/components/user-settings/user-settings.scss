@@ -6,7 +6,8 @@
   }
 
   .btn.sign-out {
-    @include create-red-button();
+    @include create-red-button(auto);
     border-color: $color-secondary-more-darkness;
+    background-color: $color-primary;
   }
 }
