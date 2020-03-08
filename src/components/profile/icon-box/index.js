@@ -9,10 +9,10 @@ import './icon-box.scss';
 const IconBox = () => {
   return (
     <div className="icon-box">
-      <IconBoxItem url="#" Icon={CatIcon} title="Мои животные" />
+      <IconBoxItem url="/profile/pets" Icon={CatIcon} title="Мои животные" />
       <IconBoxItem url="#" Icon={ReportIcon} title="Мои обращения" />
       <IconBoxItem url="#" Icon={MedIcon} title="Назначения" />
-      <IconBoxItem url="#" Icon={HandIcon} title="Настройки" />
+      <IconBoxItem url="/profile/settings" Icon={HandIcon} title="Настройки" />
     </div>
   );
 };

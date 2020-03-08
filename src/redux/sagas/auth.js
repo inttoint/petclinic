@@ -30,7 +30,7 @@ const signInFlow = function*(action) {
 
     yield call([fbAuth, fbAuth.signInWithEmailAndPassword], email, password);
 
-    yield put(replace('/profile'));
+    yield put(replace('/profile/pets'));
   } catch (error) {
     yield put(signInUserFailure(error));
   }

@@ -1,0 +1,5 @@
+@import '../../scss/index';
+
+button {
+  @include create-red-button();
+}
