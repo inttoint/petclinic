@@ -78,7 +78,7 @@
     }
 
     .text {
-      margin-top: 15px;
+      margin-top: 10px;
       margin-left: 60px;
 
       h3,
@@ -87,6 +87,19 @@
         margin: 3px 0;
         letter-spacing: 0.5px;
         white-space: nowrap;
+      }
+
+      .row {
+        display: flex;
+        width: 65%;
+        justify-content: space-between;
+        align-items: baseline;
+
+        .left {
+        }
+
+        .right {
+        }
       }
     }
 

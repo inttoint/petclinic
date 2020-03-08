@@ -6,7 +6,7 @@ import './user-settings.scss';
 const UserSettings = ({ signOutUserRequest }) => {
   return (
     <div className="container">
-      <h1>Настройка профиля</h1>
+      <h1>Настройки профиля</h1>
       <button className="btn sign-out" onClick={signOutUserRequest}>
         Выйти
       </button>

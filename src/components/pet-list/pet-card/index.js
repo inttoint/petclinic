@@ -19,8 +19,11 @@ const PetCard = () => {
         </div>
         <div className="content">
           <div className="text">
-            <h3>Василий</h3>
-            <h6>9 месяцев</h6>
+            <div className="row">
+              <h3>Василий</h3>
+              <h6>9 месяцев</h6>
+            </div>
+            <h6>Сибирский кот</h6>
           </div>
           <div
             className={`btn ${activeClass}`}
