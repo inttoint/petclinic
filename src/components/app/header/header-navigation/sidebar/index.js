@@ -14,22 +14,22 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
       <nav className="sidebar__menu">
         <ul>
           <li>
-            <Link to="#" className="sidebar__menu--link">
+            <Link to="/about" className="sidebar__menu--link">
               О нас
             </Link>
           </li>
           <li>
-            <Link to="#" className="sidebar__menu--link">
+            <Link to="/services" className="sidebar__menu--link">
               Услуги
             </Link>
           </li>
           <li>
-            <Link to="#" className="sidebar__menu--link">
+            <Link to="/reviews" className="sidebar__menu--link">
               Отзывы
             </Link>
           </li>
           <li>
-            <Link to="#" className="sidebar__menu--link">
+            <Link to="/contacts" className="sidebar__menu--link">
               Контакты
             </Link>
           </li>

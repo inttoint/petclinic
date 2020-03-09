@@ -11,22 +11,22 @@ const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
     <nav className="header__menu">
       <ul>
         <li>
-          <Link to="#" className="header__menu--link primary-link">
+          <Link to="/about" className="header__menu--link primary-link">
             О нас
           </Link>
         </li>
         <li>
-          <Link to="#" className="header__menu--link primary-link">
+          <Link to="/services" className="header__menu--link primary-link">
             Услуги
           </Link>
         </li>
         <li>
-          <Link to="#" className="header__menu--link primary-link">
+          <Link to="/reviews" className="header__menu--link primary-link">
             Отзывы
           </Link>
         </li>
         <li>
-          <Link to="#" className="header__menu--link primary-link">
+          <Link to="/contacts" className="header__menu--link primary-link">
             Контакты
           </Link>
         </li>
