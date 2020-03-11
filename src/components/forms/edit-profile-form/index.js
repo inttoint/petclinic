@@ -2,11 +2,36 @@ import React from 'react';
 import './edit-profile-form.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import MaskedInput from 'react-text-mask';
 
 const EditProfileForm = ({ handleSubmit = () => {} }) => {
+  const phoneNumberMask = [
+    '(',
+    /[1-9]/,
+    /\d/,
+    /\d/,
+    ')',
+    ' ',
+    /\d/,
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/
+  ];
+
   const editProfileValidation = Yup.object({
     firstName: Yup.string(),
     lastName: Yup.string(),
+    middleName: Yup.string(),
+    phone: Yup.string().test('isCorrect', 'Номер введен некорректно', function(
+      value
+    ) {
+      return !value.includes('_');
+    }),
     password: Yup.string().min(6, 'Минимальная длина пароля - 6 символов'),
     passwordConfirm: Yup.string().oneOf(
       [Yup.ref('password'), null],
@@ -20,6 +45,8 @@ const EditProfileForm = ({ handleSubmit = () => {} }) => {
         initialValues={{
           firstName: '',
           lastName: '',
+          middleName: '',
+          phone: '',
           password: '',
           passwordConfirm: ''
         }}
@@ -39,6 +66,31 @@ const EditProfileForm = ({ handleSubmit = () => {} }) => {
             <Field name="lastName" type="text" placeholder="Фамилия" />
             <ErrorMessage
               name="lastName"
+              className="invalid-feedback"
+              component="div"
+            />
+          </div>
+          <div className="edit-profile-form__group">
+            <Field name="middleName" type="text" placeholder="Отчество" />
+            <ErrorMessage
+              name="middleName"
+              className="invalid-feedback"
+              component="div"
+            />
+          </div>
+          <div className="edit-profile-form__group">
+            <Field name="phone">
+              {({ field }) => (
+                <MaskedInput
+                  {...field}
+                  placeholder="(987)654-32-10"
+                  mask={phoneNumberMask}
+                  type="text"
+                />
+              )}
+            </Field>
+            <ErrorMessage
+              name="phone"
               className="invalid-feedback"
               component="div"
             />

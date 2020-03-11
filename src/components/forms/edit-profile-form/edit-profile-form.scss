@@ -12,6 +12,7 @@
     &__group {
       align-self: center;
       margin-bottom: 20px;
+      width: 300px;
 
       & input {
         @include box-shadow();
@@ -40,6 +41,7 @@
 
 .btn.save {
   @include create-red-button();
+  width: 300px;
   border-color: $color-secondary-more-darkness;
   margin: 0 auto 20px;
 }

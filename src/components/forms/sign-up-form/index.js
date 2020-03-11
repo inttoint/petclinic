@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const signUpValidation = Yup.object({
-  firstName: Yup.string().required('Поле должно быть заполнено'),
-  lastName: Yup.string(),
   email: Yup.string()
     .email('Введён некорректный email')
     .required('Поле должно быть заполнено'),
@@ -24,8 +22,6 @@ const SignUpForm = ({ handleSubmit }) => {
       <h2>Регистрация</h2>
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
           email: '',
           password: '',
           passwordConfirm: ''
@@ -33,22 +29,6 @@ const SignUpForm = ({ handleSubmit }) => {
         validationSchema={signUpValidation}
         onSubmit={handleSubmit}>
         <Form className="signUp-form">
-          <div className="signUp-form__group">
-            <Field name="firstName" type="text" placeholder="Имя" />
-            <ErrorMessage
-              name="firstName"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="signUp-form__group">
-            <Field name="lastName" type="text" placeholder="Фамилия" />
-            <ErrorMessage
-              name="lastName"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
           <div className="signUp-form__group">
             <Field name="email" type="email" placeholder="E-mail" />
             <ErrorMessage
