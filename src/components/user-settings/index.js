@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addUserDetailsRequest, signOutUserRequest } from '../../redux/ac';
 import './user-settings.scss';
 import EditProfileForm from '../forms/edit-profile-form';
+import { loginCredentialsSelector } from '../../redux/selectors';
 
 class UserSettings extends Component {
   render() {
@@ -23,6 +24,12 @@ class UserSettings extends Component {
   saveUserInfo = values => this.props.addUserDetailsRequest(values);
 }
 
-export default connect(null, { signOutUserRequest, addUserDetailsRequest })(
-  UserSettings
-);
+export default connect(
+  state => ({
+    user: loginCredentialsSelector(state)
+  }),
+  {
+    signOutUserRequest,
+    addUserDetailsRequest
+  }
+)(UserSettings);

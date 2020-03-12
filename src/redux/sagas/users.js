@@ -1,8 +1,11 @@
-import { put, call, takeLatest, select } from 'redux-saga/effects';
+import { put, call, takeLatest, takeEvery, select } from 'redux-saga/effects';
 import {
   addUserDetailsFailure,
   addUserDetailsRequest,
-  addUserDetailsSuccess
+  addUserDetailsSuccess,
+  fetchUserDetailsRequest,
+  fetchUserDetailsSuccess,
+  fetchUserDetailsFailure
 } from '../ac';
 import { loginCredentialsSelector } from '../selectors';
 import { filterFalsyValues } from '../utils';
@@ -24,6 +27,18 @@ const addUserDetailsFlow = function*(action) {
   }
 };
 
+const fetchUserDetailsFlow = function*({ payload: uid }) {
+  const usersRef = firebase.database().ref(`users/${uid}`);
+  const data = yield call([usersRef, usersRef.once], 'value');
+  const userDetails = yield call([data, data.val]);
+
+  yield put(fetchUserDetailsSuccess({ ...userDetails, uid }));
+};
+
 export const addUserDetailsWatcher = function*() {
   yield takeLatest(addUserDetailsRequest, addUserDetailsFlow);
+};
+
+export const fetchUserDetailsWatcher = function*() {
+  yield takeEvery(fetchUserDetailsRequest, fetchUserDetailsFlow);
 };

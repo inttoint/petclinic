@@ -1,9 +1,13 @@
 import { OrderedMap, Record } from 'immutable';
-import { handleActions } from 'redux-actions';
+import { combineActions, handleActions } from 'redux-actions';
 import {
   addUserDetailsRequest,
   addUserDetailsSuccess,
-  addUserDetailsFailure
+  addUserDetailsFailure,
+  fetchUserDetailsRequest,
+  fetchUserDetailsSuccess,
+  fetchUserDetailsFailure,
+  signOutUserSuccess
 } from '../ac';
 
 const UserRecord = Record({
@@ -25,13 +29,26 @@ const ReducerRecord = Record({
 export const moduleName = 'users';
 
 const actions = {
-  [addUserDetailsRequest]: state => state.set('isLoading', true),
+  [addUserDetailsRequest]: state =>
+    state.set('isLoading', true).set('isLoaded', false),
   [addUserDetailsSuccess]: (state, { payload: { uid, user } }) =>
     state
-      .setIn(['entities', uid], new UserRecord({ ...user, uid }))
+      .updateIn(['entities', uid], record => record.concat(user))
       .set('isLoading', false),
-  [addUserDetailsFailure]: (state, { payload }) =>
-    state.set('isLoading', false).set('error', payload)
+
+  [fetchUserDetailsRequest]: state => state.set('isLoading', true),
+  [fetchUserDetailsSuccess]: (state, { payload }) =>
+    state
+      .set('isLoading', false)
+      .set('isLoaded', true)
+      .mergeIn(['entities', payload.uid], new UserRecord(payload)),
+
+  [combineActions(addUserDetailsFailure, fetchUserDetailsFailure)]: (
+    state,
+    { payload }
+  ) => state.set('isLoading', false).set('error', payload),
+
+  [signOutUserSuccess]: () => new ReducerRecord()
 };
 
 export default handleActions(actions, new ReducerRecord());

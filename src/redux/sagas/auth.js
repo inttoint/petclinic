@@ -9,6 +9,7 @@ import {
 import { eventChannel } from 'redux-saga';
 import { replace } from 'connected-react-router';
 import {
+  fetchUserDetailsRequest,
   signInUserFailure,
   signInUserRequest,
   signInUserSuccess,
@@ -66,6 +67,8 @@ export const authorizeStatusWatcher = function*() {
 
     if (user) {
       yield put(signInUserSuccess(user));
+      console.log(user.uid);
+      yield put(fetchUserDetailsRequest(user.uid));
     } else {
       if (yield select(isUserAuthorizedSelector)) {
         yield put(signOutUserSuccess());
@@ -89,13 +92,3 @@ export const signOutWatcher = function*() {
 
 const createAuthChannel = () =>
   eventChannel(emitter => fbAuth.onAuthStateChanged(user => emitter({ user })));
-
-// const profile = {
-//   displayName: firstName
-// };
-// const a = yield call(
-//   [fbAuth.currentUser, fbAuth.currentUser.updateProfile],
-//   profile
-// );
-//
-// console.log(fbAuth.currentUser);

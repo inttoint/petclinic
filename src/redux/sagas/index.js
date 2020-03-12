@@ -5,7 +5,7 @@ import {
   signOutWatcher,
   signUpWatcher
 } from './auth';
-import { addUserDetailsWatcher } from './users';
+import { addUserDetailsWatcher, fetchUserDetailsWatcher } from './users';
 
 export default function*() {
   yield fork(authorizeStatusWatcher);
@@ -14,4 +14,5 @@ export default function*() {
   yield fork(signOutWatcher);
 
   yield fork(addUserDetailsWatcher);
+  yield fork(fetchUserDetailsWatcher);
 }
