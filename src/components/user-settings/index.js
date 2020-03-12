@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signOutUserRequest } from '../../redux/ac';
+import { addUserDetailsRequest, signOutUserRequest } from '../../redux/ac';
 import './user-settings.scss';
 import EditProfileForm from '../forms/edit-profile-form';
 
-const UserSettings = ({ signOutUserRequest }) => {
-  return (
-    <div className="container">
-      <h1>Настройки профиля</h1>
-      <EditProfileForm />
+class UserSettings extends Component {
+  render() {
+    const { signOutUserRequest } = this.props;
 
-      <button className="btn sign-out" onClick={signOutUserRequest}>
-        Выйти из профиля
-      </button>
-    </div>
-  );
-};
+    return (
+      <div className="container">
+        <h1>Настройки профиля</h1>
+        <EditProfileForm handleSubmit={this.saveUserInfo} />
 
-export default connect(null, { signOutUserRequest })(UserSettings);
+        <button className="btn sign-out" onClick={signOutUserRequest}>
+          Выйти из профиля
+        </button>
+      </div>
+    );
+  }
+
+  saveUserInfo = values => this.props.addUserDetailsRequest(values);
+}
+
+export default connect(null, { signOutUserRequest, addUserDetailsRequest })(
+  UserSettings
+);

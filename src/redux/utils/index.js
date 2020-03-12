@@ -16,8 +16,17 @@ export function fbDataToEntities(data, RecordModel = Map) {
   ]);
 }
 
+// ToDo: переписать метод
 export function entitiesToFbData(entities) {
   const dataJS = entities.toJS();
   delete dataJS.uid;
   return dataJS;
+}
+
+export function filterFalsyValues(obj) {
+  return Object.entries(obj).reduce(
+    (acc, [key, value]) =>
+      value.trim() ? { ...acc, [key]: value.trim() } : acc,
+    {}
+  );
 }

@@ -10,15 +10,13 @@ import {
   signOutUserSuccess
 } from '../ac';
 
-const UserRecord = Record({
+const CredentialsRecord = Record({
   uid: null,
-  email: null,
-  firstName: null,
-  lastName: null
+  email: null
 });
 
 const ReducerRecord = Record({
-  user: null,
+  loginCredentials: null,
   isAuthorized: false,
   isLoading: false,
   isLoaded: false,
@@ -32,7 +30,7 @@ const actions = {
 
   [signInUserSuccess]: (state, action) =>
     state
-      .set('user', new UserRecord(action.payload))
+      .set('loginCredentials', new CredentialsRecord(action.payload))
       .set('isAuthorized', true)
       .set('isLoading', false),
 

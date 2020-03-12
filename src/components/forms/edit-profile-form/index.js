@@ -4,7 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
 
-const EditProfileForm = ({ handleSubmit = () => {} }) => {
+const EditProfileForm = ({ handleSubmit }) => {
   const phoneNumberMask = [
     '(',
     /[1-9]/,
@@ -30,7 +30,7 @@ const EditProfileForm = ({ handleSubmit = () => {} }) => {
     phone: Yup.string().test('isCorrect', 'Номер введен некорректно', function(
       value
     ) {
-      return !value.includes('_');
+      return !(value && value.includes('_'));
     }),
     password: Yup.string().min(6, 'Минимальная длина пароля - 6 символов'),
     passwordConfirm: Yup.string().oneOf(
@@ -38,6 +38,11 @@ const EditProfileForm = ({ handleSubmit = () => {} }) => {
       'Пароли не совпадают'
     )
   });
+
+  const onSubmit = (values, { resetForm }) => {
+    handleSubmit(values);
+    resetForm({});
+  };
 
   return (
     <div className="edit-profile">
@@ -51,7 +56,7 @@ const EditProfileForm = ({ handleSubmit = () => {} }) => {
           passwordConfirm: ''
         }}
         validationSchema={editProfileValidation}
-        onSubmit={handleSubmit}>
+        onSubmit={onSubmit}>
         <Form className="edit-profile-form">
           <h4>Изменить личные данные:</h4>
           <div className="edit-profile-form__group">
@@ -83,7 +88,7 @@ const EditProfileForm = ({ handleSubmit = () => {} }) => {
               {({ field }) => (
                 <MaskedInput
                   {...field}
-                  placeholder="(987)654-32-10"
+                  placeholder="Номер телефона"
                   mask={phoneNumberMask}
                   type="text"
                 />
