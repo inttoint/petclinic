@@ -67,7 +67,6 @@ export const authorizeStatusWatcher = function*() {
 
     if (user) {
       yield put(signInUserSuccess(user));
-      console.log(user.uid);
       yield put(fetchUserDetailsRequest(user.uid));
     } else {
       if (yield select(isUserAuthorizedSelector)) {

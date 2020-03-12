@@ -4,7 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
 
-const EditProfileForm = ({ handleSubmit }) => {
+const EditProfileForm = ({ handleSubmit, details }) => {
   const phoneNumberMask = [
     '(',
     /[1-9]/,
@@ -48,10 +48,10 @@ const EditProfileForm = ({ handleSubmit }) => {
     <div className="edit-profile">
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
-          middleName: '',
-          phone: '',
+          firstName: details.get('firstName') || '',
+          lastName: details.get('lastName') || '',
+          middleName: details.get('middleName') || '',
+          phone: details.get('phone') || '',
           password: '',
           passwordConfirm: ''
         }}
