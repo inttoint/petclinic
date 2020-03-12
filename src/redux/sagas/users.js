@@ -28,11 +28,15 @@ const addUserDetailsFlow = function*(action) {
 };
 
 const fetchUserDetailsFlow = function*({ payload: uid }) {
-  const usersRef = firebase.database().ref(`users/${uid}`);
-  const data = yield call([usersRef, usersRef.once], 'value');
-  const userDetails = yield call([data, data.val]);
+  try {
+    const usersRef = firebase.database().ref(`users/${uid}`);
+    const data = yield call([usersRef, usersRef.once], 'value');
+    const userDetails = yield call([data, data.val]);
 
-  yield put(fetchUserDetailsSuccess({ ...userDetails, uid }));
+    yield put(fetchUserDetailsSuccess({ ...userDetails, uid }));
+  } catch (error) {
+    yield put(fetchUserDetailsFailure(error));
+  }
 };
 
 export const addUserDetailsWatcher = function*() {
