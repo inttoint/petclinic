@@ -3,6 +3,7 @@ import './edit-profile-form.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
+import { is } from 'immutable';
 
 const EditProfileForm = ({ handleSubmit, details }) => {
   const phoneNumberMask = [
@@ -57,76 +58,82 @@ const EditProfileForm = ({ handleSubmit, details }) => {
         }}
         validationSchema={editProfileValidation}
         onSubmit={onSubmit}>
-        <Form className="edit-profile-form">
-          <h4>Изменить личные данные:</h4>
-          <div className="edit-profile-form__group">
-            <Field name="firstName" type="text" placeholder="Имя" />
-            <ErrorMessage
-              name="firstName"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="edit-profile-form__group">
-            <Field name="lastName" type="text" placeholder="Фамилия" />
-            <ErrorMessage
-              name="lastName"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="edit-profile-form__group">
-            <Field name="middleName" type="text" placeholder="Отчество" />
-            <ErrorMessage
-              name="middleName"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="edit-profile-form__group">
-            <Field name="phone">
-              {({ field }) => (
-                <MaskedInput
-                  {...field}
-                  placeholder="Номер телефона"
-                  mask={phoneNumberMask}
-                  type="text"
-                />
-              )}
-            </Field>
-            <ErrorMessage
-              name="phone"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
+        {({ isValid }) => (
+          <Form className="edit-profile-form">
+            <h4>Изменить личные данные:</h4>
+            <div className="edit-profile-form__group">
+              <Field name="firstName" type="text" placeholder="Имя" />
+              <ErrorMessage
+                name="firstName"
+                className="invalid-feedback"
+                component="div"
+              />
+            </div>
+            <div className="edit-profile-form__group">
+              <Field name="lastName" type="text" placeholder="Фамилия" />
+              <ErrorMessage
+                name="lastName"
+                className="invalid-feedback"
+                component="div"
+              />
+            </div>
+            <div className="edit-profile-form__group">
+              <Field name="middleName" type="text" placeholder="Отчество" />
+              <ErrorMessage
+                name="middleName"
+                className="invalid-feedback"
+                component="div"
+              />
+            </div>
+            <div className="edit-profile-form__group">
+              <Field name="phone">
+                {({ field }) => (
+                  <MaskedInput
+                    {...field}
+                    placeholder="Номер телефона"
+                    mask={phoneNumberMask}
+                    type="text"
+                  />
+                )}
+              </Field>
+              <ErrorMessage
+                name="phone"
+                className="invalid-feedback"
+                component="div"
+              />
+            </div>
 
-          <h4>Изменить пароль:</h4>
-          <div className="edit-profile-form__group">
-            <Field name="password" type="password" placeholder="Новый пароль" />
-            <ErrorMessage
-              name="password"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="edit-profile-form__group">
-            <Field
-              name="passwordConfirm"
-              type="password"
-              placeholder="Повторите пароль"
-            />
-            <ErrorMessage
-              name="passwordConfirm"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
+            <h4>Изменить пароль:</h4>
+            <div className="edit-profile-form__group">
+              <Field
+                name="password"
+                type="password"
+                placeholder="Новый пароль"
+              />
+              <ErrorMessage
+                name="password"
+                className="invalid-feedback"
+                component="div"
+              />
+            </div>
+            <div className="edit-profile-form__group">
+              <Field
+                name="passwordConfirm"
+                type="password"
+                placeholder="Повторите пароль"
+              />
+              <ErrorMessage
+                name="passwordConfirm"
+                className="invalid-feedback"
+                component="div"
+              />
+            </div>
 
-          <button className="btn save" type="submit">
-            Сохранить
-          </button>
-        </Form>
+            <button className="btn save" type="submit" disabled={!isValid}>
+              Сохранить
+            </button>
+          </Form>
+        )}
       </Formik>
     </div>
   );

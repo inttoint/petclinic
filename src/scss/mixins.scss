@@ -26,8 +26,15 @@
   background-color: $color-secondary;
 
   &:disabled {
-    background-color: $color-grey-darkest;
-    color: $color-white;
+    background-color: rgba($color-grey-darker, 0.5);
+    border-color: $color-grey-darker;
+    color: $color-primary;
+
+    &:hover {
+      background-color: rgba($color-grey-darker, 0.5);
+      color: $color-primary;
+      cursor: not-allowed;
+    }
   }
 
   &:hover {
