@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 import { addUserDetailsRequest, signOutUserRequest } from '../../redux/ac';
 import './user-settings.scss';
 import EditProfileForm from '../forms/edit-profile-form';
-import { authUserDetailsSelector } from '../../redux/selectors';
+import {
+  authUserDetailsSelector,
+  userIsLoadingSelector
+} from '../../redux/selectors';
 import Spinner from '../common/spinner';
 
 class UserSettings extends Component {
   render() {
-    const { signOutUserRequest, userDetails } = this.props;
-    if (!userDetails) return <Spinner />;
+    const { signOutUserRequest, userDetails, isLoading } = this.props;
+    if (isLoading || !userDetails) return <Spinner />;
 
     return (
       <div className="container">
@@ -31,7 +34,8 @@ class UserSettings extends Component {
 
 export default connect(
   state => ({
-    userDetails: authUserDetailsSelector(state)
+    userDetails: authUserDetailsSelector(state),
+    isLoading: userIsLoadingSelector(state)
   }),
   {
     signOutUserRequest,

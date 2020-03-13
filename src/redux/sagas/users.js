@@ -22,6 +22,7 @@ const addUserDetailsFlow = function*(action) {
     yield call([usersRef, usersRef.update], user);
 
     yield put(addUserDetailsSuccess({ uid, user }));
+    yield put(fetchUserDetailsRequest(uid));
   } catch (error) {
     yield put(addUserDetailsFailure(error));
   }

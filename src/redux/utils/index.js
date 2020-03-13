@@ -26,7 +26,7 @@ export function entitiesToFbData(entities) {
 export function filterFalsyValues(obj) {
   return Object.entries(obj).reduce(
     (acc, [key, value]) =>
-      value.trim() ? { ...acc, [key]: value.trim() } : acc,
+      value || value === '' ? { ...acc, [key]: value.trim() } : acc,
     {}
   );
 }

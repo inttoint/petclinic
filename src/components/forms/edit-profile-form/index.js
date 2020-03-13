@@ -3,7 +3,6 @@ import './edit-profile-form.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
-import { is } from 'immutable';
 
 const EditProfileForm = ({ handleSubmit, details }) => {
   const phoneNumberMask = [
