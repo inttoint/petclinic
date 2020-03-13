@@ -24,9 +24,10 @@ export function entitiesToFbData(entities) {
 }
 
 export function filterFalsyValues(obj) {
-  return Object.entries(obj).reduce(
-    (acc, [key, value]) =>
-      value || value === '' ? { ...acc, [key]: value.trim() } : acc,
-    {}
-  );
+  return Object.entries(obj).reduce((acc, [key, value]) => {
+    const trimmedValue = value.trim();
+    return trimmedValue || trimmedValue === ''
+      ? { ...acc, [key]: trimmedValue }
+      : acc;
+  }, {});
 }

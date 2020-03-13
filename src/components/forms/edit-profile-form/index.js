@@ -39,11 +39,6 @@ const EditProfileForm = ({ handleSubmit, details }) => {
     )
   });
 
-  const onSubmit = (values, { resetForm }) => {
-    handleSubmit(values);
-    resetForm({});
-  };
-
   return (
     <div className="edit-profile">
       <Formik
@@ -56,8 +51,8 @@ const EditProfileForm = ({ handleSubmit, details }) => {
           passwordConfirm: ''
         }}
         validationSchema={editProfileValidation}
-        onSubmit={onSubmit}>
-        {({ isValid }) => (
+        onSubmit={handleSubmit}>
+        {({ isValid, dirty }) => (
           <Form className="edit-profile-form">
             <h4>Изменить личные данные:</h4>
             <div className="edit-profile-form__group">
@@ -102,33 +97,36 @@ const EditProfileForm = ({ handleSubmit, details }) => {
               />
             </div>
 
-            <h4>Изменить пароль:</h4>
-            <div className="edit-profile-form__group">
-              <Field
-                name="password"
-                type="password"
-                placeholder="Новый пароль"
-              />
-              <ErrorMessage
-                name="password"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
-            <div className="edit-profile-form__group">
-              <Field
-                name="passwordConfirm"
-                type="password"
-                placeholder="Повторите пароль"
-              />
-              <ErrorMessage
-                name="passwordConfirm"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
+            {/*<h4>Изменить пароль:</h4>*/}
+            {/*<div className="edit-profile-form__group">*/}
+            {/*  <Field*/}
+            {/*    name="password"*/}
+            {/*    type="password"*/}
+            {/*    placeholder="Новый пароль"*/}
+            {/*  />*/}
+            {/*  <ErrorMessage*/}
+            {/*    name="password"*/}
+            {/*    className="invalid-feedback"*/}
+            {/*    component="div"*/}
+            {/*  />*/}
+            {/*</div>*/}
+            {/*<div className="edit-profile-form__group">*/}
+            {/*  <Field*/}
+            {/*    name="passwordConfirm"*/}
+            {/*    type="password"*/}
+            {/*    placeholder="Повторите пароль"*/}
+            {/*  />*/}
+            {/*  <ErrorMessage*/}
+            {/*    name="passwordConfirm"*/}
+            {/*    className="invalid-feedback"*/}
+            {/*    component="div"*/}
+            {/*  />*/}
+            {/*</div>*/}
 
-            <button className="btn save" type="submit" disabled={!isValid}>
+            <button
+              className="btn save"
+              type="submit"
+              disabled={!(isValid && dirty)}>
               Сохранить
             </button>
           </Form>
