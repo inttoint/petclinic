@@ -25,7 +25,7 @@ const ReducerRecord = Record({
 
 export const moduleName = 'auth';
 
-const actions = {
+const handlers = {
   [signInUser]: state => state.set('isLoading', true).set('error', null),
 
   [signInUserSuccess]: (state, action) =>
@@ -44,4 +44,4 @@ const actions = {
   [signOutUserSuccess]: () => new ReducerRecord()
 };
 
-export default handleActions(actions, new ReducerRecord());
+export default handleActions(handlers, new ReducerRecord());

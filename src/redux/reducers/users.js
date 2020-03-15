@@ -28,7 +28,7 @@ const ReducerRecord = Record({
 
 export const moduleName = 'users';
 
-const actions = {
+const handlers = {
   [addUserDetails]: state =>
     state.set('isLoading', true).set('isLoaded', false),
   [addUserDetailsSuccess]: (state, { payload: { uid, user } }) =>
@@ -46,9 +46,13 @@ const actions = {
   [combineActions(addUserDetailsFailure, fetchUserDetailsFailure)]: (
     state,
     { payload }
-  ) => state.set('isLoading', false).set('error', payload),
+  ) =>
+    state
+      .set('error', payload)
+      .set('isLoading', false)
+      .set('isLoaded', true),
 
   [signOutUserSuccess]: () => new ReducerRecord()
 };
 
-export default handleActions(actions, new ReducerRecord());
+export default handleActions(handlers, new ReducerRecord());
