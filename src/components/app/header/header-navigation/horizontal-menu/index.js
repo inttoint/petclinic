@@ -4,9 +4,8 @@ import { ReactComponent as ProfileIcon } from '../profile.svg';
 import './horizontal-menu.scss';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
-import { signOutUserRequest } from '../../../../../redux/ac';
 
-const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
+const HorizontalMenu = ({ isUserAuthorized }) => {
   return (
     <nav className="header__menu">
       <ul>
@@ -51,9 +50,6 @@ const HorizontalMenu = ({ isUserAuthorized, signOutUserRequest }) => {
   );
 };
 
-export default connect(
-  state => ({
-    isUserAuthorized: isUserAuthorizedSelector(state)
-  }),
-  { signOutUserRequest }
-)(HorizontalMenu);
+export default connect(state => ({
+  isUserAuthorized: isUserAuthorizedSelector(state)
+}))(HorizontalMenu);

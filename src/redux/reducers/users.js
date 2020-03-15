@@ -1,10 +1,10 @@
 import { OrderedMap, Record } from 'immutable';
 import { combineActions, handleActions } from 'redux-actions';
 import {
-  addUserDetailsRequest,
+  addUserDetails,
   addUserDetailsSuccess,
   addUserDetailsFailure,
-  fetchUserDetailsRequest,
+  fetchUserDetails,
   fetchUserDetailsSuccess,
   fetchUserDetailsFailure,
   signOutUserSuccess
@@ -29,14 +29,14 @@ const ReducerRecord = Record({
 export const moduleName = 'users';
 
 const actions = {
-  [addUserDetailsRequest]: state =>
+  [addUserDetails]: state =>
     state.set('isLoading', true).set('isLoaded', false),
   [addUserDetailsSuccess]: (state, { payload: { uid, user } }) =>
     state
       .updateIn(['entities', uid], record => record.concat(user))
       .set('isLoading', false),
 
-  [fetchUserDetailsRequest]: state => state.set('isLoading', true),
+  [fetchUserDetails]: state => state.set('isLoading', true),
   [fetchUserDetailsSuccess]: (state, { payload }) =>
     state
       .set('isLoading', false)

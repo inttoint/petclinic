@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUserDetailsRequest, signOutUserRequest } from '../../redux/ac';
+import { addUserDetails, signOutUser } from '../../redux/ac';
 import './user-settings.scss';
 import EditProfileForm from '../forms/edit-profile-form';
 import {
@@ -11,7 +11,7 @@ import Spinner from '../common/spinner';
 
 class UserSettings extends Component {
   render() {
-    const { signOutUserRequest, userDetails, isLoading } = this.props;
+    const { signOutUser, userDetails, isLoading } = this.props;
     if (isLoading || !userDetails) return <Spinner />;
 
     return (
@@ -22,14 +22,14 @@ class UserSettings extends Component {
           details={userDetails}
         />
 
-        <button className="btn sign-out" onClick={signOutUserRequest}>
+        <button className="btn sign-out" onClick={signOutUser}>
           Выйти из профиля
         </button>
       </div>
     );
   }
 
-  saveUserInfo = values => this.props.addUserDetailsRequest(values);
+  saveUserInfo = values => this.props.addUserDetails(values);
 }
 
 export default connect(
@@ -38,7 +38,7 @@ export default connect(
     isLoading: userIsLoadingSelector(state)
   }),
   {
-    signOutUserRequest,
-    addUserDetailsRequest
+    signOutUser,
+    addUserDetails
   }
 )(UserSettings);

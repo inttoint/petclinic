@@ -1,9 +1,9 @@
 import { put, call, takeLatest, takeEvery, select } from 'redux-saga/effects';
 import {
   addUserDetailsFailure,
-  addUserDetailsRequest,
+  addUserDetails,
   addUserDetailsSuccess,
-  fetchUserDetailsRequest,
+  fetchUserDetails,
   fetchUserDetailsSuccess,
   fetchUserDetailsFailure
 } from '../ac';
@@ -41,9 +41,9 @@ const fetchUserDetailsFlow = function*({ payload: uid }) {
 };
 
 export const addUserDetailsWatcher = function*() {
-  yield takeLatest(addUserDetailsRequest, addUserDetailsFlow);
+  yield takeLatest(addUserDetails, addUserDetailsFlow);
 };
 
 export const fetchUserDetailsWatcher = function*() {
-  yield takeEvery(fetchUserDetailsRequest, fetchUserDetailsFlow);
+  yield takeEvery(fetchUserDetails, fetchUserDetailsFlow);
 };

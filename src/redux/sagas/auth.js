@@ -9,14 +9,14 @@ import {
 import { eventChannel } from 'redux-saga';
 import { replace } from 'connected-react-router';
 import {
-  fetchUserDetailsRequest,
+  fetchUserDetails,
   signInUserFailure,
-  signInUserRequest,
+  signInUser,
   signInUserSuccess,
-  signOutUserRequest,
+  signOutUser,
   signOutUserSuccess,
   signUpUserFailure,
-  signUpUserRequest,
+  signUpUser,
   signUpUserSuccess
 } from '../ac';
 import * as firebase from 'firebase/app';
@@ -67,7 +67,7 @@ export const authorizeStatusWatcher = function*() {
 
     if (user) {
       yield put(signInUserSuccess(user));
-      yield put(fetchUserDetailsRequest(user.uid));
+      yield put(fetchUserDetails(user.uid));
     } else {
       if (yield select(isUserAuthorizedSelector)) {
         yield put(signOutUserSuccess());
@@ -78,15 +78,15 @@ export const authorizeStatusWatcher = function*() {
 };
 
 export const signInWatcher = function*() {
-  yield takeLatest(signInUserRequest, signInFlow);
+  yield takeLatest(signInUser, signInFlow);
 };
 
 export const signUpWatcher = function*() {
-  yield takeLatest(signUpUserRequest, signUpFlow);
+  yield takeLatest(signUpUser, signUpFlow);
 };
 
 export const signOutWatcher = function*() {
-  yield takeEvery(signOutUserRequest, signOutFlow);
+  yield takeEvery(signOutUser, signOutFlow);
 };
 
 const createAuthChannel = () =>

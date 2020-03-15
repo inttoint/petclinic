@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './sidebar.scss';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
-import { signOutUserRequest } from '../../../../../redux/ac';
+import { signOutUser } from '../../../../../redux/ac';
 import { ReactComponent as ProfileIcon } from '../profile.svg';
 
-const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
+const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
   const style = { opacity: isOpen ? 1 : 0, display: isOpen ? 'block' : 'none' };
 
   return (
@@ -49,7 +49,7 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUserRequest }) => {
           </li>
           {isUserAuthorized && (
             <li>
-              <button className="red-btn" onClick={signOutUserRequest}>
+              <button className="red-btn" onClick={signOutUser}>
                 Выход
               </button>
             </li>
@@ -64,5 +64,5 @@ export default connect(
   state => ({
     isUserAuthorized: isUserAuthorizedSelector(state)
   }),
-  { signOutUserRequest }
+  { signOutUser }
 )(Sidebar);

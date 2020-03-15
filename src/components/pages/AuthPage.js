@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../app/header';
 import catWithMac from '../../img/PajdTsgda.jpg';
 import SignInForm from '../forms/sign-in-form';
-import { signInUserRequest, signUpUserRequest } from '../../redux/ac';
+import { signInUser, signUpUser } from '../../redux/ac';
 import { connect } from 'react-redux';
 import { authLoadingSelector } from '../../redux/selectors';
 import Spinner from '../common/spinner';
@@ -16,7 +16,6 @@ class AuthPage extends Component {
     return (
       <div>
         <Header backgroundImage={catWithMac}>
-          {/*<SignInForm handleSubmit={this.handleSignIn} />*/}
           <Route
             path="/auth/sign-in"
             render={() => <SignInForm handleSubmit={this.handleSignIn} />}
@@ -31,13 +30,13 @@ class AuthPage extends Component {
     );
   }
 
-  handleSignIn = user => this.props.signInUserRequest(user);
-  handleSignUp = user => this.props.signUpUserRequest(user);
+  handleSignIn = user => this.props.signInUser(user);
+  handleSignUp = user => this.props.signUpUser(user);
 }
 
 export default connect(
   state => ({
     isLoading: authLoadingSelector(state)
   }),
-  { signInUserRequest, signUpUserRequest }
+  { signInUser, signUpUser }
 )(AuthPage);

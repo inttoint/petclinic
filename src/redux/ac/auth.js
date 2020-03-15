@@ -1,6 +1,5 @@
 import { createActions } from 'redux-actions';
 import {
-  REQUEST,
   SIGN_OUT_USER,
   SIGN_IN_USER,
   SUCCESS,
@@ -9,25 +8,25 @@ import {
 } from '../constants';
 
 export const {
-  signInUserRequest,
+  signInUser,
   signInUserSuccess,
   signInUserFailure,
 
-  signUpUserRequest,
+  signUpUser,
   signUpUserSuccess,
   signUpUserFailure,
 
-  signOutUserRequest,
+  signOutUser,
   signOutUserSuccess
 } = createActions(
-  SIGN_IN_USER + REQUEST,
+  SIGN_IN_USER,
   SIGN_IN_USER + SUCCESS,
   SIGN_IN_USER + FAILURE,
 
-  SIGN_UP_USER + REQUEST,
+  SIGN_UP_USER,
   SIGN_UP_USER + SUCCESS,
   SIGN_UP_USER + FAILURE,
 
-  SIGN_OUT_USER + REQUEST,
+  SIGN_OUT_USER,
   SIGN_OUT_USER + SUCCESS
 );
