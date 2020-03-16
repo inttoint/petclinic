@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import avatar from './Avatar_cat.png';
+import avatarCat from './Avatar_cat.png';
+import avatarDog from './avatar_dog.jpg';
 import { ReactComponent as SettingIcon } from './gear.svg';
 import { ReactComponent as MedReportIcon } from './medical-history.svg';
 import { ReactComponent as MedHelpIcon } from './syringe.svg';
 import './pet-card.scss';
 
-const PetCard = () => {
+const PetCard = ({ pet: { name, description, age, type } }) => {
   const [isOpen, toggleCardActions] = useState(false);
 
   const activeClass = isOpen ? 'active' : '';
   const openClass = isOpen ? 'open' : '';
+
+  const avatar = type === 'Собака' ? avatarDog : avatarCat;
 
   return (
     <div>
@@ -20,10 +23,10 @@ const PetCard = () => {
         <div className="content">
           <div className="text">
             <div className="row">
-              <h3>Василий</h3>
-              <h6>9 месяцев</h6>
+              <h3>{name}</h3>
+              <h6>{age}</h6>
             </div>
-            <h6>Сибирский кот</h6>
+            <h6>{description}</h6>
           </div>
           <div
             className={`btn ${activeClass}`}

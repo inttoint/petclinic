@@ -11,7 +11,7 @@ const PetRecord = new Record({
   uid: null,
   name: null,
   description: null,
-  birthday: null,
+  age: null,
   photo: null,
   type: null,
   ownerUid: null

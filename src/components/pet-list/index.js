@@ -4,6 +4,12 @@ import { fetchPetsByOwner } from '../../redux/ac';
 import { connect } from 'react-redux';
 
 import './pet-list.scss';
+import {
+  getPetList,
+  petListIsLoaded,
+  petListIsLoading
+} from '../../redux/selectors';
+import Spinner from '../common/spinner';
 
 class PetList extends Component {
   componentDidMount() {
@@ -17,15 +23,25 @@ class PetList extends Component {
   }
 
   render() {
+    const { isLoading, isLoaded, pets } = this.props;
+    if (isLoading && !isLoaded) return <Spinner />;
+    console.log(pets);
     return (
       <div className="container">
         <h1>Мои питомцы</h1>
-        <PetCard />
-        <PetCard />
-        <PetCard />
+        {pets.map(pet => (
+          <PetCard key={pet.uid} pet={pet} />
+        ))}
       </div>
     );
   }
 }
 
-export default connect(null, { fetchPetsByOwner })(PetList);
+export default connect(
+  state => ({
+    pets: getPetList(state),
+    isLoading: petListIsLoading(state),
+    isLoaded: petListIsLoaded(state)
+  }),
+  { fetchPetsByOwner }
+)(PetList);
