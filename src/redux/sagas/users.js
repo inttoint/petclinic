@@ -7,14 +7,14 @@ import {
   fetchUserDetailsSuccess,
   fetchUserDetailsFailure
 } from '../ac';
-import { loginCredentialsSelector } from '../selectors';
+import { getLoginCredentials } from '../selectors';
 import { filterFalsyValues } from '../utils';
 
 import * as firebase from 'firebase/app';
 import 'firebase/database';
 
 const addUserDetailsFlow = function*(action) {
-  const { uid } = yield select(loginCredentialsSelector);
+  const { uid } = yield select(getLoginCredentials);
   const user = filterFalsyValues(action.payload);
 
   try {

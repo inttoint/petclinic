@@ -35,9 +35,7 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
           </li>
           <li>
             {isUserAuthorized ? (
-              <Link
-                to="/profile/pets"
-                className="sidebar__menu--secondary-link">
+              <Link to="/users" className="sidebar__menu--secondary-link">
                 <ProfileIcon />
                 Личный кабинет
               </Link>

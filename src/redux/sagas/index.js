@@ -6,6 +6,7 @@ import {
   signUpWatcher
 } from './auth';
 import { addUserDetailsWatcher, fetchUserDetailsWatcher } from './users';
+import { fetchPetsByOwnerWatcher } from './pets';
 
 export default function*() {
   yield fork(authorizeStatusWatcher);
@@ -15,4 +16,6 @@ export default function*() {
 
   yield fork(addUserDetailsWatcher);
   yield fork(fetchUserDetailsWatcher);
+
+  yield fork(fetchPetsByOwnerWatcher);
 }

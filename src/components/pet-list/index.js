@@ -1,16 +1,31 @@
-import React from 'react';
-import './pet-list.scss';
+import React, { Component } from 'react';
 import PetCard from './pet-card';
+import { fetchPetsByOwner } from '../../redux/ac';
+import { connect } from 'react-redux';
 
-const PetList = () => {
-  return (
-    <div className="container">
-      <h1>Мои питомцы</h1>
-      <PetCard />
-      <PetCard />
-      <PetCard />
-    </div>
-  );
-};
+import './pet-list.scss';
 
-export default PetList;
+class PetList extends Component {
+  componentDidMount() {
+    const {
+      match: {
+        params: { id }
+      },
+      fetchPetsByOwner
+    } = this.props;
+    fetchPetsByOwner(id);
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <h1>Мои питомцы</h1>
+        <PetCard />
+        <PetCard />
+        <PetCard />
+      </div>
+    );
+  }
+}
+
+export default connect(null, { fetchPetsByOwner })(PetList);

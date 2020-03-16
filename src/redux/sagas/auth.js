@@ -29,9 +29,15 @@ const signInFlow = function*(action) {
   try {
     const { email, password } = action.payload;
 
-    yield call([fbAuth, fbAuth.signInWithEmailAndPassword], email, password);
-
-    yield put(replace('/profile/pets'));
+    const {
+      user: { uid }
+    } = yield call(
+      [fbAuth, fbAuth.signInWithEmailAndPassword],
+      email,
+      password
+    );
+    console.log(uid);
+    yield put(replace(`/users/${uid}`));
   } catch (error) {
     yield put(signInUserFailure(error));
   }

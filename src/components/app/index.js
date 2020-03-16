@@ -4,7 +4,7 @@ import AuthPage from '../pages/AuthPage';
 import HomePage from '../pages/HomePage';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../redux/selectors';
-import ProfilePage from '../pages/ProfilePage';
+import UserProfilePage from '../pages/UserProfilePage';
 import AboutPage from '../pages/AboutPage';
 import ServicesPage from '../pages/ServicesPage';
 import ReviewsPage from '../pages/ReviewsPage';
@@ -21,7 +21,7 @@ const App = ({ isUserAuthorized }) => {
         <Route path="/contacts" component={ContactsPage} />
 
         {!isUserAuthorized && <Route path="/auth" component={AuthPage} />}
-        <Route path="/profile" component={ProfilePage} />
+        <Route path="/users" component={UserProfilePage} />
         <Redirect to="/" />
       </Switch>
     </div>

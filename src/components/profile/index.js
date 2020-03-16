@@ -1,21 +1,21 @@
 import React from 'react';
 import IconBox from './icon-box';
-import './profile.scss';
+import './user-profile.scss';
 import PetList from '../pet-list';
 import { Route } from 'react-router-dom';
 import UserSettings from '../user-settings';
 
-const Profile = () => {
+const UserProfile = ({ userUid }) => {
   return (
     <div className="wrapper">
       <div className="main-controls">
         <div className="main-controls__left">
-          <Route path="/profile/pets" component={PetList} />
-          <Route path="/profile/settings" component={UserSettings} />
+          <Route path="/users/:id/pets" component={PetList} />
+          <Route path="/users/:id/settings" component={UserSettings} />
         </div>
         <div className="main-controls__right">
           <div className="outer-shadow">
-            <IconBox />
+            <IconBox userUid={userUid} />
           </div>
         </div>
       </div>
@@ -23,4 +23,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default UserProfile;

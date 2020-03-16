@@ -1,6 +1,6 @@
 import { moduleName } from '../reducers/users';
 import { createSelector } from 'reselect';
-import { loginCredentialsSelector } from './auth';
+import { getLoginCredentials } from './auth';
 
 const stateSelector = state => state[moduleName];
 export const userIsLoadingSelector = createSelector(
@@ -15,6 +15,6 @@ export const entitiesSelector = createSelector(
 
 export const authUserDetailsSelector = createSelector(
   entitiesSelector,
-  loginCredentialsSelector,
+  getLoginCredentials,
   (entities, user) => entities.get(user && user.get('uid'))
 );

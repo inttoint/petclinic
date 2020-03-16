@@ -6,13 +6,21 @@ import { ReactComponent as HandIcon } from '../svg/veterinary.svg';
 import IconBoxItem from './icon-box-item';
 import './icon-box.scss';
 
-const IconBox = () => {
+const IconBox = ({ userUid }) => {
   return (
     <div className="icon-box">
-      <IconBoxItem url="/profile/pets" Icon={CatIcon} title="Мои животные" />
+      <IconBoxItem
+        url={`/users/${userUid}/pets`}
+        Icon={CatIcon}
+        title="Мои животные"
+      />
       <IconBoxItem url="#" Icon={ReportIcon} title="Мои обращения" />
       <IconBoxItem url="#" Icon={MedIcon} title="Назначения" />
-      <IconBoxItem url="/profile/settings" Icon={HandIcon} title="Настройки" />
+      <IconBoxItem
+        url={`/users/${userUid}/settings`}
+        Icon={HandIcon}
+        title="Настройки"
+      />
     </div>
   );
 };
