@@ -9,10 +9,12 @@ import AboutPage from '../pages/AboutPage';
 import ServicesPage from '../pages/ServicesPage';
 import ReviewsPage from '../pages/ReviewsPage';
 import ContactsPage from '../pages/ContactsPage';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from '../../theme/globalStyle';
 
 const App = ({ isUserAuthorized }) => {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
@@ -24,7 +26,8 @@ const App = ({ isUserAuthorized }) => {
         <Route path="/users" component={UserProfilePage} />
         <Redirect to="/" />
       </Switch>
-    </div>
+      <GlobalStyle />
+    </ThemeProvider>
   );
 };
 

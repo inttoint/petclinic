@@ -24,17 +24,27 @@ class PetList extends Component {
 
   render() {
     const { isLoading, isLoaded, pets } = this.props;
+
     if (isLoading && !isLoaded) return <Spinner />;
-    console.log(pets);
+
+    const petListRendering =
+      pets.length !== 0 ? (
+        this.renderPets(pets)
+      ) : (
+        <h5>Добавьте своего питомца</h5>
+      );
+
     return (
       <div className="container">
         <h1>Мои питомцы</h1>
-        {pets.map(pet => (
-          <PetCard key={pet.uid} pet={pet} />
-        ))}
+        {petListRendering}
       </div>
     );
   }
+
+  renderPets = pets => {
+    return pets.map(pet => <PetCard key={pet.uid} pet={pet} />);
+  };
 }
 
 export default connect(

@@ -3,7 +3,8 @@ import { handleActions } from 'redux-actions';
 import {
   fetchPetsByOwner,
   fetchPetsByOwnerSuccess,
-  fetchPetsByOwnerFailure
+  fetchPetsByOwnerFailure,
+  signOutUser
 } from '../ac';
 import { fbDataToEntities } from '../utils';
 
@@ -40,7 +41,9 @@ const handlers = {
     state
       .set('error', payload)
       .set('isLoading', false)
-      .set('isLoaded', true)
+      .set('isLoaded', true),
+
+  [signOutUser]: state => new ReducerRecord()
 };
 
 export default handleActions(handlers, new ReducerRecord());

@@ -6,7 +6,6 @@ import { ConnectedRouter } from 'connected-react-router';
 import './firebase';
 import store from './redux/store';
 import history from './history';
-import './scss/index.scss';
 
 ReactDOM.render(
   <Provider store={store}>
