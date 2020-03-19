@@ -6,10 +6,10 @@ import HeaderIntro from '../app/header/header-intro';
 import { getTitles } from '../../mocks/titles';
 import { connect } from 'react-redux';
 import { getLoginCredentials } from '../../redux/selectors';
-import Spinner from '../common/spinner';
+import Loader from '../common/loader';
 
 const UserProfilePage = ({ credentials }) => {
-  if (!credentials) return <Spinner />;
+  if (!credentials) return <Loader />;
 
   const { firstTitle, secondTitle } = getTitles('profile');
   return (

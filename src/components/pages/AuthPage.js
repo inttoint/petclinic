@@ -5,7 +5,7 @@ import SignInForm from '../forms/sign-in-form';
 import { signInUser, signUpUser } from '../../redux/ac';
 import { connect } from 'react-redux';
 import { authLoadingSelector } from '../../redux/selectors';
-import Spinner from '../common/spinner';
+import Loader from '../common/loader';
 import SignUpForm from '../forms/sign-up-form';
 import { Route } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ class AuthPage extends Component {
             path="/auth/sign-up"
             render={() => <SignUpForm handleSubmit={this.handleSignUp} />}
           />
-          {isLoading && <Spinner />}
+          {isLoading && <Loader />}
         </Header>
       </div>
     );

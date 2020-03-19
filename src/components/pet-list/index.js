@@ -9,7 +9,7 @@ import {
   petListIsLoaded,
   petListIsLoading
 } from '../../redux/selectors';
-import Spinner from '../common/spinner';
+import Loader from '../common/loader';
 
 class PetList extends Component {
   componentDidMount() {
@@ -25,7 +25,7 @@ class PetList extends Component {
   render() {
     const { isLoading, isLoaded, pets } = this.props;
 
-    if (isLoading && !isLoaded) return <Spinner />;
+    if (isLoading && !isLoaded) return <Loader />;
 
     const petListRendering =
       pets.length !== 0 ? (

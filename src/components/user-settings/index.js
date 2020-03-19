@@ -7,12 +7,12 @@ import {
   authUserDetailsSelector,
   userIsLoadingSelector
 } from '../../redux/selectors';
-import Spinner from '../common/spinner';
+import Loader from '../common/loader';
 
 class UserSettings extends Component {
   render() {
     const { signOutUser, userDetails, isLoading } = this.props;
-    if (isLoading || !userDetails) return <Spinner />;
+    if (isLoading || !userDetails) return <Loader />;
 
     return (
       <div className="container">
