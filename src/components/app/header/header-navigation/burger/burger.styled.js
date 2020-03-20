@@ -18,10 +18,9 @@ export const BurgerButton = styled.button`
     margin-bottom: 8px;
     position: relative;
 
-    background: ${({ theme }) => theme.colorGrey};
+    background: ${({ theme }) => theme.colors.grey};
     border-radius: 1px;
-    box-shadow: 2px 2px 3px
-      fade_out(${({ theme }) => theme.colorPrimaryDark}, 0.7);
+    box-shadow: 2px 2px 3px ${({ theme }) => theme.colors.shadowColor};
     z-index: 99;
 
     transform-origin: 0;
@@ -33,7 +32,7 @@ export const BurgerButton = styled.button`
 
     &:nth-child(2) {
       right: 5px;
-      background-color: ${({ theme }) => theme.colorSecondaryLight};
+      background-color: ${({ theme }) => theme.colors.secondaryLight};
       opacity: ${({ isOpen }) => (isOpen ? '0' : '1')};
       transform: ${({ isOpen }) =>
         isOpen ? 'translateX(10px)' : 'translateX(0px)'};

@@ -32,8 +32,8 @@ export const LoaderStyled = styled.div`
       animation: ${animation} 2.5s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
       width: 1em;
       height: 1em;
-      background-color: ${({ theme }) => theme.colorSecondaryLightest};
-      border: 1px solid ${({ theme }) => theme.colorPrimary};
+      background-color: ${({ theme }) => theme.colors.secondaryLightest};
+      border: 1px solid ${({ theme }) => theme.colors.primary};
     }
   }
 `;

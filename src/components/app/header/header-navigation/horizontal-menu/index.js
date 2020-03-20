@@ -1,52 +1,41 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ReactComponent as ProfileIcon } from '../profile.svg';
-import './horizontal-menu.scss';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
+import {
+  LinkDefault,
+  LinkSecondary
+} from '../../../../common/links/link.styled';
+import { HeaderMenu } from './horizontal-menu.styled';
 
 const HorizontalMenu = ({ isUserAuthorized }) => {
   return (
-    <nav className="header__menu">
+    <HeaderMenu>
       <ul>
         <li>
-          <Link to="/about" className="header__menu--link primary-link">
-            О нас
-          </Link>
+          <LinkDefault to="/about">О нас</LinkDefault>
         </li>
         <li>
-          <Link to="/services" className="header__menu--link primary-link">
-            Услуги
-          </Link>
+          <LinkDefault to="/services">Услуги</LinkDefault>
         </li>
         <li>
-          <Link to="/reviews" className="header__menu--link primary-link">
-            Отзывы
-          </Link>
+          <LinkDefault to="/reviews">Отзывы</LinkDefault>
         </li>
         <li>
-          <Link to="/contacts" className="header__menu--link primary-link">
-            Контакты
-          </Link>
+          <LinkDefault to="/contacts">Контакты</LinkDefault>
         </li>
         <li>
           {isUserAuthorized ? (
-            <Link
-              to="/users"
-              className="header__menu--secondary-link secondary-link">
+            <LinkSecondary to="/users">
               <ProfileIcon />
               Личный кабинет
-            </Link>
+            </LinkSecondary>
           ) : (
-            <Link
-              to="/auth/sign-in"
-              className="header__menu--link primary-link">
-              Вход
-            </Link>
+            <LinkDefault to="/auth/sign-in">Вход</LinkDefault>
           )}
         </li>
       </ul>
-    </nav>
+    </HeaderMenu>
   );
 };
 
