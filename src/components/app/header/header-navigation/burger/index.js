@@ -1,5 +1,4 @@
 import React from 'react';
-import './burger.scss';
 import { BurgerButton } from './burger.styled';
 
 /* ToDo: 1. Кликнуть на бургер. 2. Открыть окно в полный экран. 3. Починить исчезающий крестик */

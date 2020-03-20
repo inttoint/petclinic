@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo/noun_primary50_.png';
-import './header-navigation.scss';
+import { HeaderNav } from './header-navigation.styled';
 import Sidebar from './sidebar';
 import Burger from './burger';
 import HorizontalMenu from './horizontal-menu';
@@ -10,12 +10,12 @@ const HeaderNavigation = () => {
   const [isSidebarOpen, toggleSidebar] = useState(false);
 
   return (
-    <header className="header">
+    <HeaderNav>
       <Logo image={logo} />
       <HorizontalMenu />
       <Burger isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-    </header>
+    </HeaderNav>
   );
 };
 
