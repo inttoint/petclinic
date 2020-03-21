@@ -27,30 +27,14 @@ const SecondaryLink = styled(StyledLink)`
   ${boxShadowMixin};
   ${borderMixin(({ theme }) => theme.colors.secondary)};
 
+  padding: 0 3px;
+  display: flex;
+  align-items: center;
   letter-spacing: 0;
 
   width: ${({ width }) => (width ? `${width}px` : '100%')};
   height: 40px;
   background-color: ${({ theme }) => theme.colors.secondary};
-
-  &:disabled {
-    border-color: ${({ theme }) => theme.colors.greyDarker};
-
-    &:hover {
-      background-color: rgba(180, 180, 180, 0.5);
-      color: ${({ theme }) => theme.colors.primary};
-      cursor: not-allowed;
-    }
-  }
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.primaryDark};
-    color: ${({ theme }) => theme.colors.secondary};
-  }
-
-  padding: 0 3px;
-  display: flex;
-  align-items: center;
 
   svg {
     fill: ${({ theme }) => theme.colors.greyLight};
@@ -59,8 +43,21 @@ const SecondaryLink = styled(StyledLink)`
   }
 
   &:hover {
+    background-color: ${({ theme }) => theme.colors.primaryDark};
+    color: ${({ theme }) => theme.colors.secondary};
+
     svg {
       fill: ${({ theme }) => theme.colors.secondary};
+    }
+  }
+
+  &:disabled {
+    border-color: ${({ theme }) => theme.colors.greyDarker};
+
+    &:hover {
+      background-color: rgba(180, 180, 180, 0.5);
+      color: ${({ theme }) => theme.colors.primary};
+      cursor: not-allowed;
     }
   }
 `;
