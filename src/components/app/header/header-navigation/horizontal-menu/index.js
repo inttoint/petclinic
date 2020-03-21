@@ -2,10 +2,7 @@ import React from 'react';
 import { ReactComponent as ProfileIcon } from '../profile.svg';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
-import {
-  StyledLink,
-  SecondaryLink
-} from '../../../../common/links/link.styled';
+import { StyledLink, PrimaryLink } from '../../../../common/links/link.styled';
 import { HeaderMenu } from './horizontal-menu.styled';
 
 const HorizontalMenu = ({ isUserAuthorized }) => {
@@ -26,10 +23,10 @@ const HorizontalMenu = ({ isUserAuthorized }) => {
         </li>
         <li>
           {isUserAuthorized ? (
-            <SecondaryLink to="/users">
+            <PrimaryLink to="/users">
               <ProfileIcon />
               Личный кабинет
-            </SecondaryLink>
+            </PrimaryLink>
           ) : (
             <StyledLink to="/auth/sign-in">Вход</StyledLink>
           )}

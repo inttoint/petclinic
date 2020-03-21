@@ -23,7 +23,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const SecondaryLink = styled(StyledLink)`
+const PrimaryLink = styled(StyledLink)`
   ${boxShadowMixin};
   ${borderMixin(({ theme }) => theme.colors.secondary)};
 
@@ -32,7 +32,7 @@ const SecondaryLink = styled(StyledLink)`
   align-items: center;
   letter-spacing: 0;
 
-  width: ${({ width }) => (width ? `${width}px` : '100%')};
+  width: ${({ width }) => (width ? width : '100%')};
   height: 40px;
   background-color: ${({ theme }) => theme.colors.secondary};
 
@@ -64,4 +64,4 @@ const SecondaryLink = styled(StyledLink)`
   }
 `;
 
-export { StyledLink, SecondaryLink };
+export { StyledLink, PrimaryLink };

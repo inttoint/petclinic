@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
 import { signOutUser } from '../../../../../redux/ac';
 import { ReactComponent as ProfileIcon } from '../profile.svg';
-import {
-  StyledLink,
-  SecondaryLink
-} from '../../../../common/links/link.styled';
+import { StyledLink, PrimaryLink } from '../../../../common/links/link.styled';
 import { SidebarContainer, SidebarMenu } from './sidebar.styled';
 
 const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
@@ -28,19 +25,19 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
           </li>
           <li>
             {isUserAuthorized ? (
-              <SecondaryLink to="/users">
+              <PrimaryLink to="/users">
                 <ProfileIcon />
                 Личный кабинет
-              </SecondaryLink>
+              </PrimaryLink>
             ) : (
               <StyledLink to="/auth/sign-in">Вход</StyledLink>
             )}
           </li>
           {isUserAuthorized && (
             <li>
-              <SecondaryLink as="button" onClick={signOutUser}>
+              <PrimaryLink as="button" onClick={signOutUser}>
                 Выход
-              </SecondaryLink>
+              </PrimaryLink>
             </li>
           )}
         </ul>

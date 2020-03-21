@@ -9,7 +9,8 @@ import {
   Input,
   InputGroup
 } from '../../common/inputs/input.styled';
-import { SecondaryLink } from '../../common/links/link.styled';
+import { PrimaryLink } from '../../common/links/link.styled';
+import { PrimaryButton } from '../../common/buttons/button.styled';
 
 const EditProfileForm = ({ handleSubmit, details }) => {
   const phoneNumberMask = [
@@ -104,9 +105,9 @@ const EditProfileForm = ({ handleSubmit, details }) => {
               <ErrorInputMessage name="phone" component="div" />
             </InputGroup>
 
-            <SaveButton as="button" disabled={!(isValid && dirty)}>
+            <PrimaryButton disabled={!(isValid && dirty)}>
               Сохранить
-            </SaveButton>
+            </PrimaryButton>
           </StyledForm>
         )}
       </Formik>

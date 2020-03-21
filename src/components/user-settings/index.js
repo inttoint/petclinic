@@ -8,6 +8,10 @@ import {
   userIsLoadingSelector
 } from '../../redux/selectors';
 import Loader from '../common/loader';
+import {
+  PrimaryButton,
+  SecondaryButton
+} from '../common/buttons/button.styled';
 
 class UserSettings extends Component {
   render() {
@@ -22,9 +26,9 @@ class UserSettings extends Component {
           details={userDetails}
         />
 
-        <button className="btn sign-out" onClick={signOutUser}>
+        <PrimaryButton width="auto" onClick={signOutUser} secondary>
           Выйти из профиля
-        </button>
+        </PrimaryButton>
       </div>
     );
   }
