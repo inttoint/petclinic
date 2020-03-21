@@ -1,17 +1,15 @@
 import React from 'react';
 import HeaderNavigation from './header-navigation';
-import './header.scss';
+import { ImageBackground, InnerShadow } from './header.styled';
 
 const Header = ({ backgroundImage, children }) => {
-  const bgStyles = { backgroundImage: `url(${backgroundImage})` };
-
   return (
-    <div className="bg-full" style={bgStyles}>
-      <div className="inner-shadow">
+    <ImageBackground bg={backgroundImage}>
+      <InnerShadow>
         <HeaderNavigation />
         {children}
-      </div>
-    </div>
+      </InnerShadow>
+    </ImageBackground>
   );
 };
 
