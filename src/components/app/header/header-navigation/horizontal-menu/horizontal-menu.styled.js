@@ -11,6 +11,7 @@ export const HeaderMenu = styled.nav`
 
     li {
       display: inline-block;
+      padding: 5px 20px 5px 0;
     }
   }
 

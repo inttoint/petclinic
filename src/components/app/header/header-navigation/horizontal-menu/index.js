@@ -3,8 +3,8 @@ import { ReactComponent as ProfileIcon } from '../profile.svg';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
 import {
-  LinkDefault,
-  LinkSecondary
+  StyledLink,
+  SecondaryLink
 } from '../../../../common/links/link.styled';
 import { HeaderMenu } from './horizontal-menu.styled';
 
@@ -13,25 +13,25 @@ const HorizontalMenu = ({ isUserAuthorized }) => {
     <HeaderMenu>
       <ul>
         <li>
-          <LinkDefault to="/about">О нас</LinkDefault>
+          <StyledLink to="/about">О нас</StyledLink>
         </li>
         <li>
-          <LinkDefault to="/services">Услуги</LinkDefault>
+          <StyledLink to="/services">Услуги</StyledLink>
         </li>
         <li>
-          <LinkDefault to="/reviews">Отзывы</LinkDefault>
+          <StyledLink to="/reviews">Отзывы</StyledLink>
         </li>
         <li>
-          <LinkDefault to="/contacts">Контакты</LinkDefault>
+          <StyledLink to="/contacts">Контакты</StyledLink>
         </li>
         <li>
           {isUserAuthorized ? (
-            <LinkSecondary to="/users">
+            <SecondaryLink to="/users">
               <ProfileIcon />
               Личный кабинет
-            </LinkSecondary>
+            </SecondaryLink>
           ) : (
-            <LinkDefault to="/auth/sign-in">Вход</LinkDefault>
+            <StyledLink to="/auth/sign-in">Вход</StyledLink>
           )}
         </li>
       </ul>

@@ -1,60 +1,51 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './sidebar.scss';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
 import { signOutUser } from '../../../../../redux/ac';
 import { ReactComponent as ProfileIcon } from '../profile.svg';
+import {
+  StyledLink,
+  SecondaryLink
+} from '../../../../common/links/link.styled';
+import { SidebarContainer, SidebarMenu } from './sidebar.styled';
 
 const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
-  const style = { opacity: isOpen ? 1 : 0, display: isOpen ? 'block' : 'none' };
-
   return (
-    <div className="sidebar__container" style={style}>
-      <nav className="sidebar__menu">
+    <SidebarContainer isOpen={isOpen}>
+      <SidebarMenu>
         <ul>
           <li>
-            <Link to="/about" className="sidebar__menu--link">
-              О нас
-            </Link>
+            <StyledLink to="/about">О нас</StyledLink>
           </li>
           <li>
-            <Link to="/services" className="sidebar__menu--link">
-              Услуги
-            </Link>
+            <StyledLink to="/services">Услуги</StyledLink>
           </li>
           <li>
-            <Link to="/reviews" className="sidebar__menu--link">
-              Отзывы
-            </Link>
+            <StyledLink to="/reviews">Отзывы</StyledLink>
           </li>
           <li>
-            <Link to="/contacts" className="sidebar__menu--link">
-              Контакты
-            </Link>
+            <StyledLink to="/contacts">Контакты</StyledLink>
           </li>
           <li>
             {isUserAuthorized ? (
-              <Link to="/users" className="sidebar__menu--secondary-link">
+              <SecondaryLink to="/users">
                 <ProfileIcon />
                 Личный кабинет
-              </Link>
+              </SecondaryLink>
             ) : (
-              <Link to="/auth/sign-in" className="sidebar__menu--link">
-                Вход
-              </Link>
+              <StyledLink to="/auth/sign-in">Вход</StyledLink>
             )}
           </li>
           {isUserAuthorized && (
             <li>
-              <button className="red-btn" onClick={signOutUser}>
+              <SecondaryLink as="button" onClick={signOutUser}>
                 Выход
-              </button>
+              </SecondaryLink>
             </li>
           )}
         </ul>
-      </nav>
-    </div>
+      </SidebarMenu>
+    </SidebarContainer>
   );
 };
 

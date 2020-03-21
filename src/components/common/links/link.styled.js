@@ -6,14 +6,16 @@ import {
   navElementStyles
 } from '../../../theme/mixins';
 
-const LinkDefault = styled(Link)`
+const StyledLink = styled(Link)`
+  font-family: inherit;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.greyLight};
-  padding: 5px 20px 5px 0;
   letter-spacing: 2px;
   text-decoration: none;
+
+  ${navElementStyles};
 
   &:hover {
     color: ${({ theme }) => theme.colors.secondaryLighter};
@@ -21,27 +23,24 @@ const LinkDefault = styled(Link)`
   }
 `;
 
-const LinkSecondary = styled(LinkDefault)`
+const SecondaryLink = styled(StyledLink)`
   ${boxShadowMixin};
   ${borderMixin(({ theme }) => theme.colors.secondary)};
 
   letter-spacing: 0;
 
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.greyLight};
-
-  ${navElementStyles};
-
-  width: 165px;
+  width: ${({ width }) => (width ? `${width}px` : '100%')};
   height: 40px;
   background-color: ${({ theme }) => theme.colors.secondary};
-  text-decoration: none;
 
   &:disabled {
-    background-color: ${({ theme }) => theme.colors.greyDarkest};
-    color: ${({ theme }) => theme.colors.white};
+    border-color: ${({ theme }) => theme.colors.greyDarker};
+
+    &:hover {
+      background-color: rgba(180, 180, 180, 0.5);
+      color: ${({ theme }) => theme.colors.primary};
+      cursor: not-allowed;
+    }
   }
 
   &:hover {
@@ -66,4 +65,4 @@ const LinkSecondary = styled(LinkDefault)`
   }
 `;
 
-export { LinkDefault, LinkSecondary };
+export { StyledLink, SecondaryLink };
