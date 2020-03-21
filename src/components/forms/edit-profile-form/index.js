@@ -3,6 +3,12 @@ import './edit-profile-form.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
+import { StyledForm } from './edit-profile-form.styled';
+import {
+  ErrorInputMessage,
+  Input,
+  InputGroup
+} from '../../common/inputs/input.styled';
 
 const EditProfileForm = ({ handleSubmit, details }) => {
   const phoneNumberMask = [
@@ -53,33 +59,36 @@ const EditProfileForm = ({ handleSubmit, details }) => {
         validationSchema={editProfileValidation}
         onSubmit={handleSubmit}>
         {({ isValid, dirty }) => (
-          <Form className="edit-profile-form">
+          <StyledForm>
             <h4>Изменить личные данные:</h4>
-            <div className="edit-profile-form__group">
-              <Field name="firstName" type="text" placeholder="Имя" />
-              <ErrorMessage
+            <InputGroup>
+              <Field
+                as={Input}
                 name="firstName"
-                className="invalid-feedback"
-                component="div"
+                type="text"
+                placeholder="Имя"
               />
-            </div>
-            <div className="edit-profile-form__group">
-              <Field name="lastName" type="text" placeholder="Фамилия" />
-              <ErrorMessage
+              <ErrorInputMessage name="firstName" component="div" />
+            </InputGroup>
+            <InputGroup>
+              <Field
+                as={Input}
                 name="lastName"
-                className="invalid-feedback"
-                component="div"
+                type="text"
+                placeholder="Фамилия"
               />
-            </div>
-            <div className="edit-profile-form__group">
-              <Field name="middleName" type="text" placeholder="Отчество" />
-              <ErrorMessage
+              <ErrorInputMessage name="lastName" component="div" />
+            </InputGroup>
+            <InputGroup>
+              <Field
+                as={Input}
                 name="middleName"
-                className="invalid-feedback"
-                component="div"
+                type="text"
+                placeholder="Отчество"
               />
-            </div>
-            <div className="edit-profile-form__group">
+              <ErrorInputMessage name="middleName" component="div" />
+            </InputGroup>
+            <InputGroup>
               <Field name="phone">
                 {({ field }) => (
                   <MaskedInput
@@ -87,41 +96,12 @@ const EditProfileForm = ({ handleSubmit, details }) => {
                     placeholder="Номер телефона"
                     mask={phoneNumberMask}
                     type="text"
+                    render={(ref, meta) => <Input {...meta} ref={ref} />}
                   />
                 )}
               </Field>
-              <ErrorMessage
-                name="phone"
-                className="invalid-feedback"
-                component="div"
-              />
-            </div>
-
-            {/*<h4>Изменить пароль:</h4>*/}
-            {/*<div className="edit-profile-form__group">*/}
-            {/*  <Field*/}
-            {/*    name="password"*/}
-            {/*    type="password"*/}
-            {/*    placeholder="Новый пароль"*/}
-            {/*  />*/}
-            {/*  <ErrorMessage*/}
-            {/*    name="password"*/}
-            {/*    className="invalid-feedback"*/}
-            {/*    component="div"*/}
-            {/*  />*/}
-            {/*</div>*/}
-            {/*<div className="edit-profile-form__group">*/}
-            {/*  <Field*/}
-            {/*    name="passwordConfirm"*/}
-            {/*    type="password"*/}
-            {/*    placeholder="Повторите пароль"*/}
-            {/*  />*/}
-            {/*  <ErrorMessage*/}
-            {/*    name="passwordConfirm"*/}
-            {/*    className="invalid-feedback"*/}
-            {/*    component="div"*/}
-            {/*  />*/}
-            {/*</div>*/}
+              <ErrorInputMessage name="phone" component="div" />
+            </InputGroup>
 
             <button
               className="btn save"
@@ -129,7 +109,7 @@ const EditProfileForm = ({ handleSubmit, details }) => {
               disabled={!(isValid && dirty)}>
               Сохранить
             </button>
-          </Form>
+          </StyledForm>
         )}
       </Formik>
     </div>
