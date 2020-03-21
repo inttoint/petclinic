@@ -53,6 +53,8 @@ const SecondaryLink = styled(StyledLink)`
 
   &:disabled {
     border-color: ${({ theme }) => theme.colors.greyDarker};
+    background-color: rgba(180, 180, 180, 0.5);
+    color: ${({ theme }) => theme.colors.primary};
 
     &:hover {
       background-color: rgba(180, 180, 180, 0.5);

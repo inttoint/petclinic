@@ -3,12 +3,13 @@ import './edit-profile-form.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
-import { StyledForm } from './edit-profile-form.styled';
+import { SaveButton, StyledForm } from './edit-profile-form.styled';
 import {
   ErrorInputMessage,
   Input,
   InputGroup
 } from '../../common/inputs/input.styled';
+import { SecondaryLink } from '../../common/links/link.styled';
 
 const EditProfileForm = ({ handleSubmit, details }) => {
   const phoneNumberMask = [
@@ -103,12 +104,9 @@ const EditProfileForm = ({ handleSubmit, details }) => {
               <ErrorInputMessage name="phone" component="div" />
             </InputGroup>
 
-            <button
-              className="btn save"
-              type="submit"
-              disabled={!(isValid && dirty)}>
+            <SaveButton as="button" disabled={!(isValid && dirty)}>
               Сохранить
-            </button>
+            </SaveButton>
           </StyledForm>
         )}
       </Formik>
