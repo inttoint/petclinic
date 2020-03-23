@@ -1,8 +1,15 @@
 import React from 'react';
-import './sign-up-form.scss';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
+import { AuthContainer } from '../../common/containers.styled';
+import { SignUpStyledForm } from './sign-up-form.styled';
+import {
+  ErrorInputMessage,
+  Input,
+  InputGroup
+} from '../../common/inputs/input.styled';
+import { PrimaryButton } from '../../common/buttons/button.styled';
+import { WhiteLink } from '../../common/links/link.styled';
 
 const signUpValidation = Yup.object({
   email: Yup.string()
@@ -18,7 +25,7 @@ const signUpValidation = Yup.object({
 
 const SignUpForm = ({ handleSubmit }) => {
   return (
-    <div className="container">
+    <AuthContainer>
       <h2>Регистрация</h2>
       <Formik
         initialValues={{
@@ -28,50 +35,36 @@ const SignUpForm = ({ handleSubmit }) => {
         }}
         validationSchema={signUpValidation}
         onSubmit={handleSubmit}>
-        <Form className="signUp-form">
-          <div className="signUp-form__group">
-            <Field name="email" type="email" placeholder="E-mail" />
-            <ErrorMessage
-              name="email"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="signUp-form__group">
+        <SignUpStyledForm>
+          <InputGroup>
+            <Field as={Input} name="email" type="email" placeholder="E-mail" />
+            <ErrorInputMessage name="email" component="div" />
+          </InputGroup>
+          <InputGroup>
             <Field
+              as={Input}
               name="password"
               type="password"
               placeholder="Придумайте пароль"
             />
-            <ErrorMessage
-              name="password"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="signUp-form__group">
+            <ErrorInputMessage name="password" component="div" />
+          </InputGroup>
+          <InputGroup>
             <Field
+              as={Input}
               name="passwordConfirm"
               type="password"
               placeholder="Повторите пароль"
             />
-            <ErrorMessage
-              name="passwordConfirm"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
+            <ErrorInputMessage name="passwordConfirm" component="div" />
+          </InputGroup>
 
-          <button className="red-btn" type="submit">
-            Регистрация
-          </button>
+          <PrimaryButton type="submit">Регистрация</PrimaryButton>
 
-          <Link to="/auth/sign-in" className="signUp-form--link">
-            У меня уже есть аккаунт ⟶
-          </Link>
-        </Form>
+          <WhiteLink to="/auth/sign-in">У меня уже есть аккаунт ⟶</WhiteLink>
+        </SignUpStyledForm>
       </Formik>
-    </div>
+    </AuthContainer>
   );
 };
 

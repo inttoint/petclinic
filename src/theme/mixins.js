@@ -17,4 +17,12 @@ const navElementStyles = css`
   transition: 0.25s ease-in-out; //ToDo
 `;
 
-export { boxShadowMixin, borderMixin, navElementStyles };
+const flexCenteredContainer = css`
+  padding: 2% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export { boxShadowMixin, borderMixin, navElementStyles, flexCenteredContainer };

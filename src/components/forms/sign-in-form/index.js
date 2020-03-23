@@ -6,9 +6,10 @@ import {
   Input,
   InputGroup
 } from '../../common/inputs/input.styled';
-import { Container, SignInStyledForm } from './sign-in-form.styled';
+import { SignInStyledForm } from './sign-in-form.styled';
 import { PrimaryButton } from '../../common/buttons/button.styled';
 import { WhiteLink } from '../../common/links/link.styled';
+import { AuthContainer } from '../../common/containers.styled';
 
 const SignInValidation = Yup.object({
   email: Yup.string()
@@ -21,7 +22,7 @@ const SignInValidation = Yup.object({
 
 const SignInForm = ({ handleSubmit }) => {
   return (
-    <Container>
+    <AuthContainer>
       <h2>Вход</h2>
       <Formik
         initialValues={{ email: '', password: '' }}
@@ -47,7 +48,7 @@ const SignInForm = ({ handleSubmit }) => {
           <WhiteLink to="/auth/sign-up">Зарегистрироваться ⟶</WhiteLink>
         </SignInStyledForm>
       </Formik>
-    </Container>
+    </AuthContainer>
   );
 };
 

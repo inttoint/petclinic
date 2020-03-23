@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { Form } from 'formik';
 
-const SignInStyledForm = styled(Form)`
+const SignUpStyledForm = styled(Form)`
+  //width: 350px;
   display: flex;
   flex-direction: column;
-  //width: 350px;
 `;
 
-export { SignInStyledForm };
+export { SignUpStyledForm };
