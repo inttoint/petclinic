@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
 import { signOutUser } from '../../../../../redux/ac';
 import { ReactComponent as ProfileIcon } from '../profile.svg';
-import { StyledLink, PrimaryLink } from '../../../../common/links/link.styled';
+import { StyledLink } from '../../../../common/links/link.styled';
 import { SidebarContainer, SidebarMenu } from './sidebar.styled';
+import {
+  PrimaryButton,
+  PrimaryButtonWithIcon
+} from '../../../../common/buttons/button.styled';
+import { useHistory } from 'react-router-dom';
 
 const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
+  const history = useHistory();
   return (
     <SidebarContainer isOpen={isOpen}>
       <SidebarMenu>
@@ -25,19 +31,17 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
           </li>
           <li>
             {isUserAuthorized ? (
-              <PrimaryLink to="/users">
+              <PrimaryButtonWithIcon onClick={() => history.push('/users')}>
                 <ProfileIcon />
                 Личный кабинет
-              </PrimaryLink>
+              </PrimaryButtonWithIcon>
             ) : (
               <StyledLink to="/auth/sign-in">Вход</StyledLink>
             )}
           </li>
           {isUserAuthorized && (
             <li>
-              <PrimaryLink as="button" onClick={signOutUser}>
-                Выход
-              </PrimaryLink>
+              <PrimaryButton onClick={signOutUser}>Выход</PrimaryButton>
             </li>
           )}
         </ul>

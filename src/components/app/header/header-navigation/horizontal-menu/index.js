@@ -2,10 +2,14 @@ import React from 'react';
 import { ReactComponent as ProfileIcon } from '../profile.svg';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
-import { StyledLink, PrimaryLink } from '../../../../common/links/link.styled';
+import { StyledLink } from '../../../../common/links/link.styled';
 import { HeaderMenu } from './horizontal-menu.styled';
+import { PrimaryButtonWithIcon } from '../../../../common/buttons/button.styled';
+import { useHistory } from 'react-router-dom';
 
 const HorizontalMenu = ({ isUserAuthorized }) => {
+  const history = useHistory();
+
   return (
     <HeaderMenu>
       <ul>
@@ -23,10 +27,10 @@ const HorizontalMenu = ({ isUserAuthorized }) => {
         </li>
         <li>
           {isUserAuthorized ? (
-            <PrimaryLink to="/users">
+            <PrimaryButtonWithIcon onClick={() => history.push('/users')}>
               <ProfileIcon />
               Личный кабинет
-            </PrimaryLink>
+            </PrimaryButtonWithIcon>
           ) : (
             <StyledLink to="/auth/sign-in">Вход</StyledLink>
           )}

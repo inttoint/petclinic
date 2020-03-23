@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import {
-  boxShadowMixin,
-  borderMixin,
-  navElementStyles
-} from '../../../theme/mixins';
+import { navElementStyles } from '../../../theme/mixins';
 
 const StyledLink = styled(Link)`
   font-family: inherit;
@@ -23,45 +19,4 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const PrimaryLink = styled(StyledLink)`
-  ${boxShadowMixin};
-  ${borderMixin(({ theme }) => theme.colors.secondary)};
-
-  padding: 0 3px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0;
-
-  width: ${({ width }) => (width ? width : '100%')};
-  height: 40px;
-  background-color: ${({ theme }) => theme.colors.secondary};
-
-  svg {
-    fill: ${({ theme }) => theme.colors.greyLight};
-    margin-right: 5px;
-    transition: 0.25s ease-in-out; // ToDo: transition привести к одному значению
-  }
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.primaryDark};
-    color: ${({ theme }) => theme.colors.secondary};
-
-    svg {
-      fill: ${({ theme }) => theme.colors.secondary};
-    }
-  }
-
-  &:disabled {
-    border-color: ${({ theme }) => theme.colors.greyDarker};
-    background-color: rgba(180, 180, 180, 0.5);
-    color: ${({ theme }) => theme.colors.primary};
-
-    &:hover {
-      background-color: rgba(180, 180, 180, 0.5);
-      color: ${({ theme }) => theme.colors.primary};
-      cursor: not-allowed;
-    }
-  }
-`;
-
-export { StyledLink, PrimaryLink };
+export { StyledLink };

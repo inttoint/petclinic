@@ -14,13 +14,12 @@ export const PrimaryButton = styled.button`
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0;
+  color: ${({ theme }) => theme.colors.greyLight};
   background-color: ${({ secondary, theme }) =>
     secondary ? theme.colors.primary : theme.colors.secondary};
-  color: ${({ theme }) => theme.colors.greyLight};
-  margin: 0 auto 20px;
-  display: inline-block;
+  letter-spacing: 0;
 
+  display: inline-block;
   padding: 0 3px;
   width: ${({ width }) => (width ? width : '100%')};
   height: 40px;
@@ -44,7 +43,7 @@ export const PrimaryButton = styled.button`
   }
 `;
 
-const PrimaryButtonWithIcon = styled(PrimaryButton)`
+export const PrimaryButtonWithIcon = styled(PrimaryButton)`
   display: flex;
   align-items: center;
 

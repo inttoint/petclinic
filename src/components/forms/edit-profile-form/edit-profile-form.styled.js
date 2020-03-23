@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Form } from 'formik';
-import { PrimaryLink } from '../../common/links/link.styled';
+import { PrimaryButton } from '../../common/buttons/button.styled';
 
 export const StyledForm = styled(Form)`
   display: flex;
@@ -11,8 +11,7 @@ export const StyledForm = styled(Form)`
   }
 `;
 
-export const SaveButton = styled(PrimaryLink)`
+export const SaveButton = styled(PrimaryButton)`
   border-color: ${({ theme }) => theme.colors.secondaryMoreDarkness};
   margin: 0 auto 20px;
-  display: inline-block;
 `;

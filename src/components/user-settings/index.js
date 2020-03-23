@@ -8,10 +8,7 @@ import {
   userIsLoadingSelector
 } from '../../redux/selectors';
 import Loader from '../common/loader';
-import {
-  PrimaryButton,
-  SecondaryButton
-} from '../common/buttons/button.styled';
+import { PrimaryButton } from '../common/buttons/button.styled';
 
 class UserSettings extends Component {
   render() {
