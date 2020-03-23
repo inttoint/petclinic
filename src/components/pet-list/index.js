@@ -3,13 +3,14 @@ import PetCard from './pet-card';
 import { fetchPetsByOwner } from '../../redux/ac';
 import { connect } from 'react-redux';
 
-import './pet-list.scss';
 import {
   getPetList,
   petListIsLoaded,
   petListIsLoading
 } from '../../redux/selectors';
 import Loader from '../common/loader';
+import { MainTitle } from '../common/titles/titles.styled';
+import { Container } from '../common/containers.styled';
 
 class PetList extends Component {
   componentDidMount() {
@@ -35,10 +36,10 @@ class PetList extends Component {
       );
 
     return (
-      <div className="container">
-        <h1>Мои питомцы</h1>
+      <Container>
+        <MainTitle>Мои питомцы</MainTitle>
         {petListRendering}
-      </div>
+      </Container>
     );
   }
 

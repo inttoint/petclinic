@@ -17,4 +17,11 @@ const navElementStyles = css`
   transition: 0.25s ease-in-out; //ToDo
 `;
 
-export { boxShadowMixin, borderMixin, navElementStyles };
+const sizeMixin = (w, h) => {
+  return css`
+    width: ${w};
+    height: ${h};
+  `;
+};
+
+export { boxShadowMixin, borderMixin, navElementStyles, sizeMixin };

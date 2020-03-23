@@ -1,52 +1,53 @@
 import React, { useState } from 'react';
-import avatarCat from './Avatar_cat.png';
-import avatarDog from './avatar_dog.jpg';
-import { ReactComponent as SettingIcon } from './gear.svg';
-import { ReactComponent as MedReportIcon } from './medical-history.svg';
-import { ReactComponent as MedHelpIcon } from './syringe.svg';
-import './pet-card.scss';
+import avatarCat from './img/Avatar_cat.png';
+import avatarDog from './img/avatar_dog.jpg';
+import { ReactComponent as SettingIcon } from './img/gear.svg';
+import { ReactComponent as MedReportIcon } from './img/medical-history.svg';
+import { ReactComponent as MedHelpIcon } from './img/syringe.svg';
+import {
+  Box,
+  BoxItem,
+  Button,
+  Card,
+  Content,
+  Photo,
+  Row,
+  Text
+} from './pet-card.styled';
 
 const PetCard = ({ pet: { name, description, age, type } }) => {
   const [isOpen, toggleCardActions] = useState(false);
-
-  const activeClass = isOpen ? 'active' : '';
-  const openClass = isOpen ? 'open' : '';
-
   const avatar = type === 'Собака' ? avatarDog : avatarCat;
 
   return (
-    <div>
-      <div className="profile">
-        <div className="photo">
-          <img src={avatar} alt="" />
-        </div>
-        <div className="content">
-          <div className="text">
-            <div className="row">
-              <h3>{name}</h3>
-              <h6>{age}</h6>
-            </div>
-            <h6>{description}</h6>
-          </div>
-          <div
-            className={`btn ${activeClass}`}
-            onClick={() => toggleCardActions(!isOpen)}>
-            <span />
-          </div>
-        </div>
-        <div className={`box ${openClass}`}>
-          <div>
-            <MedHelpIcon />
-          </div>
-          <div>
-            <MedReportIcon />
-          </div>
-          <div>
-            <SettingIcon />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Card>
+      <Photo>
+        <img src={avatar} alt="" />
+      </Photo>
+      <Content>
+        <Text>
+          <Row>
+            <h3>{name}</h3>
+            <h6>{age}</h6>
+          </Row>
+          <h6>{description}</h6>
+        </Text>
+        <Button isOpen={isOpen} onClick={() => toggleCardActions(!isOpen)}>
+          <span />
+        </Button>
+      </Content>
+      <Box isOpen={isOpen}>
+        <BoxItem>
+          <MedHelpIcon />
+        </BoxItem>
+        <BoxItem>
+          <MedReportIcon />
+        </BoxItem>
+        <BoxItem>
+          <SettingIcon />
+        </BoxItem>
+      </Box>
+    </Card>
   );
 };
 
