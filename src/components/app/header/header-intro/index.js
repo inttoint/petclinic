@@ -1,15 +1,16 @@
 import React from 'react';
 import DividerLine from '../../../common/divider';
 
-import { Container, MainTitle, SecondaryTitle } from './header-intro.styled';
+import { HeaderContainer, SecondaryTitle } from './header-intro.styled';
+import { MainTitle } from '../../../common/titles/titles.styled';
 
 const HeaderIntro = ({ firstTitle, secondTitle }) => {
   return (
-    <Container>
+    <HeaderContainer>
       <MainTitle>{firstTitle}</MainTitle>
       <DividerLine />
       <SecondaryTitle>{secondTitle}</SecondaryTitle>
-    </Container>
+    </HeaderContainer>
   );
 };
 

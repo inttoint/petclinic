@@ -7,7 +7,7 @@ import {
   InputGroup
 } from '../../common/inputs/input.styled';
 import { SignInStyledForm } from './sign-in-form.styled';
-import { PrimaryButton } from '../../common/buttons/button.styled';
+import { Button } from '../../common/buttons/button.styled';
 import { WhiteLink } from '../../common/links/link.styled';
 import { AuthContainer } from '../../common/containers.styled';
 
@@ -43,7 +43,7 @@ const SignInForm = ({ handleSubmit }) => {
             <ErrorInputMessage name="password" component="div" />
           </InputGroup>
 
-          <PrimaryButton type="submit">Войти</PrimaryButton>
+          <Button type="submit">Войти</Button>
 
           <WhiteLink to="/auth/sign-up">Зарегистрироваться ⟶</WhiteLink>
         </SignInStyledForm>

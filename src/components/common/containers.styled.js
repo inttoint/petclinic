@@ -1,8 +1,13 @@
 import styled from 'styled-components';
-import { flexCenteredContainer } from '../../theme/mixins';
 
-const AuthContainer = styled.div`
-  ${flexCenteredContainer};
+const Container = styled.div`
+  padding: 2% 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const AuthContainer = styled(Container)`
   z-index: 1;
 
   h2 {
@@ -12,4 +17,4 @@ const AuthContainer = styled.div`
   }
 `;
 
-export { AuthContainer };
+export { AuthContainer, Container };

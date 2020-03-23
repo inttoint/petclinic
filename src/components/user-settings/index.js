@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUserDetails, signOutUser } from '../../redux/ac';
-import './user-settings.scss';
 import EditProfileForm from '../forms/edit-profile-form';
 import {
   authUserDetailsSelector,
   userIsLoadingSelector
 } from '../../redux/selectors';
 import Loader from '../common/loader';
-import { PrimaryButton } from '../common/buttons/button.styled';
+import { Button } from '../common/buttons/button.styled';
+import { MainTitle } from '../common/titles/titles.styled';
+import { Container } from '../common/containers.styled';
 
 class UserSettings extends Component {
   render() {
@@ -16,17 +17,17 @@ class UserSettings extends Component {
     if (isLoading || !userDetails) return <Loader />;
 
     return (
-      <div className="container">
-        <h1>Настройки профиля</h1>
+      <Container>
+        <MainTitle>Настройки профиля</MainTitle>
         <EditProfileForm
           handleSubmit={this.saveUserInfo}
           details={userDetails}
         />
 
-        <PrimaryButton width="auto" onClick={signOutUser} secondary>
+        <Button width="auto" onClick={signOutUser} secondary>
           Выйти из профиля
-        </PrimaryButton>
-      </div>
+        </Button>
+      </Container>
     );
   }
 

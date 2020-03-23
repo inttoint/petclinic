@@ -1,5 +1,4 @@
 import React from 'react';
-import './edit-profile-form.scss';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -13,7 +12,7 @@ const PasswordResetForm = ({ handleSubmit }) => {
   });
 
   return (
-    <div className="edit-profile">
+    <div className="">
       <Formik
         initialValues={{
           password: '',

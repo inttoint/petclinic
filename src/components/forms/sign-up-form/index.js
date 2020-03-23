@@ -8,7 +8,7 @@ import {
   Input,
   InputGroup
 } from '../../common/inputs/input.styled';
-import { PrimaryButton } from '../../common/buttons/button.styled';
+import { Button } from '../../common/buttons/button.styled';
 import { WhiteLink } from '../../common/links/link.styled';
 
 const signUpValidation = Yup.object({
@@ -59,7 +59,7 @@ const SignUpForm = ({ handleSubmit }) => {
             <ErrorInputMessage name="passwordConfirm" component="div" />
           </InputGroup>
 
-          <PrimaryButton type="submit">Регистрация</PrimaryButton>
+          <Button type="submit">Регистрация</Button>
 
           <WhiteLink to="/auth/sign-in">У меня уже есть аккаунт ⟶</WhiteLink>
         </SignUpStyledForm>

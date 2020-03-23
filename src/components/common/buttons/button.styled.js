@@ -5,7 +5,7 @@ import {
   navElementStyles
 } from '../../../theme/mixins';
 
-export const PrimaryButton = styled.button`
+export const Button = styled.button`
   ${navElementStyles};
   ${boxShadowMixin};
   ${borderMixin(({ theme }) => theme.colors.secondaryMoreDarkness)};
@@ -43,7 +43,7 @@ export const PrimaryButton = styled.button`
   }
 `;
 
-export const PrimaryButtonWithIcon = styled(PrimaryButton)`
+export const ButtonWithIcon = styled(Button)`
   display: flex;
   align-items: center;
 

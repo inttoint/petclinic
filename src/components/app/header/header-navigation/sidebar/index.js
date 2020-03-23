@@ -6,8 +6,8 @@ import { ReactComponent as ProfileIcon } from '../profile.svg';
 import { StyledLink } from '../../../../common/links/link.styled';
 import { SidebarContainer, SidebarMenu } from './sidebar.styled';
 import {
-  PrimaryButton,
-  PrimaryButtonWithIcon
+  Button,
+  ButtonWithIcon
 } from '../../../../common/buttons/button.styled';
 import { useHistory } from 'react-router-dom';
 
@@ -31,17 +31,17 @@ const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {
           </li>
           <li>
             {isUserAuthorized ? (
-              <PrimaryButtonWithIcon onClick={() => history.push('/users')}>
+              <ButtonWithIcon onClick={() => history.push('/users')}>
                 <ProfileIcon />
                 Личный кабинет
-              </PrimaryButtonWithIcon>
+              </ButtonWithIcon>
             ) : (
               <StyledLink to="/auth/sign-in">Вход</StyledLink>
             )}
           </li>
           {isUserAuthorized && (
             <li>
-              <PrimaryButton onClick={signOutUser}>Выход</PrimaryButton>
+              <Button onClick={signOutUser}>Выход</Button>
             </li>
           )}
         </ul>
