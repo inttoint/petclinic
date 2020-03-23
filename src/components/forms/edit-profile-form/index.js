@@ -1,9 +1,8 @@
 import React from 'react';
-import './edit-profile-form.scss';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
-import { SaveButton, StyledForm } from './edit-profile-form.styled';
+import { SaveButton, EditProfileStyledForm } from './edit-profile-form.styled';
 import {
   ErrorInputMessage,
   Input,
@@ -46,68 +45,61 @@ const EditProfileForm = ({ handleSubmit, details }) => {
   });
 
   return (
-    <div className="edit-profile">
-      <Formik
-        initialValues={{
-          firstName: details.get('firstName') || '',
-          lastName: details.get('lastName') || '',
-          middleName: details.get('middleName') || '',
-          phone: details.get('phone') || '',
-          password: '',
-          passwordConfirm: ''
-        }}
-        validationSchema={editProfileValidation}
-        onSubmit={handleSubmit}>
-        {({ isValid, dirty }) => (
-          <StyledForm>
-            <h4>Изменить личные данные:</h4>
-            <InputGroup>
-              <Field
-                as={Input}
-                name="firstName"
-                type="text"
-                placeholder="Имя"
-              />
-              <ErrorInputMessage name="firstName" component="div" />
-            </InputGroup>
-            <InputGroup>
-              <Field
-                as={Input}
-                name="lastName"
-                type="text"
-                placeholder="Фамилия"
-              />
-              <ErrorInputMessage name="lastName" component="div" />
-            </InputGroup>
-            <InputGroup>
-              <Field
-                as={Input}
-                name="middleName"
-                type="text"
-                placeholder="Отчество"
-              />
-              <ErrorInputMessage name="middleName" component="div" />
-            </InputGroup>
-            <InputGroup>
-              <Field name="phone">
-                {({ field }) => (
-                  <MaskedInput
-                    {...field}
-                    placeholder="Номер телефона"
-                    mask={phoneNumberMask}
-                    type="text"
-                    render={(ref, meta) => <Input {...meta} ref={ref} />}
-                  />
-                )}
-              </Field>
-              <ErrorInputMessage name="phone" component="div" />
-            </InputGroup>
+    <Formik
+      initialValues={{
+        firstName: details.get('firstName') || '',
+        lastName: details.get('lastName') || '',
+        middleName: details.get('middleName') || '',
+        phone: details.get('phone') || '',
+        password: '',
+        passwordConfirm: ''
+      }}
+      validationSchema={editProfileValidation}
+      onSubmit={handleSubmit}>
+      {({ isValid, dirty }) => (
+        <EditProfileStyledForm>
+          <h4>Изменить личные данные:</h4>
+          <InputGroup>
+            <Field as={Input} name="firstName" type="text" placeholder="Имя" />
+            <ErrorInputMessage name="firstName" component="div" />
+          </InputGroup>
+          <InputGroup>
+            <Field
+              as={Input}
+              name="lastName"
+              type="text"
+              placeholder="Фамилия"
+            />
+            <ErrorInputMessage name="lastName" component="div" />
+          </InputGroup>
+          <InputGroup>
+            <Field
+              as={Input}
+              name="middleName"
+              type="text"
+              placeholder="Отчество"
+            />
+            <ErrorInputMessage name="middleName" component="div" />
+          </InputGroup>
+          <InputGroup>
+            <Field name="phone">
+              {({ field }) => (
+                <MaskedInput
+                  {...field}
+                  placeholder="Номер телефона"
+                  mask={phoneNumberMask}
+                  type="text"
+                  render={(ref, meta) => <Input {...meta} ref={ref} />}
+                />
+              )}
+            </Field>
+            <ErrorInputMessage name="phone" component="div" />
+          </InputGroup>
 
-            <SaveButton disabled={!(isValid && dirty)}>Сохранить</SaveButton>
-          </StyledForm>
-        )}
-      </Formik>
-    </div>
+          <SaveButton disabled={!(isValid && dirty)}>Сохранить</SaveButton>
+        </EditProfileStyledForm>
+      )}
+    </Formik>
   );
 };
 

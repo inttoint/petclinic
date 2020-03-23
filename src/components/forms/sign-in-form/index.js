@@ -1,8 +1,14 @@
 import React from 'react';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
-import './sign-in-form.scss';
+import {
+  ErrorInputMessage,
+  Input,
+  InputGroup
+} from '../../common/inputs/input.styled';
+import { Container, SignInStyledForm } from './sign-in-form.styled';
+import { PrimaryButton } from '../../common/buttons/button.styled';
+import { WhiteLink } from '../../common/links/link.styled';
 
 const SignInValidation = Yup.object({
   email: Yup.string()
@@ -15,40 +21,33 @@ const SignInValidation = Yup.object({
 
 const SignInForm = ({ handleSubmit }) => {
   return (
-    <div className="container">
+    <Container>
       <h2>Вход</h2>
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={SignInValidation}
         onSubmit={handleSubmit}>
-        <Form className="signIn-form">
-          <div className="signIn-form__group">
-            <Field name="email" type="email" placeholder="E-mail" />
-            <ErrorMessage
-              name="email"
-              className="invalid-feedback"
-              component="div"
-            />
-          </div>
-          <div className="signIn-form__group">
-            <Field name="password" type="password" placeholder="Пароль" />
-            <ErrorMessage
+        <SignInStyledForm>
+          <InputGroup>
+            <Field as={Input} name="email" type="email" placeholder="E-mail" />
+            <ErrorInputMessage name="email" component="div" />
+          </InputGroup>
+          <InputGroup>
+            <Field
+              as={Input}
               name="password"
-              className="invalid-feedback"
-              component="div"
+              type="password"
+              placeholder="Пароль"
             />
-          </div>
+            <ErrorInputMessage name="password" component="div" />
+          </InputGroup>
 
-          <button className="red-btn" type="submit">
-            Войти
-          </button>
+          <PrimaryButton type="submit">Войти</PrimaryButton>
 
-          <Link to="/auth/sign-up" className="signIn-form--link">
-            Зарегистрироваться ⟶
-          </Link>
-        </Form>
+          <WhiteLink to="/auth/sign-up">Зарегистрироваться ⟶</WhiteLink>
+        </SignInStyledForm>
       </Formik>
-    </div>
+    </Container>
   );
 };
 

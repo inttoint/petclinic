@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Form } from 'formik';
 import { PrimaryButton } from '../../common/buttons/button.styled';
 
-export const StyledForm = styled(Form)`
+const EditProfileStyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
 
@@ -11,7 +11,9 @@ export const StyledForm = styled(Form)`
   }
 `;
 
-export const SaveButton = styled(PrimaryButton)`
+const SaveButton = styled(PrimaryButton)`
   border-color: ${({ theme }) => theme.colors.secondaryMoreDarkness};
   margin: 0 auto 20px;
 `;
+
+export { EditProfileStyledForm, SaveButton };
