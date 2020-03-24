@@ -1,15 +1,14 @@
 import React from 'react';
-import './icon-box-item.scss';
-import { Link } from 'react-router-dom';
+import { ControlElement, ControlLink } from './icon-box-item.styled';
 
 const IconBoxItem = ({ url, Icon, title }) => {
   return (
-    <div className="icon-box__item">
-      <Link to={url} className="icon-box__item--link">
+    <ControlElement>
+      <ControlLink to={url}>
         <Icon />
         <h5>{title}</h5>
-      </Link>
-    </div>
+      </ControlLink>
+    </ControlElement>
   );
 };
 

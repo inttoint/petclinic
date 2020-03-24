@@ -4,11 +4,11 @@ import { ReactComponent as ReportIcon } from '../svg/registration.svg';
 import { ReactComponent as MedIcon } from '../svg/vaccine.svg';
 import { ReactComponent as HandIcon } from '../svg/veterinary.svg';
 import IconBoxItem from './icon-box-item';
-import './icon-box.scss';
+import { IconBoxWrapper } from './icon-box.styled';
 
 const IconBox = ({ userUid }) => {
   return (
-    <div className="icon-box">
+    <IconBoxWrapper>
       <IconBoxItem
         url={`/users/${userUid}/pets`}
         Icon={CatIcon}
@@ -21,7 +21,7 @@ const IconBox = ({ userUid }) => {
         Icon={HandIcon}
         title="Настройки"
       />
-    </div>
+    </IconBoxWrapper>
   );
 };
 
