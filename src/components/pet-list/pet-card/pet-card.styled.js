@@ -15,12 +15,12 @@ const Card = styled.div`
 
   ${sizeMixin('400px', '100px')};
   ${boxShadowMixin};
-  transform: translate(10%, 0%);
+  transform: translate(6%, 0%);
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.greyDark};
   color: ${({ theme }) => theme.colors.secondaryDarker};
   animation: ${showCard} 0.5s forwards ease-in-out;
-  margin-bottom: 30px;
+  margin: 0 10px 30px;
 `;
 
 const rotatePhoto = keyframes`

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ControlElement = styled.div`
   position: relative;
   width: 50%;
-  padding: 35px 30px;
+  padding: 35px 10px;
   display: inline-block;
   margin: 1px 0;
   text-align: center;
