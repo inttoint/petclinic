@@ -35,6 +35,7 @@ const WhiteLink = styled(Link)`
   &:hover {
     ${borderMixin(({ theme }) => theme.colors.white)};
     ${boxShadowMixin};
+    transition: all 300ms ease-in-out;
   }
 `;
 

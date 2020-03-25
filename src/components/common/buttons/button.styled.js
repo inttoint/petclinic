@@ -50,7 +50,7 @@ export const ButtonWithIcon = styled(Button)`
   svg {
     fill: ${({ theme }) => theme.colors.greyLight};
     margin-right: 5px;
-    transition: 0.25s ease-in-out; // ToDo: transition привести к одному значению
+    transition: all 300ms ease-in-out;
   }
 
   &:hover {

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Container } from '../common/containers.styled';
 import { device } from '../../theme';
 
 const Wrapper = styled.div`

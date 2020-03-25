@@ -12,6 +12,7 @@ export const Input = styled.input`
   background: rgba(33, 33, 33, 0.8);
   color: ${({ theme }) => theme.colors.grey};
   outline: none;
+  transition: all 300ms ease-in-out;
 
   &:focus {
     background-color: ${({ theme }) => theme.colors.primaryDarker};

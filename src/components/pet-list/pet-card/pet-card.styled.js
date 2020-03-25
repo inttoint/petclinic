@@ -123,7 +123,7 @@ const Button = styled.div`
   border-radius: 50%;
   z-index: 10;
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition:300ms ease-in-out;
   animation: ${popBtn} 0.3s both ease-in-out 0.5s;
 
   &:hover {
@@ -133,7 +133,6 @@ const Button = styled.div`
     span,
     span:before,
     span:after {
-      transition: all 300ms ease-in-out;
       background-color: ${({ theme }) => theme.colors.secondaryLighter};
     }
   }
@@ -154,7 +153,6 @@ const Button = styled.div`
       ${sizeMixin('100%', '2px')};
       position: absolute;
       background-color: ${({ theme }) => theme.colors.greyLight};
-      transition-duration: 0.3s;
       transform: rotate(0deg);
       ${({ isOpen }) => isOpen && 'width: 60%;'};
       left: ${({ isOpen }) => (isOpen ? '14.3px' : '2px')};

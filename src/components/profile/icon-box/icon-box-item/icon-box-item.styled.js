@@ -9,6 +9,7 @@ const ControlElement = styled.div`
   margin: 1px 0;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.secondaryDarker};
+  transition: all 300ms ease-in-out;
 
   &:nth-child(2n) {
     border-left: 1px solid ${({ theme }) => theme.colors.secondaryMoreDarkness};
@@ -51,6 +52,7 @@ const ControlLink = styled(Link)`
     width: 80px;
     height: auto;
     fill: ${({ theme }) => theme.colors.grey};
+    transition: 0.3s ease-in-out;
 
     &:hover {
       fill: rgba(220, 220, 220, 0.8);
@@ -63,6 +65,7 @@ const ControlLink = styled(Link)`
     letter-spacing: 1.5px;
     padding: 10px;
     margin-bottom: 10px;
+    transition: 0.3s ease-in-out;
 
     &:hover {
       color: rgba(220, 220, 220, 0.8);
