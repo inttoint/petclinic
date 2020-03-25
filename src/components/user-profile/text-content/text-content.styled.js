@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import { Container } from '../../common/containers.styled';
 
-export const TextContentWrapper = styled.div`
+export const TextContentWrapper = styled(Container)`
+  align-items: start;
+
   h4 {
     margin-top: 0;
     font-size: 24px;
