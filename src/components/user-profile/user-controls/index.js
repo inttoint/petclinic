@@ -3,26 +3,26 @@ import { ReactComponent as CatIcon } from '../svg/pet.svg';
 import { ReactComponent as ReportIcon } from '../svg/registration.svg';
 import { ReactComponent as MedIcon } from '../svg/vaccine.svg';
 import { ReactComponent as HandIcon } from '../svg/veterinary.svg';
-import IconBoxItem from './icon-box-item';
-import { IconBoxWrapper } from './icon-box.styled';
+import UserControlsItem from './user-controls-item';
+import { UserControlsWrapper } from './icon-box.styled';
 
-const IconBox = ({ userUid }) => {
+const UserControls = ({ userUid }) => {
   return (
-    <IconBoxWrapper>
-      <IconBoxItem
+    <UserControlsWrapper>
+      <UserControlsItem
         url={`/users/${userUid}/pets`}
         Icon={CatIcon}
         title="Мои животные"
       />
-      <IconBoxItem url="#" Icon={ReportIcon} title="Мои обращения" />
-      <IconBoxItem url="#" Icon={MedIcon} title="Назначения" />
-      <IconBoxItem
+      <UserControlsItem url="#" Icon={ReportIcon} title="Мои обращения" />
+      <UserControlsItem url="#" Icon={MedIcon} title="Назначения" />
+      <UserControlsItem
         url={`/users/${userUid}/settings`}
         Icon={HandIcon}
         title="Настройки"
       />
-    </IconBoxWrapper>
+    </UserControlsWrapper>
   );
 };
 
-export default IconBox;
+export default UserControls;

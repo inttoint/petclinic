@@ -46,7 +46,7 @@ const ControlElement = styled.div`
 
 const ControlLink = styled(Link)`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.white};
 
   svg {
     width: 80px;

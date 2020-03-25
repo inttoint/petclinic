@@ -1,5 +1,5 @@
 import React from 'react';
-import IconBox from './icon-box';
+import UserControls from './user-controls';
 import PetList from '../pet-list';
 import { Route } from 'react-router-dom';
 import UserSettings from '../user-settings';
@@ -19,7 +19,7 @@ const UserProfile = ({ userUid }) => {
       </LeftColumn>
       <RightColumn>
         <OuterShadow>
-          <IconBox userUid={userUid} />
+          <UserControls userUid={userUid} />
         </OuterShadow>
       </RightColumn>
     </Wrapper>

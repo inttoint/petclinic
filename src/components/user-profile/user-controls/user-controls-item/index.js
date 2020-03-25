@@ -1,7 +1,7 @@
 import React from 'react';
 import { ControlElement, ControlLink } from './icon-box-item.styled';
 
-const IconBoxItem = ({ url, Icon, title }) => {
+const UserControlsItem = ({ url, Icon, title }) => {
   return (
     <ControlElement>
       <ControlLink to={url}>
@@ -12,4 +12,4 @@ const IconBoxItem = ({ url, Icon, title }) => {
   );
 };
 
-export default IconBoxItem;
+export default UserControlsItem;
