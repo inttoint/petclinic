@@ -7,7 +7,7 @@ import { ReactComponent as MedHelpIcon } from './img/syringe.svg';
 import {
   Box,
   BoxItem,
-  Button,
+  ActionButton,
   Card,
   Content,
   Photo,
@@ -32,9 +32,11 @@ const PetCard = ({ pet: { name, description, age, type } }) => {
           </Row>
           <h6>{description}</h6>
         </Text>
-        <Button isOpen={isOpen} onClick={() => toggleCardActions(!isOpen)}>
+        <ActionButton
+          isOpen={isOpen}
+          onClick={() => toggleCardActions(!isOpen)}>
           <span />
-        </Button>
+        </ActionButton>
       </Content>
       <Box isOpen={isOpen}>
         <BoxItem>

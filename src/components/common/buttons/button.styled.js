@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import {
   borderMixin,
   boxShadowMixin,
-  navElementStyles
+  navElementStyles,
+  sizeMixin
 } from '../../../theme/mixins';
 
 export const Button = styled.button`
@@ -48,6 +49,7 @@ export const ButtonWithIcon = styled(Button)`
   align-items: center;
 
   svg {
+    ${sizeMixin('30px', '30px')};
     fill: ${({ theme }) => theme.colors.greyLight};
     margin-right: 5px;
     transition: all 300ms ease-in-out;

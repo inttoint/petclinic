@@ -1,6 +1,6 @@
 import React from 'react';
 import UserControls from './user-controls';
-import PetList from '../pet-list';
+import Pets from '../pets';
 import { Route } from 'react-router-dom';
 import UserSettings from '../user-settings';
 import {
@@ -15,7 +15,7 @@ const UserProfile = ({ userUid }) => {
   return (
     <Wrapper>
       <LeftColumn>
-        <Route path="/users/:id/pets" component={PetList} />
+        <Route path="/users/:id/pets" component={Pets} />
         <Route path="/users/:id/settings" component={UserSettings} />
         <Route path="/users/:id/medical-record" component={TextContent} />
       </LeftColumn>

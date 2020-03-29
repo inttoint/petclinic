@@ -113,7 +113,7 @@ const toArrow = keyframes`
   }
 `;
 
-const Button = styled.div`
+const ActionButton = styled.div`
   background-color: ${({ theme }) => theme.colors.secondary};
   ${sizeMixin('50px', '50px')};
   ${boxShadowMixin};
@@ -247,4 +247,4 @@ const BoxItem = styled.div`
   }
 `;
 
-export { Card, Box, BoxItem, Button, Content, Photo, Text, Row };
+export { Card, Box, BoxItem, ActionButton, Content, Photo, Text, Row };

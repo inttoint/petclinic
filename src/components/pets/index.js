@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PetCard from './pet-card';
 import { fetchPetsByOwner } from '../../redux/ac';
 import { connect } from 'react-redux';
 
@@ -11,8 +10,10 @@ import {
 import Loader from '../common/loader';
 import { MainTitle } from '../common/titles/titles.styled';
 import { Container } from '../common/containers.styled';
+import { PetList } from './pet-list';
+import { Panel } from './panel';
 
-class PetList extends Component {
+class Pets extends Component {
   componentDidMount() {
     const {
       match: {
@@ -26,26 +27,17 @@ class PetList extends Component {
   render() {
     const { isLoading, isLoaded, pets } = this.props;
 
-    if (isLoading && !isLoaded) return <Loader />;
-
-    const petListRendering =
-      pets.length !== 0 ? (
-        this.renderPets(pets)
-      ) : (
-        <h5>Добавьте своего питомца</h5>
-      );
+    const content =
+      isLoading && !isLoaded ? <Loader /> : <PetList pets={pets} />;
 
     return (
       <Container>
         <MainTitle>Мои питомцы</MainTitle>
-        {petListRendering}
+        <Panel />
+        {content}
       </Container>
     );
   }
-
-  renderPets = pets => {
-    return pets.map(pet => <PetCard key={pet.uid} pet={pet} />);
-  };
 }
 
 export default connect(
@@ -55,4 +47,4 @@ export default connect(
     isLoaded: petListIsLoaded(state)
   }),
   { fetchPetsByOwner }
-)(PetList);
+)(Pets);
