@@ -6,7 +6,7 @@ import {
   sizeMixin
 } from '../../../theme/mixins';
 
-export const Button = styled.button`
+const Button = styled.button`
   ${navElementStyles};
   ${boxShadowMixin};
   ${borderMixin(({ theme }) => theme.colors.secondaryMoreDarkness)};
@@ -44,7 +44,7 @@ export const Button = styled.button`
   }
 `;
 
-export const ButtonWithIcon = styled(Button)`
+const ButtonWithIcon = styled(Button)`
   display: flex;
   align-items: center;
 
@@ -64,3 +64,15 @@ export const ButtonWithIcon = styled(Button)`
     }
   }
 `;
+
+const MiniButton = styled(ButtonWithIcon)`
+  margin-right: 5px;
+
+  svg {
+    ${sizeMixin('20px', '20px')};
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+`;
+
+export { Button, ButtonWithIcon, MiniButton };

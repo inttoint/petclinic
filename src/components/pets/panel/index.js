@@ -2,12 +2,8 @@ import React from 'react';
 import { ReactComponent as SearchIcon } from './paw.svg';
 import { ReactComponent as RefreshIcon } from './refresh.svg';
 import { ReactComponent as AddPetIcon } from './pawprint.svg';
-import {
-  MiniButton,
-  PanelWrapper,
-  SearchInput,
-  SearchRow
-} from './panel.styled';
+import { PanelWrapper, SearchInput, SearchRow } from './panel.styled';
+import { MiniButton } from '../../common/buttons/button.styled';
 
 export const Panel = () => {
   return (

@@ -12,6 +12,7 @@ import { MainTitle } from '../common/titles/titles.styled';
 import { Container } from '../common/containers.styled';
 import { PetList } from './pet-list';
 import { Panel } from './panel';
+import DefaultModal from '../modals/default-modal';
 
 class Pets extends Component {
   componentDidMount() {
@@ -34,6 +35,7 @@ class Pets extends Component {
       <Container>
         <MainTitle>Мои питомцы</MainTitle>
         <Panel />
+        <DefaultModal />
         {content}
       </Container>
     );

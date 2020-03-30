@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { sizeMixin } from '../../../theme/mixins';
-import { ButtonWithIcon } from '../../common/buttons/button.styled';
 
 const PanelWrapper = styled.div`
   width: 100%;
@@ -38,14 +37,4 @@ const SearchInput = styled.input`
   }
 `;
 
-const MiniButton = styled(ButtonWithIcon)`
-  margin-right: 5px;
-
-  svg {
-    ${sizeMixin('20px', '20px')};
-    margin-right: 5px;
-    margin-left: 5px;
-  }
-`;
-
-export { PanelWrapper, SearchRow, SearchInput, MiniButton };
+export { PanelWrapper, SearchRow, SearchInput };
