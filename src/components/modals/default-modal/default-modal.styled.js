@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { boxShadowMixin, sizeMixin } from '../../../theme/mixins';
+import { Container } from '../../common/containers.styled';
 
 const Overlay = styled.div`
   position: fixed;
@@ -20,7 +21,7 @@ const DefaultModalWrapper = styled.div`
   top: 0;
   bottom: 0;
   margin: auto;
-  ${sizeMixin('300px', '300px')};
+  ${sizeMixin('350px', '300px')};
   z-index: 200;
 `;
 
@@ -32,52 +33,57 @@ const CloseButton = styled.button`
   border: none;
   background: none;
   outline: none;
+  z-index: 1;
 
   svg {
     ${sizeMixin('15px', '15px')};
-    fill: ${({ theme }) => theme.colors.greyDarkest};
+    fill: ${({ theme }) => theme.colors.secondaryDarker};
   }
 `;
 
 const ModalHeader = styled.div`
   display: flex;
   justify-content: center;
-  background: ${({ theme }) => theme.colors.greyDarker};
   width: 100%;
 
   h3 {
     margin: 10px 0 10px 0;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 1.5px;
     color: ${({ theme }) => theme.colors.greyDarkest};
   }
 `;
+
 const ModalContent = styled.div`
   padding: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    ${sizeMixin('calc(100% + 50px)', 'calc(100%)')};
+    background-color: ${({ theme }) => theme.colors.grey};
+    left: -25px;
+    top: 50px;
+    z-index: -2;
+    transform: rotate(2deg);
+  }
 `;
 
-const ModalToggleBtn = styled.button`
-  cursor: pointer;
-  background-color: red;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 20px;
-
-  &:focus {
-    outline: none;
-  }
+const ModalContainer = styled(Container)`
+  margin-top: 55px;
 `;
 
 export {
   Overlay,
   DefaultModalWrapper,
   CloseButton,
-  ModalToggleBtn,
   ModalHeader,
-  ModalContent
+  ModalContent,
+  ModalContainer
 };
