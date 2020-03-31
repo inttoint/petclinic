@@ -16,13 +16,9 @@ const DefaultModalWrapper = styled.div`
   ${boxShadowMixin};
   background: ${({ theme }) => theme.colors.greyDark};
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  ${sizeMixin('350px', '300px')};
   z-index: 200;
+  left: calc((100% - 350px) / 2);
+  top: calc((100% - 300px) / 2);
 `;
 
 const CloseButton = styled.button`
@@ -45,23 +41,20 @@ const ModalHeader = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: -10px;
 
   h3 {
     margin: 10px 0 10px 0;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: ${({ theme }) => theme.colors.greyDarkest};
+    color: ${({ theme }) => theme.colors.secondaryDarker};
   }
 `;
 
 const ModalContent = styled.div`
-  padding: 10px;
+  padding: 10px 20px;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
 
   &:before {
     content: '';
@@ -69,14 +62,13 @@ const ModalContent = styled.div`
     ${sizeMixin('calc(100% + 50px)', 'calc(100%)')};
     background-color: ${({ theme }) => theme.colors.grey};
     left: -25px;
-    top: 50px;
     z-index: -2;
     transform: rotate(2deg);
   }
 `;
 
 const ModalContainer = styled(Container)`
-  margin-top: 55px;
+  margin-top: 5px;
 `;
 
 export {

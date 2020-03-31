@@ -5,7 +5,8 @@ import { ReactComponent as AddPetIcon } from './pawprint.svg';
 import { PanelWrapper, SearchInput, SearchRow } from './panel.styled';
 import { MiniButton } from '../../common/buttons/button.styled';
 import DefaultModal from '../../modals/default-modal';
-import { Input, InputGroup } from '../../common/inputs/input.styled';
+import { AddNewPetStyledForm } from '../../forms/add-new-pet-form/add-new-pet-form.styled';
+import AddNewPetForm from '../../forms/add-new-pet-form';
 
 export const Panel = () => {
   const [isModalOpen, toggleModal] = useState(true);
@@ -27,9 +28,8 @@ export const Panel = () => {
         heading="Добавить питомца"
         isModalOpen={isModalOpen}
         toggleModal={toggleModal}>
-        <InputGroup>
-          <Input />
-        </InputGroup>
+        {/*<AddNewPetStyledForm handleSubmit={() => {}} />*/}
+        <AddNewPetForm handleSubmit={() => {}} />
       </DefaultModal>
     </PanelWrapper>
   );

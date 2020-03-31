@@ -17,13 +17,13 @@ const DefaultModal = ({ heading, children, isModalOpen, toggleModal }) => {
         <Overlay>
           <Portal>
             <DefaultModalWrapper>
-              <CloseButton
-                width="auto"
-                onClick={() => toggleModal(!isModalOpen)}>
-                <CloseIcon />
-              </CloseButton>
               <ModalHeader>
                 <h3>{heading}</h3>
+                <CloseButton
+                  width="auto"
+                  onClick={() => toggleModal(!isModalOpen)}>
+                  <CloseIcon />
+                </CloseButton>
               </ModalHeader>
 
               <ModalContent>
