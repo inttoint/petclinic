@@ -68,7 +68,7 @@ const ModalContent = styled.div`
 `;
 
 const ModalContainer = styled(Container)`
-  margin-top: 5px;
+  margin-top: 15px;
 `;
 
 export {
