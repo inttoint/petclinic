@@ -18,6 +18,19 @@ export const Input = styled.input`
     background-color: ${({ theme }) => theme.colors.primaryDarker};
     color: ${({ theme }) => theme.colors.grey};
   }
+
+  &[type='date']::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &[type='date']::-webkit-calendar-picker-indicator {
+    opacity: 1;
+
+    &:hover {
+      background: none;
+      cursor: pointer;
+    }
+  }
 `;
 
 export const ErrorInputMessage = styled(ErrorMessage)`

@@ -4,11 +4,11 @@ import { ReactComponent as CloseIcon } from './close.svg';
 import {
   CloseButton,
   DefaultModalWrapper,
-  ModalContainer,
   ModalContent,
   ModalHeader,
   Overlay
 } from './default-modal.styled';
+import { Container } from '../../common/containers.styled';
 
 const DefaultModal = ({ heading, children, isModalOpen, toggleModal }) => {
   return (
@@ -27,7 +27,7 @@ const DefaultModal = ({ heading, children, isModalOpen, toggleModal }) => {
               </ModalHeader>
 
               <ModalContent>
-                <ModalContainer>{children}</ModalContainer>
+                <Container>{children}</Container>
               </ModalContent>
             </DefaultModalWrapper>
           </Portal>

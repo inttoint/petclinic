@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { boxShadowMixin, sizeMixin } from '../../../theme/mixins';
-import { Container } from '../../common/containers.styled';
 
 const Overlay = styled.div`
   position: fixed;
@@ -67,15 +66,4 @@ const ModalContent = styled.div`
   }
 `;
 
-const ModalContainer = styled(Container)`
-  margin-top: 15px;
-`;
-
-export {
-  Overlay,
-  DefaultModalWrapper,
-  CloseButton,
-  ModalHeader,
-  ModalContent,
-  ModalContainer
-};
+export { Overlay, DefaultModalWrapper, CloseButton, ModalHeader, ModalContent };

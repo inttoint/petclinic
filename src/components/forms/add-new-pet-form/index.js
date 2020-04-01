@@ -7,6 +7,7 @@ import {
   InputGroup
 } from '../../common/inputs/input.styled';
 import { Button } from '../../common/buttons/button.styled';
+import PetTypeRadioButtons from '../../pets/pet-type-radio-buttons';
 
 const AddNewPetForm = ({ handleSubmit }) => {
   return (
@@ -14,6 +15,8 @@ const AddNewPetForm = ({ handleSubmit }) => {
       initialValues={{ name: '', description: '', birthday: '', type: '' }}
       onSubmit={handleSubmit}>
       <AddNewPetStyledForm>
+        <PetTypeRadioButtons />
+
         <InputGroup>
           <Field as={Input} name="name" type="text" placeholder="Кличка" />
           <ErrorInputMessage name="name" component="div" />
