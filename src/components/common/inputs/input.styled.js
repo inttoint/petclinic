@@ -31,6 +31,14 @@ export const Input = styled.input`
       cursor: pointer;
     }
   }
+
+  &[type='file'] {
+    cursor: pointer;
+
+    ::-webkit-file-upload-button {
+      cursor: pointer;
+    }
+  }
 `;
 
 export const ErrorInputMessage = styled(ErrorMessage)`

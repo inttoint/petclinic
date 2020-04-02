@@ -39,6 +39,17 @@ const AddNewPetForm = ({ handleSubmit }) => {
           />
           <ErrorInputMessage name="birthday" component="div" />
         </InputGroup>
+        <InputGroup>
+          <Field
+            as={Input}
+            name="photo"
+            id="photo"
+            type="file"
+            placeholder="Изображение"
+          />
+          <label htmlFor="photo">Выбрать изображение</label>
+          <ErrorInputMessage name="photo" component="div" />
+        </InputGroup>
 
         <Button type="submit">Сохранить</Button>
       </AddNewPetStyledForm>

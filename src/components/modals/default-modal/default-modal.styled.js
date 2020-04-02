@@ -18,8 +18,8 @@ const DefaultModalWrapper = styled.div`
   background: ${({ theme }) => theme.colors.greyDark};
   position: fixed;
   z-index: 200;
-  left: calc((100% - 350px) / 2);
-  top: calc((100% - 300px) / 2);
+  left: calc((100% - ${({ width }) => width}) / 2);
+  top: calc((100% - ${({ height }) => height}) / 2);
 `;
 
 const CloseButton = styled.button`

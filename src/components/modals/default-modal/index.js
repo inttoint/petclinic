@@ -16,7 +16,7 @@ const DefaultModal = ({ heading, children, isModalOpen, toggleModal }) => {
       {isModalOpen ? (
         <Overlay>
           <Portal>
-            <DefaultModalWrapper>
+            <DefaultModalWrapper width="350px" height="470px">
               <ModalHeader>
                 <h3>{heading}</h3>
                 <CloseButton

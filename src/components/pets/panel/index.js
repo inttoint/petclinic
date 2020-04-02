@@ -8,7 +8,7 @@ import DefaultModal from '../../modals/default-modal';
 import AddNewPetForm from '../../forms/add-new-pet-form';
 
 export const Panel = () => {
-  const [isModalOpen, toggleModal] = useState(true);
+  const [isModalOpen, toggleModal] = useState(false);
   return (
     <PanelWrapper>
       <SearchRow>
