@@ -16,7 +16,6 @@ const RadioTile = styled.label`
   flex-direction: column;
   padding: 10px;
   cursor: pointer;
-  opacity: 0.5;
   transition: all 0.3s ease-in-out;
 
   svg {
@@ -38,12 +37,7 @@ const InputContainer = styled.div`
   input[type='radio'] {
     display: none;
 
-    &:active ~ ${RadioTile} {
-      opacity: 1;
-    }
-
     &:checked ~ ${RadioTile} {
-      opacity: 1;
       background: ${({ theme }) => theme.colors.secondaryDarker};
     }
   }

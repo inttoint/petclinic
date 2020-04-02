@@ -53,7 +53,7 @@ const ModalHeader = styled.div`
 `;
 
 const ModalContent = styled.div`
-  padding: 10px 20px;
+  padding: 10px 30px;
   overflow: hidden;
   position: relative;
   border-radius: 7px;
