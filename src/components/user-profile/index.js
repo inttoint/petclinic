@@ -9,7 +9,7 @@ import {
   RightColumn,
   Wrapper
 } from './user-profile.styled';
-import TextContent from './text-content';
+import MedicalRecord from '../medical-record';
 
 const UserProfile = ({ userUid }) => {
   return (
@@ -17,7 +17,7 @@ const UserProfile = ({ userUid }) => {
       <LeftColumn>
         <Route path="/users/:id/pets" component={Pets} />
         <Route path="/users/:id/settings" component={UserSettings} />
-        <Route path="/users/:id/medical-record" component={TextContent} />
+        <Route path="/users/:id/medical-record" component={MedicalRecord} />
       </LeftColumn>
       <RightColumn>
         <OuterShadow>
