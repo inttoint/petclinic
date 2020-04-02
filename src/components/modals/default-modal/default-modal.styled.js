@@ -13,6 +13,8 @@ const Overlay = styled.div`
 
 const DefaultModalWrapper = styled.div`
   ${boxShadowMixin};
+
+  border-radius: 7px;
   background: ${({ theme }) => theme.colors.greyDark};
   position: fixed;
   z-index: 200;
@@ -54,6 +56,7 @@ const ModalContent = styled.div`
   padding: 10px 20px;
   overflow: hidden;
   position: relative;
+  border-radius: 7px;
 
   &:before {
     content: '';

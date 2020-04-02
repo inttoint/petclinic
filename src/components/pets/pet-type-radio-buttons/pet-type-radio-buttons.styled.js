@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { sizeMixin } from '../../../theme/mixins';
+import { borderMixin, sizeMixin } from '../../../theme/mixins';
 
 const Options = styled.div`
   border: none;
@@ -10,7 +10,8 @@ const Options = styled.div`
 `;
 
 const RadioTile = styled.label`
-  border: 1px solid rgba(129, 60, 52, 0.15);
+  background: rgba(129, 60, 52, 0.25);
+  ${borderMixin('rgba(129, 60, 52, 0.25)')};
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -20,19 +21,19 @@ const RadioTile = styled.label`
 
   svg {
     ${sizeMixin('30px', '30px')};
-    fill: ${({ theme }) => theme.colors.secondaryDarker};
+    fill: ${({ theme }) => theme.colors.white};
   }
 
   &:hover,
   &:focus,
   &:active {
-    border: 1px solid rgba(129, 60, 52, 0.5);
+    background: rgba(129, 60, 52, 0.7);
   }
 `;
 
 const InputContainer = styled.div`
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 10px;
 
   input[type='radio'] {
     display: none;
@@ -43,7 +44,7 @@ const InputContainer = styled.div`
 
     &:checked ~ ${RadioTile} {
       opacity: 1;
-      border: 1px solid ${({ theme }) => theme.colors.secondaryDarker};
+      background: ${({ theme }) => theme.colors.secondaryDarker};
     }
   }
 `;
