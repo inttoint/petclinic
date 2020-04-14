@@ -7,36 +7,37 @@ import {
   Table
 } from 'react-virtualized';
 import 'react-virtualized/styles.css';
+import s from './status';
 
 const records = [
   {
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
-    status: 'Новая'
+    status: 'new'
   },
 
-  { date: '14.02.2020', complaint: 'bbbb', status: 'В работе' },
-  { date: '14.02.2020', complaint: 'bbbb', status: 'В работе' },
+  { date: '14.02.2020', complaint: 'bbbb', status: 'in_progress' },
+  { date: '14.02.2020', complaint: 'bbbb', status: 'rejected' },
   {
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
-    status: 'Новая'
+    status: 'new'
   },
-  { date: '14.02.2020', complaint: 'bbbb', status: 'В работе' },
+  { date: '14.02.2020', complaint: 'bbbb', status: 'in_progress' },
   {
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
-    status: 'Новая'
+    status: 'new'
   },
-  { date: '14.02.2020', complaint: 'bbbb', status: 'В работе' },
+  { date: '14.02.2020', complaint: 'bbbb', status: 'done' },
   {
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
-    status: 'Новая'
+    status: 'new'
   }
 ];
 
@@ -62,7 +63,12 @@ class MedicalRecordTable extends Component {
             dataKey="date"
             style={{ color: 'black' }}
           />
-          <Column label="Статус записи" width={120} dataKey="status" />
+          <Column
+            label="Статус записи"
+            cellRenderer={this.statusColumnRenderer}
+            width={120}
+            dataKey="status"
+          />
           <Column
             label="Жалобы"
             cellRenderer={this.complaintColumnRenderer}
@@ -75,6 +81,13 @@ class MedicalRecordTable extends Component {
   }
 
   rowGetter = ({ index }) => records[index];
+
+  statusColumnRenderer = ({ dataKey, rowIndex, style }) => {
+    const status = records[rowIndex][dataKey];
+    const { name, textColor } = s[status];
+
+    return <div style={{ ...style, color: textColor }}>{name}</div>;
+  };
 
   complaintColumnRenderer = ({ dataKey, parent, rowIndex, style }) => (
     <CellMeasurer
