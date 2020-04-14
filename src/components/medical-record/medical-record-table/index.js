@@ -61,7 +61,7 @@ class MedicalRecordTable extends Component {
             label="Дата обращения"
             width={120}
             dataKey="date"
-            style={{ color: 'black' }}
+            style={{ color: 'rgb(18, 18, 18)' }}
           />
           <Column
             label="Статус записи"

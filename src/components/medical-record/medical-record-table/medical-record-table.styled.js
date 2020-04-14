@@ -17,14 +17,15 @@ export const TableWrapper = styled.div`
   }
 
   .ReactVirtualized__Table__headerRow {
-    border: 1px solid white;
+    border: 1px solid rgba(116, 53, 45, 0.6);
+    color: ${({ theme }) => theme.colors.greyLight};
     ${boxShadowMixin};
     background: ${({ theme }) => theme.colors.secondaryMoreDarkness};
   }
 
   .ReactVirtualized__Table__row {
-    border-bottom: 1px solid white;
-    ${boxShadowMixin};
+    border-bottom: 1px solid rgba(116, 53, 45, 0.6);
+    box-shadow: 4px 4px 7px -4px ${({ theme }) => theme.colors.shadowColor};
 
     :hover {
       cursor: pointer;
