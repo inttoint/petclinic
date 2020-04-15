@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../app/header';
-import catWithMac from '../../img/PajdTsgda.jpg';
+import Header from '../header';
+import catWithMac from '../../assets/images/background/PajdTsgda.jpg';
 import SignInForm from '../forms/sign-in-form';
 import { signInUser, signUpUser } from '../../redux/ac';
 import { connect } from 'react-redux';

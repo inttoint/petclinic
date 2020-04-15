@@ -4,8 +4,8 @@ import {
   Options,
   RadioTile
 } from './pet-type-radio-buttons.styled';
-import { ReactComponent as Cat } from './happy.svg';
-import { ReactComponent as Dog } from './dog.svg';
+import { ReactComponent as Cat } from '../../../assets/images/icons/cat_type.svg';
+import { ReactComponent as Dog } from '../../../assets/images/icons/dog_type.svg';
 
 const PetTypeRadioButtons = () => {
   return (

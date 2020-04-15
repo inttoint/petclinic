@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import avatarCat from './img/Avatar_cat.png';
-import avatarDog from './img/avatar_dog.jpg';
-import { ReactComponent as SettingIcon } from './img/gear.svg';
-import { ReactComponent as MedReportIcon } from './img/medical-history.svg';
-import { ReactComponent as MedHelpIcon } from './img/syringe.svg';
+import avatarCat from '../../../assets/images/avatar_cat.png';
+import avatarDog from '../../../assets/images/avatar_dog.jpg';
+import { ReactComponent as SettingIcon } from '../../../assets/images/icons/edit_settings.svg';
+import { ReactComponent as MedReportIcon } from '../../../assets/images/icons/medical-history.svg';
+import { ReactComponent as MedHelpIcon } from '../../../assets/images/icons/syringe.svg';
 import {
   Box,
   BoxItem,

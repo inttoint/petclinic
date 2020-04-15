@@ -1,7 +1,7 @@
 import React from 'react';
-import whiteCat from '../../img/britan.jpg';
-import Header from '../app/header';
-import HeaderIntro from '../app/header/header-intro';
+import whiteCat from '../../assets/images/background/britan.jpg';
+import Header from '../header';
+import HeaderIntro from '../header/header-intro';
 import { getTitles } from '../../mocks/titles';
 
 const HomePage = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import dog from '../../img/aisadn129.jpg';
-import Header from '../app/header';
-import HeaderIntro from '../app/header/header-intro';
+import dog from '../../assets/images/background/aisadn129.jpg';
+import Header from '../header';
+import HeaderIntro from '../header/header-intro';
 import { getTitles } from '../../mocks/titles';
 
 const ServicesPage = () => {

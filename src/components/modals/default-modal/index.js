@@ -1,6 +1,6 @@
 import React from 'react';
 import Portal from '../portal';
-import { ReactComponent as CloseIcon } from './close.svg';
+import { ReactComponent as CloseIcon } from '../../../assets/images/icons/close.svg';
 import {
   CloseButton,
   DefaultModalWrapper,

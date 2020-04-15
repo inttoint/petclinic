@@ -1,17 +1,17 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import AuthPage from '../pages/AuthPage';
-import HomePage from '../pages/HomePage';
+import AuthPage from './pages/AuthPage';
+import HomePage from './pages/HomePage';
 import { connect } from 'react-redux';
-import { isUserAuthorizedSelector } from '../../redux/selectors';
-import UserProfilePage from '../pages/UserProfilePage';
-import AboutPage from '../pages/AboutPage';
-import ServicesPage from '../pages/ServicesPage';
-import ReviewsPage from '../pages/ReviewsPage';
-import ContactsPage from '../pages/ContactsPage';
+import { isUserAuthorizedSelector } from '../redux/selectors';
+import UserProfilePage from './pages/UserProfilePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ReviewsPage from './pages/ReviewsPage';
+import ContactsPage from './pages/ContactsPage';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../theme';
-import GlobalStyle from '../../theme/globalStyle';
+import { theme } from '../theme';
+import GlobalStyle from '../theme/globalStyle';
 
 const App = ({ isUserAuthorized }) => {
   return (

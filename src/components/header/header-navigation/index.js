@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo/noun_primary50_.png';
+import logo from '../../../assets/images/logo_cat_dog.png';
 import { HeaderNav } from './header-navigation.styled';
 import Sidebar from './sidebar';
 import Burger from './burger';

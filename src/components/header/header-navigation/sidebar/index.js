@@ -1,14 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
-import { signOutUser } from '../../../../../redux/ac';
-import { ReactComponent as ProfileIcon } from '../profile.svg';
-import { StyledLink } from '../../../../common/links/link.styled';
+import { isUserAuthorizedSelector } from '../../../../redux/selectors';
+import { signOutUser } from '../../../../redux/ac';
+import { ReactComponent as ProfileIcon } from '../../../../assets/images/icons/profile.svg';
+import { StyledLink } from '../../../common/links/link.styled';
 import { SidebarContainer, SidebarMenu } from './sidebar.styled';
-import {
-  Button,
-  ButtonWithIcon
-} from '../../../../common/buttons/button.styled';
+import { Button, ButtonWithIcon } from '../../../common/buttons/button.styled';
 import { useHistory } from 'react-router-dom';
 
 const Sidebar = ({ isOpen, isUserAuthorized, signOutUser }) => {

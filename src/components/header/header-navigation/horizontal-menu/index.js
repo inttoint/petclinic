@@ -1,10 +1,10 @@
 import React from 'react';
-import { ReactComponent as ProfileIcon } from '../profile.svg';
+import { ReactComponent as ProfileIcon } from '../../../../assets/images/icons/profile.svg';
 import { connect } from 'react-redux';
-import { isUserAuthorizedSelector } from '../../../../../redux/selectors';
-import { StyledLink } from '../../../../common/links/link.styled';
+import { isUserAuthorizedSelector } from '../../../../redux/selectors';
+import { StyledLink } from '../../../common/links/link.styled';
 import { HeaderMenu } from './horizontal-menu.styled';
-import { ButtonWithIcon } from '../../../../common/buttons/button.styled';
+import { ButtonWithIcon } from '../../../common/buttons/button.styled';
 import { useHistory } from 'react-router-dom';
 
 const HorizontalMenu = ({ isUserAuthorized }) => {

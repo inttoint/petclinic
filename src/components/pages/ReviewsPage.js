@@ -1,7 +1,7 @@
 import React from 'react';
-import dog from '../../img/adK3Vu70DEQ.jpg';
-import Header from '../app/header';
-import HeaderIntro from '../app/header/header-intro';
+import dog from '../../assets/images/background/adK3Vu70DEQ.jpg';
+import Header from '../header';
+import HeaderIntro from '../header/header-intro';
 import { getTitles } from '../../mocks/titles';
 
 const ReviewsPage = () => {

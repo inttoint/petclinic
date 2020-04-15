@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../app/header';
-import image from './dp2m5glF2Y4.jpg';
+import Header from '../header';
+import image from '../../assets/images/background/dp2m5glF2Y4.jpg';
 import UserProfile from '../user-profile';
-import HeaderIntro from '../app/header/header-intro';
+import HeaderIntro from '../header/header-intro';
 import { getTitles } from '../../mocks/titles';
 import { connect } from 'react-redux';
 import { getLoginCredentials } from '../../redux/selectors';
