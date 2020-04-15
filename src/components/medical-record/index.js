@@ -3,11 +3,11 @@ import MedicalRecordTable from './medical-record-table';
 import { Container } from '../common/containers.styled';
 import { MainTitle } from '../common/titles/titles.styled';
 
-const MedicalRecord = () => {
+const MedicalRecord = props => {
   return (
     <Container>
       <MainTitle>Медицинские записи</MainTitle>
-      <MedicalRecordTable />
+      <MedicalRecordTable {...props} />
     </Container>
   );
 };

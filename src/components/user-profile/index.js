@@ -17,7 +17,7 @@ const UserProfile = ({ userUid }) => {
       <LeftColumn>
         <Route path="/users/:id/pets" component={Pets} />
         <Route path="/users/:id/settings" component={UserSettings} />
-        <Route path="/users/:id/medical-record" component={MedicalRecord} />
+        <Route path="/users/:id/medical-records" component={MedicalRecord} />
       </LeftColumn>
       <RightColumn>
         <OuterShadow>

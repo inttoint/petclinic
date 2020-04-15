@@ -11,29 +11,53 @@ import s from './status';
 
 const records = [
   {
+    id: 1,
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
     status: 'new'
   },
 
-  { date: '14.02.2020', complaint: 'bbbb', status: 'in_progress' },
-  { date: '14.02.2020', complaint: 'bbbb', status: 'rejected' },
   {
+    id: 2,
+    date: '14.02.2020',
+    complaint: 'bbbb',
+    status: 'in_progress'
+  },
+  {
+    id: 3,
+    date: '14.02.2020',
+    complaint: 'bbbb',
+    status: 'rejected'
+  },
+  {
+    id: 4,
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
     status: 'new'
   },
-  { date: '14.02.2020', complaint: 'bbbb', status: 'in_progress' },
   {
+    id: 5,
+    date: '14.02.2020',
+    complaint: 'bbbb',
+    status: 'in_progress'
+  },
+  {
+    id: 6,
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
     status: 'new'
   },
-  { date: '14.02.2020', complaint: 'bbbb', status: 'done' },
   {
+    id: 7,
+    date: '14.02.2020',
+    complaint: 'bbbb',
+    status: 'done'
+  },
+  {
+    id: 8,
     date: '22.05.2019',
     complaint:
       'Для выяснения жалоб больному задают вопрос: что Вас бес­покоит?, на что Вы жалуетесь? И дают больному возможность свободно рассказать о своих ощущениях, переживаниях. ',
@@ -56,7 +80,8 @@ class MedicalRecordTable extends Component {
           width={600}
           height={500}
           rowGetter={this.rowGetter}
-          rowCount={records.length}>
+          rowCount={records.length}
+          onRowClick={this.onRowClick}>
           <Column
             label="Дата обращения"
             width={120}
@@ -105,5 +130,11 @@ class MedicalRecordTable extends Component {
       </div>
     </CellMeasurer>
   );
+
+  onRowClick = ({ index }) => {
+    const recordId = records[index].id;
+    this.props.history.push(`/medical-records/${recordId}`);
+    console.log(this.props);
+  };
 }
 export default MedicalRecordTable;

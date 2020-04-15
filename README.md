@@ -8,3 +8,20 @@
 4) Отслеживание изменений в настройках профиля. И рендеринг компоненты с новыми, сохраненными, данными
 
 5. Эффективное создание компонентов с помощью styled system https://habr.com/ru/post/441790/
+
+Чистый и красивый код в проекте https://github.com/react-boilerplate/react-boilerplate/
+
+REDUX
+
+---
+
+1. Добавить immer
+2. Убрать action-creator и immutableJS
+
+ОБЩЕЕ
+
+---
+
+0. Создать src/assets/images, ...themes
+1. Добавить PropTypes
+1. ТЕСТЫ

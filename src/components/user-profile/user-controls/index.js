@@ -15,7 +15,7 @@ const UserControls = ({ userUid }) => {
         title="Мои животные"
       />
       <UserControlsItem
-        url={`/users/${userUid}/medical-record`}
+        url={`/users/${userUid}/medical-records`}
         Icon={ReportIcon}
         title="Мои обращения"
       />
