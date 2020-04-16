@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderMixin, sizeMixin } from '../../../theme/mixins';
+import { borderMixin, sizeMixin } from '../../../assets/theme/mixins';
 
 const Options = styled.div`
   border: none;

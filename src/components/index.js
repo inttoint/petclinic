@@ -10,8 +10,8 @@ import ServicesPage from './pages/ServicesPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ContactsPage from './pages/ContactsPage';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../theme';
-import GlobalStyle from '../theme/globalStyle';
+import { theme } from '../assets/theme/theme';
+import GlobalStyle from '../global-styles';
 
 const App = ({ isUserAuthorized }) => {
   return (

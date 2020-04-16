@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { boxShadowMixin } from '../../../theme/mixins';
+import { boxShadowMixin } from '../../../assets/theme/mixins';
 
 export const TableWrapper = styled.div`
   .ReactVirtualized__Table {

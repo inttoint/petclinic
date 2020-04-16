@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { sizeMixin } from '../../../theme/mixins';
+import { sizeMixin } from '../../../assets/theme/mixins';
 
 const PanelWrapper = styled.div`
   width: 100%;

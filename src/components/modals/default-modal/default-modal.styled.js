@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { boxShadowMixin, sizeMixin } from '../../../theme/mixins';
+import { boxShadowMixin, sizeMixin } from '../../../assets/theme/mixins';
 
 const Overlay = styled.div`
   position: fixed;

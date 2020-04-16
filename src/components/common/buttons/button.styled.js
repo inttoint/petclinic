@@ -4,7 +4,7 @@ import {
   boxShadowMixin,
   navElementStyles,
   sizeMixin
-} from '../../../theme/mixins';
+} from '../../../assets/theme/mixins';
 
 const Button = styled.button`
   ${navElementStyles};

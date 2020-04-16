@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { boxShadowMixin } from '../../../theme/mixins';
+import { boxShadowMixin } from '../../../assets/theme/mixins';
 import { ErrorMessage } from 'formik';
 
 export const Input = styled.input`

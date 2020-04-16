@@ -4,7 +4,7 @@ import {
   navElementStyles,
   boxShadowMixin,
   borderMixin
-} from '../../../theme/mixins';
+} from '../../../assets/theme/mixins';
 
 const StyledLink = styled(Link)`
   font-family: inherit;

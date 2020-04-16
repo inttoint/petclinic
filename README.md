@@ -22,6 +22,8 @@ REDUX
 
 ---
 
-0. Создать src/assets/images, ...themes
-1. Добавить PropTypes
-1. ТЕСТЫ
+0. Создать src/assets/themes
+1. создать файл для конфигурация firebase
+2. Добавить PropTypes
+3. ТЕСТЫ
+4. box-sizing: border-box, может не везде?

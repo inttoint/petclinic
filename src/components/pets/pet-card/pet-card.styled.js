@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { boxShadowMixin, sizeMixin } from '../../../theme/mixins';
+import { boxShadowMixin, sizeMixin } from '../../../assets/theme/mixins';
 
 const showCard = keyframes`
   0% {
