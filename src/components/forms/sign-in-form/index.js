@@ -2,14 +2,14 @@ import React from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 import {
-  ErrorInputMessage,
-  Input,
-  InputGroup
-} from '../../common/inputs/input.styled';
-import { SignInStyledForm } from './sign-in-form.styled';
-import { Button } from '../../common/buttons/button.styled';
-import { WhiteLink } from '../../common/links/link.styled';
-import { AuthContainer } from '../../common/containers.styled';
+  SErrorInputMessage,
+  SInput,
+  SInputGroup
+} from '../../common/input.styled';
+import { SSignInForm } from './sign-in-form.styled';
+import { SButton } from '../../common/button.styled';
+import { SWhiteLink } from '../../common/link.styled';
+import { SAuthContainer } from '../../common/containers.styled';
 
 const SignInValidation = Yup.object({
   email: Yup.string()
@@ -22,33 +22,33 @@ const SignInValidation = Yup.object({
 
 const SignInForm = ({ handleSubmit }) => {
   return (
-    <AuthContainer>
+    <SAuthContainer>
       <h2>Вход</h2>
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={SignInValidation}
         onSubmit={handleSubmit}>
-        <SignInStyledForm>
-          <InputGroup>
-            <Field as={Input} name="email" type="email" placeholder="E-mail" />
-            <ErrorInputMessage name="email" component="div" />
-          </InputGroup>
-          <InputGroup>
+        <SSignInForm>
+          <SInputGroup>
+            <Field as={SInput} name="email" type="email" placeholder="E-mail" />
+            <SErrorInputMessage name="email" component="div" />
+          </SInputGroup>
+          <SInputGroup>
             <Field
-              as={Input}
+              as={SInput}
               name="password"
               type="password"
               placeholder="Пароль"
             />
-            <ErrorInputMessage name="password" component="div" />
-          </InputGroup>
+            <SErrorInputMessage name="password" component="div" />
+          </SInputGroup>
 
-          <Button type="submit">Войти</Button>
+          <SButton type="submit">Войти</SButton>
 
-          <WhiteLink to="/auth/sign-up">Зарегистрироваться ⟶</WhiteLink>
-        </SignInStyledForm>
+          <SWhiteLink to="/auth/sign-up">Зарегистрироваться ⟶</SWhiteLink>
+        </SSignInForm>
       </Formik>
-    </AuthContainer>
+    </SAuthContainer>
   );
 };
 

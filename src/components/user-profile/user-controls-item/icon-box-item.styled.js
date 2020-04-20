@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const ControlElement = styled.div`
+const SControlElement = styled.div`
   position: relative;
   width: 50%;
   padding: 35px 10px;
@@ -44,7 +44,7 @@ const ControlElement = styled.div`
   }
 `;
 
-const ControlLink = styled(Link)`
+const SControlLink = styled(Link)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
 
@@ -74,4 +74,4 @@ const ControlLink = styled(Link)`
   }
 `;
 
-export { ControlElement, ControlLink };
+export { SControlElement, SControlLink };

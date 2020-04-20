@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Container } from '../../common/containers.styled';
+import { SContainer } from '../../common/containers.styled';
 
-export const TextContentWrapper = styled(Container)`
+export const STextContentWrapper = styled(SContainer)`
   align-items: start;
 
   h4 {

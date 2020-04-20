@@ -4,27 +4,27 @@ import Pets from '../pets';
 import { Route } from 'react-router-dom';
 import UserSettings from '../user-settings';
 import {
-  LeftColumn,
-  OuterShadow,
-  RightColumn,
-  Wrapper
+  SLeftColumn,
+  SOuterShadow,
+  SRightColumn,
+  SWrapper
 } from './user-profile.styled';
 import MedicalRecord from '../medical-record';
 
 const UserProfile = ({ userUid }) => {
   return (
-    <Wrapper>
-      <LeftColumn>
+    <SWrapper>
+      <SLeftColumn>
         <Route path="/users/:id/pets" component={Pets} />
         <Route path="/users/:id/settings" component={UserSettings} />
         <Route path="/users/:id/medical-records" component={MedicalRecord} />
-      </LeftColumn>
-      <RightColumn>
-        <OuterShadow>
+      </SLeftColumn>
+      <SRightColumn>
+        <SOuterShadow>
           <UserControls userUid={userUid} />
-        </OuterShadow>
-      </RightColumn>
-    </Wrapper>
+        </SOuterShadow>
+      </SRightColumn>
+    </SWrapper>
   );
 };
 

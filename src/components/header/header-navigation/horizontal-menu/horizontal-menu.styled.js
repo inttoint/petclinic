@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderMenu = styled.nav`
+export const SHeaderMenu = styled.nav`
   margin-left: auto;
 
   ul {

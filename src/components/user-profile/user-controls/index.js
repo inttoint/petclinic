@@ -4,11 +4,11 @@ import { ReactComponent as ReportIcon } from '../../../assets/images/icons/docum
 import { ReactComponent as MedIcon } from '../../../assets/images/icons/vaccine.svg';
 import { ReactComponent as HandIcon } from '../../../assets/images/icons/hand_and_paw.svg';
 import UserControlsItem from '../user-controls-item';
-import { UserControlsWrapper } from './icon-box.styled';
+import { SUserControlsWrapper } from './icon-box.styled';
 
 const UserControls = ({ userUid }) => {
   return (
-    <UserControlsWrapper>
+    <SUserControlsWrapper>
       <UserControlsItem
         url={`/users/${userUid}/pets`}
         Icon={CatIcon}
@@ -25,7 +25,7 @@ const UserControls = ({ userUid }) => {
         Icon={HandIcon}
         title="Настройки"
       />
-    </UserControlsWrapper>
+    </SUserControlsWrapper>
   );
 };
 

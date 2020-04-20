@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SidebarContainer = styled.div`
+const SSidebarContainer = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -14,7 +14,7 @@ const SidebarContainer = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
 `;
 
-const SidebarMenu = styled.nav`
+const SSidebarMenu = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,4 +35,4 @@ const SidebarMenu = styled.nav`
   }
 `;
 
-export { SidebarMenu, SidebarContainer };
+export { SSidebarMenu, SSidebarContainer };

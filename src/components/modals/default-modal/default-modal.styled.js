@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { boxShadowMixin, sizeMixin } from '../../../assets/theme/mixins';
 
-const Overlay = styled.div`
+const SOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@ const Overlay = styled.div`
   z-index: 199;
 `;
 
-const DefaultModalWrapper = styled.div`
+const SDefaultModalWrapper = styled.div`
   ${boxShadowMixin};
 
   border-radius: 7px;
@@ -22,7 +22,7 @@ const DefaultModalWrapper = styled.div`
   top: calc((100% - ${({ height }) => height}) / 2);
 `;
 
-const CloseButton = styled.button`
+const SCloseButton = styled.button`
   position: absolute;
   right: 10px;
   top: 14px;
@@ -38,7 +38,7 @@ const CloseButton = styled.button`
   }
 `;
 
-const ModalHeader = styled.div`
+const SModalHeader = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -52,7 +52,7 @@ const ModalHeader = styled.div`
   }
 `;
 
-const ModalContent = styled.div`
+const SModalContent = styled.div`
   padding: 10px 30px;
   overflow: hidden;
   position: relative;
@@ -69,4 +69,10 @@ const ModalContent = styled.div`
   }
 `;
 
-export { Overlay, DefaultModalWrapper, CloseButton, ModalHeader, ModalContent };
+export {
+  SOverlay,
+  SDefaultModalWrapper,
+  SCloseButton,
+  SModalHeader,
+  SModalContent
+};

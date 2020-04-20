@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BurgerButton = styled.button`
+export const SBurgerButton = styled.button`
   display: none;
   cursor: pointer;
   position: relative;

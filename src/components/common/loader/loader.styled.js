@@ -10,7 +10,7 @@ const animation = keyframes`
   }
 `;
 
-export const LoaderStyled = styled.div`
+const SLoader = styled.div`
   display: flex;
   font-size: 25px;
   position: absolute;
@@ -37,3 +37,5 @@ export const LoaderStyled = styled.div`
     }
   }
 `;
+
+export { SLoader };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Form } from 'formik';
 
-export const AddNewPetStyledForm = styled(Form)`
+const SAddNewPetForm = styled(Form)`
   display: flex;
   flex-direction: column;
 
@@ -9,3 +9,5 @@ export const AddNewPetStyledForm = styled(Form)`
     margin-bottom: 15px;
   }
 `;
+
+export { SAddNewPetForm };

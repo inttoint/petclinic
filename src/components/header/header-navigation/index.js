@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../../assets/images/logo_cat_dog.png';
-import { HeaderNav } from './header-navigation.styled';
+import { SHeaderNav } from './header-navigation.styled';
 import Sidebar from './sidebar';
 import Burger from './burger';
 import HorizontalMenu from './horizontal-menu';
@@ -10,12 +10,12 @@ const HeaderNavigation = () => {
   const [isSidebarOpen, toggleSidebar] = useState(false);
 
   return (
-    <HeaderNav>
+    <SHeaderNav>
       <Logo image={logo} />
       <HorizontalMenu />
       <Burger isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-    </HeaderNav>
+    </SHeaderNav>
   );
 };
 

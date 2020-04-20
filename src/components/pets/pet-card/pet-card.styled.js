@@ -7,7 +7,7 @@ const showCard = keyframes`
   }
 `;
 
-const Card = styled.div`
+const SCard = styled.div`
   * {
     outline: none;
     user-select: none;
@@ -29,7 +29,7 @@ const rotatePhoto = keyframes`
   }
 `;
 
-const Photo = styled.div`
+const SPhoto = styled.div`
   ${sizeMixin('100px', '100px')};
   ${boxShadowMixin};
   box-sizing: border-box;
@@ -45,7 +45,7 @@ const Photo = styled.div`
   }
 `;
 
-const Content = styled.div`
+const SContent = styled.div`
   box-sizing: border-box;
   padding: 10px;
   overflow: hidden;
@@ -66,7 +66,7 @@ const Content = styled.div`
   }
 `;
 
-const Text = styled.div`
+const SText = styled.div`
   margin-top: 10px;
   margin-left: 60px;
 
@@ -79,7 +79,7 @@ const Text = styled.div`
   }
 `;
 
-const Row = styled.div`
+const SRow = styled.div`
   display: flex;
   width: 65%;
   justify-content: space-between;
@@ -113,7 +113,7 @@ const toArrow = keyframes`
   }
 `;
 
-const ActionButton = styled.div`
+const SActionButton = styled.div`
   background-color: ${({ theme }) => theme.colors.secondary};
   ${sizeMixin('50px', '50px')};
   ${boxShadowMixin};
@@ -190,7 +190,7 @@ function createBoxItem(count) {
   `;
 }
 
-const Box = styled.div`
+const SBox = styled.div`
   ${sizeMixin('150px', '150px')};
   opacity: 0;
   border-radius: 50%;
@@ -214,7 +214,7 @@ const Box = styled.div`
     `}
 `;
 
-const BoxItem = styled.div`
+const SBoxItem = styled.div`
   ${sizeMixin('50px', '50px')};
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.secondaryDarker};
@@ -247,4 +247,4 @@ const BoxItem = styled.div`
   }
 `;
 
-export { Card, Box, BoxItem, ActionButton, Content, Photo, Text, Row };
+export { SCard, SBox, SBoxItem, SActionButton, SContent, SPhoto, SText, SRow };

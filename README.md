@@ -22,8 +22,10 @@ REDUX
 
 ---
 
-0. Создать src/assets/themes
-1. создать файл для конфигурация firebase
-2. Добавить PropTypes
-3. ТЕСТЫ
-4. box-sizing: border-box, может не везде?
+0.переименовать компоненты
+
+0. transition - в миксин
+1. рефакторинг компонент
+1. Добавить PropTypes
+1. ТЕСТЫ
+1. box-sizing: border-box, может не везде?

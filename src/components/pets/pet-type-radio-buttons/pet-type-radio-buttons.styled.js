@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { borderMixin, sizeMixin } from '../../../assets/theme/mixins';
 
-const Options = styled.div`
+const SOptions = styled.div`
   border: none;
   padding: 0;
   display: flex;
@@ -9,7 +9,7 @@ const Options = styled.div`
   margin: 5px 0 20px;
 `;
 
-const RadioTile = styled.label`
+const SRadioTile = styled.label`
   background: rgba(129, 60, 52, 0.25);
   ${borderMixin('rgba(129, 60, 52, 0.25)')};
   display: flex;
@@ -30,17 +30,17 @@ const RadioTile = styled.label`
   }
 `;
 
-const InputContainer = styled.div`
+const SInputContainer = styled.div`
   display: inline-block;
   margin-right: 10px;
 
   input[type='radio'] {
     display: none;
 
-    &:checked ~ ${RadioTile} {
+    &:checked ~ ${SRadioTile} {
       background: ${({ theme }) => theme.colors.secondaryDarker};
     }
   }
 `;
 
-export { Options, InputContainer, RadioTile };
+export { SOptions, SInputContainer, SRadioTile };

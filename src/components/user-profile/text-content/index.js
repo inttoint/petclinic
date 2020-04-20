@@ -1,12 +1,12 @@
 import React from 'react';
-import DividerLine from '../../common/divider';
-import { TextContentWrapper } from './text-content.styled';
+import { STextContentWrapper } from './text-content.styled';
+import { SDivider } from '../../common/divider.styled';
 
 const TextContent = () => {
   return (
-    <TextContentWrapper>
+    <STextContentWrapper>
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-      <DividerLine />
+      <SDivider />
       <p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
@@ -17,7 +17,7 @@ const TextContent = () => {
         fermentum odio eu feugiat. Ac odio tempor orci dapibus ultrices in
         iaculis.
       </p>
-    </TextContentWrapper>
+    </STextContentWrapper>
   );
 };
 

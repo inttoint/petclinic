@@ -1,12 +1,12 @@
 import React from 'react';
-import { AddNewPetStyledForm } from './add-new-pet-form.styled';
+import { SAddNewPetForm } from './add-new-pet-form.styled';
 import { Field, Formik } from 'formik';
 import {
-  ErrorInputMessage,
-  Input,
-  InputGroup
-} from '../../common/inputs/input.styled';
-import { Button } from '../../common/buttons/button.styled';
+  SErrorInputMessage,
+  SInput,
+  SInputGroup
+} from '../../common/input.styled';
+import { SButton } from '../../common/button.styled';
 import PetTypeRadioButtons from '../../pets/pet-type-radio-buttons';
 
 const AddNewPetForm = ({ handleSubmit }) => {
@@ -14,45 +14,45 @@ const AddNewPetForm = ({ handleSubmit }) => {
     <Formik
       initialValues={{ name: '', description: '', birthday: '', type: '' }}
       onSubmit={handleSubmit}>
-      <AddNewPetStyledForm>
+      <SAddNewPetForm>
         <PetTypeRadioButtons />
 
-        <InputGroup>
-          <Field as={Input} name="name" type="text" placeholder="Кличка" />
-          <ErrorInputMessage name="name" component="div" />
-        </InputGroup>
-        <InputGroup>
+        <SInputGroup>
+          <Field as={SInput} name="name" type="text" placeholder="Кличка" />
+          <SErrorInputMessage name="name" component="div" />
+        </SInputGroup>
+        <SInputGroup>
           <Field
-            as={Input}
+            as={SInput}
             name="description"
             type="text"
             placeholder="Описание"
           />
-          <ErrorInputMessage name="description" component="div" />
-        </InputGroup>
-        <InputGroup>
+          <SErrorInputMessage name="description" component="div" />
+        </SInputGroup>
+        <SInputGroup>
           <Field
-            as={Input}
+            as={SInput}
             name="birthday"
             type="date"
             placeholder="Дата рождения"
           />
-          <ErrorInputMessage name="birthday" component="div" />
-        </InputGroup>
-        <InputGroup>
+          <SErrorInputMessage name="birthday" component="div" />
+        </SInputGroup>
+        <SInputGroup>
           <Field
-            as={Input}
+            as={SInput}
             name="photo"
             id="photo"
             type="file"
             placeholder="Изображение"
           />
           <label htmlFor="photo">Выбрать изображение</label>
-          <ErrorInputMessage name="photo" component="div" />
-        </InputGroup>
+          <SErrorInputMessage name="photo" component="div" />
+        </SInputGroup>
 
-        <Button type="submit">Сохранить</Button>
-      </AddNewPetStyledForm>
+        <SButton type="submit">Сохранить</SButton>
+      </SAddNewPetForm>
     </Formik>
   );
 };

@@ -2,12 +2,12 @@ import React from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 import MaskedInput from 'react-text-mask';
-import { SaveButton, EditProfileStyledForm } from './edit-profile-form.styled';
+import { SSaveButton, SEditProfileForm } from './edit-profile-form.styled';
 import {
-  ErrorInputMessage,
-  Input,
-  InputGroup
-} from '../../common/inputs/input.styled';
+  SErrorInputMessage,
+  SInput,
+  SInputGroup
+} from '../../common/input.styled';
 
 const EditProfileForm = ({ handleSubmit, details }) => {
   const phoneNumberMask = [
@@ -57,31 +57,31 @@ const EditProfileForm = ({ handleSubmit, details }) => {
       validationSchema={editProfileValidation}
       onSubmit={handleSubmit}>
       {({ isValid, dirty }) => (
-        <EditProfileStyledForm>
+        <SEditProfileForm>
           <h4>Изменить личные данные:</h4>
-          <InputGroup>
-            <Field as={Input} name="firstName" type="text" placeholder="Имя" />
-            <ErrorInputMessage name="firstName" component="div" />
-          </InputGroup>
-          <InputGroup>
+          <SInputGroup>
+            <Field as={SInput} name="firstName" type="text" placeholder="Имя" />
+            <SErrorInputMessage name="firstName" component="div" />
+          </SInputGroup>
+          <SInputGroup>
             <Field
-              as={Input}
+              as={SInput}
               name="lastName"
               type="text"
               placeholder="Фамилия"
             />
-            <ErrorInputMessage name="lastName" component="div" />
-          </InputGroup>
-          <InputGroup>
+            <SErrorInputMessage name="lastName" component="div" />
+          </SInputGroup>
+          <SInputGroup>
             <Field
-              as={Input}
+              as={SInput}
               name="middleName"
               type="text"
               placeholder="Отчество"
             />
-            <ErrorInputMessage name="middleName" component="div" />
-          </InputGroup>
-          <InputGroup>
+            <SErrorInputMessage name="middleName" component="div" />
+          </SInputGroup>
+          <SInputGroup>
             <Field name="phone">
               {({ field }) => (
                 <MaskedInput
@@ -89,15 +89,15 @@ const EditProfileForm = ({ handleSubmit, details }) => {
                   placeholder="Номер телефона"
                   mask={phoneNumberMask}
                   type="text"
-                  render={(ref, meta) => <Input {...meta} ref={ref} />}
+                  render={(ref, meta) => <SInput {...meta} ref={ref} />}
                 />
               )}
             </Field>
-            <ErrorInputMessage name="phone" component="div" />
-          </InputGroup>
+            <SErrorInputMessage name="phone" component="div" />
+          </SInputGroup>
 
-          <SaveButton disabled={!(isValid && dirty)}>Сохранить</SaveButton>
-        </EditProfileStyledForm>
+          <SSaveButton disabled={!(isValid && dirty)}>Сохранить</SSaveButton>
+        </SEditProfileForm>
       )}
     </Formik>
   );

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
-import { AuthContainer } from '../../common/containers.styled';
-import { SignUpStyledForm } from './sign-up-form.styled';
+import { SAuthContainer } from '../../common/containers.styled';
+import { SSignUpForm } from './sign-up-form.styled';
 import {
-  ErrorInputMessage,
-  Input,
-  InputGroup
-} from '../../common/inputs/input.styled';
-import { Button } from '../../common/buttons/button.styled';
-import { WhiteLink } from '../../common/links/link.styled';
+  SErrorInputMessage,
+  SInput,
+  SInputGroup
+} from '../../common/input.styled';
+import { SButton } from '../../common/button.styled';
+import { SWhiteLink } from '../../common/link.styled';
 
 const signUpValidation = Yup.object({
   email: Yup.string()
@@ -25,7 +25,7 @@ const signUpValidation = Yup.object({
 
 const SignUpForm = ({ handleSubmit }) => {
   return (
-    <AuthContainer>
+    <SAuthContainer>
       <h2>Регистрация</h2>
       <Formik
         initialValues={{
@@ -35,36 +35,36 @@ const SignUpForm = ({ handleSubmit }) => {
         }}
         validationSchema={signUpValidation}
         onSubmit={handleSubmit}>
-        <SignUpStyledForm>
-          <InputGroup>
-            <Field as={Input} name="email" type="email" placeholder="E-mail" />
-            <ErrorInputMessage name="email" component="div" />
-          </InputGroup>
-          <InputGroup>
+        <SSignUpForm>
+          <SInputGroup>
+            <Field as={SInput} name="email" type="email" placeholder="E-mail" />
+            <SErrorInputMessage name="email" component="div" />
+          </SInputGroup>
+          <SInputGroup>
             <Field
-              as={Input}
+              as={SInput}
               name="password"
               type="password"
               placeholder="Придумайте пароль"
             />
-            <ErrorInputMessage name="password" component="div" />
-          </InputGroup>
-          <InputGroup>
+            <SErrorInputMessage name="password" component="div" />
+          </SInputGroup>
+          <SInputGroup>
             <Field
-              as={Input}
+              as={SInput}
               name="passwordConfirm"
               type="password"
               placeholder="Повторите пароль"
             />
-            <ErrorInputMessage name="passwordConfirm" component="div" />
-          </InputGroup>
+            <SErrorInputMessage name="passwordConfirm" component="div" />
+          </SInputGroup>
 
-          <Button type="submit">Регистрация</Button>
+          <SButton type="submit">Регистрация</SButton>
 
-          <WhiteLink to="/auth/sign-in">У меня уже есть аккаунт ⟶</WhiteLink>
-        </SignUpStyledForm>
+          <SWhiteLink to="/auth/sign-in">У меня уже есть аккаунт ⟶</SWhiteLink>
+        </SSignUpForm>
       </Formik>
-    </AuthContainer>
+    </SAuthContainer>
   );
 };
 

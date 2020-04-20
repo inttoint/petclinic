@@ -1,14 +1,14 @@
 import React from 'react';
-import { ControlElement, ControlLink } from './icon-box-item.styled';
+import { SControlElement, SControlLink } from './icon-box-item.styled';
 
 const UserControlsItem = ({ url, Icon, title }) => {
   return (
-    <ControlElement>
-      <ControlLink to={url}>
+    <SControlElement>
+      <SControlLink to={url}>
         <Icon />
         <h5>{title}</h5>
-      </ControlLink>
-    </ControlElement>
+      </SControlLink>
+    </SControlElement>
   );
 };
 

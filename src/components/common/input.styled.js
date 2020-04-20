@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { boxShadowMixin } from '../../../assets/theme/mixins';
+import { boxShadowMixin } from '../../assets/theme/mixins';
 import { ErrorMessage } from 'formik';
 
-export const Input = styled.input`
+const SInput = styled.input`
   ${boxShadowMixin};
 
   width: 100%;
@@ -41,13 +41,15 @@ export const Input = styled.input`
   }
 `;
 
-export const ErrorInputMessage = styled(ErrorMessage)`
+const SErrorInputMessage = styled(ErrorMessage)`
   padding-left: 16px;
   color: ${({ theme }) => theme.colors.secondaryLightest};
 `;
 
-export const InputGroup = styled.div`
+const SInputGroup = styled.div`
   align-self: center;
   margin-bottom: 20px;
   width: 300px;
 `;
+
+export { SInput, SInputGroup, SErrorInputMessage };

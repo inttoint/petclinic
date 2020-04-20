@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const SContainer = styled.div`
   padding: 2% 6%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
-const AuthContainer = styled(Container)`
+
+const SAuthContainer = styled(SContainer)`
   z-index: 1;
 
   h2 {
@@ -17,4 +18,4 @@ const AuthContainer = styled(Container)`
   }
 `;
 
-export { AuthContainer, Container };
+export { SAuthContainer, SContainer };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { sizeMixin } from '../../../assets/theme/mixins';
 
-const PanelWrapper = styled.div`
+const SPanelWrapper = styled.div`
   width: 100%;
   display: flex;
   border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryMoreDarkness};
@@ -9,7 +9,7 @@ const PanelWrapper = styled.div`
   padding-bottom: 10px;
 `;
 
-const SearchRow = styled.div`
+const SSearchRow = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@ const SearchRow = styled.div`
   }
 `;
 
-const SearchInput = styled.input`
+const SSearchInput = styled.input`
   ${sizeMixin('100%', '30px')};
   background: none;
   border: none;
@@ -37,4 +37,4 @@ const SearchInput = styled.input`
   }
 `;
 
-export { PanelWrapper, SearchRow, SearchInput };
+export { SPanelWrapper, SSearchRow, SSearchInput };

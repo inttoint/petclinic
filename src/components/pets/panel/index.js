@@ -2,26 +2,28 @@ import React, { useState } from 'react';
 import { ReactComponent as SearchIcon } from '../../../assets/images/icons/search_paw.svg';
 import { ReactComponent as RefreshIcon } from '../../../assets/images/icons/refresh_arrow.svg';
 import { ReactComponent as AddPetIcon } from '../../../assets/images/icons/plus_in_paw.svg';
-import { PanelWrapper, SearchInput, SearchRow } from './panel.styled';
-import { MiniButton } from '../../common/buttons/button.styled';
+import { SPanelWrapper, SSearchInput, SSearchRow } from './panel.styled';
+import { SMiniButtonWithIcon } from '../../common/button.styled';
 import DefaultModal from '../../modals/default-modal';
 import AddNewPetForm from '../../forms/add-new-pet-form';
 
 export const Panel = () => {
   const [isModalOpen, toggleModal] = useState(false);
   return (
-    <PanelWrapper>
-      <SearchRow>
+    <SPanelWrapper>
+      <SSearchRow>
         <SearchIcon />
-        <SearchInput placeholder="Кличка или описание питомца" />
-      </SearchRow>
+        <SSearchInput placeholder="Кличка или описание питомца" />
+      </SSearchRow>
 
-      <MiniButton width="auto" onClick={() => toggleModal(!isModalOpen)}>
+      <SMiniButtonWithIcon
+        width="auto"
+        onClick={() => toggleModal(!isModalOpen)}>
         <AddPetIcon />
-      </MiniButton>
-      <MiniButton width="auto">
+      </SMiniButtonWithIcon>
+      <SMiniButtonWithIcon width="auto">
         <RefreshIcon />
-      </MiniButton>
+      </SMiniButtonWithIcon>
 
       <DefaultModal
         heading="Добавить питомца"
@@ -29,6 +31,6 @@ export const Panel = () => {
         toggleModal={toggleModal}>
         <AddNewPetForm handleSubmit={() => {}} />
       </DefaultModal>
-    </PanelWrapper>
+    </SPanelWrapper>
   );
 };

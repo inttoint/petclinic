@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { boxShadowMixin } from '../../../assets/theme/mixins';
 
-export const TableWrapper = styled.div`
+export const STableWrapper = styled.div`
   .ReactVirtualized__Table {
     font-size: 14px;
     //border: 1px solid white;

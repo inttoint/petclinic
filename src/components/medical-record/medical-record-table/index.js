@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TableWrapper } from './medical-record-table.styled';
+import { STableWrapper } from './medical-record-table.styled';
 import {
   CellMeasurerCache,
   CellMeasurer,
@@ -66,6 +66,8 @@ const records = [
 ];
 
 const _cache = new CellMeasurerCache({
+  defaultHeight: 50,
+  fixedWidth: true,
   rowHeight: 50,
   minHeight: 50
 });
@@ -73,7 +75,7 @@ const _cache = new CellMeasurerCache({
 class MedicalRecordTable extends Component {
   render() {
     return (
-      <TableWrapper>
+      <STableWrapper>
         <Table
           rowHeight={_cache.rowHeight}
           headerHeight={40}
@@ -101,7 +103,7 @@ class MedicalRecordTable extends Component {
             dataKey="complaint"
           />
         </Table>
-      </TableWrapper>
+      </STableWrapper>
     );
   }
 

@@ -4,9 +4,9 @@ import {
   navElementStyles,
   boxShadowMixin,
   borderMixin
-} from '../../../assets/theme/mixins';
+} from '../../assets/theme/mixins';
 
-const StyledLink = styled(Link)`
+const SLink = styled(Link)`
   font-family: inherit;
   text-transform: uppercase;
   font-size: 14px;
@@ -23,14 +23,13 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const WhiteLink = styled(Link)`
+const SWhiteLink = styled(Link)`
   text-decoration: none;
   text-align: center;
   display: block;
   padding: 10px;
   margin-top: 20px;
   color: ${({ theme }) => theme.colors.white};
-  //width: 100%;
 
   &:hover {
     ${borderMixin(({ theme }) => theme.colors.white)};
@@ -39,4 +38,4 @@ const WhiteLink = styled(Link)`
   }
 `;
 
-export { StyledLink, WhiteLink };
+export { SLink, SWhiteLink };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../../assets/theme/theme';
 
-const Wrapper = styled.div`
+const SWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const LeftColumn = styled.div`
+const SLeftColumn = styled.div`
   flex: 1;
   width: 100%;
   //padding: 20px 40px 60px 30px;
@@ -27,15 +27,15 @@ const LeftColumn = styled.div`
   }
 `;
 
-const RightColumn = styled.div`
+const SRightColumn = styled.div`
   flex: 1;
   width: 100%;
   align-self: center;
   padding: 15px 0;
 `;
 
-const OuterShadow = styled.div`
+const SOuterShadow = styled.div`
   box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.03);
 `;
 
-export { Wrapper, LeftColumn, RightColumn, OuterShadow };
+export { SWrapper, SLeftColumn, SRightColumn, SOuterShadow };

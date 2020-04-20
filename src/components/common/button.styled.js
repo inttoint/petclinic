@@ -4,9 +4,9 @@ import {
   boxShadowMixin,
   navElementStyles,
   sizeMixin
-} from '../../../assets/theme/mixins';
+} from '../../assets/theme/mixins';
 
-const Button = styled.button`
+const SButton = styled.button`
   ${navElementStyles};
   ${boxShadowMixin};
   ${borderMixin(({ theme }) => theme.colors.secondaryMoreDarkness)};
@@ -44,7 +44,7 @@ const Button = styled.button`
   }
 `;
 
-const ButtonWithIcon = styled(Button)`
+const SButtonWithIcon = styled(SButton)`
   display: flex;
   align-items: center;
 
@@ -65,7 +65,7 @@ const ButtonWithIcon = styled(Button)`
   }
 `;
 
-const MiniButton = styled(ButtonWithIcon)`
+const SMiniButtonWithIcon = styled(SButtonWithIcon)`
   margin-right: 5px;
 
   svg {
@@ -75,4 +75,4 @@ const MiniButton = styled(ButtonWithIcon)`
   }
 `;
 
-export { Button, ButtonWithIcon, MiniButton };
+export { SButton, SButtonWithIcon, SMiniButtonWithIcon };

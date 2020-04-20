@@ -7,9 +7,9 @@ import {
   userIsLoadingSelector
 } from '../../redux/selectors';
 import Loader from '../common/loader';
-import { Button } from '../common/buttons/button.styled';
-import { MainTitle } from '../common/titles/titles.styled';
-import { Container } from '../common/containers.styled';
+import { SButton } from '../common/button.styled';
+import { SMainTitle } from '../common/titles.styled';
+import { SContainer } from '../common/containers.styled';
 
 class UserSettings extends Component {
   render() {
@@ -17,17 +17,17 @@ class UserSettings extends Component {
     if (isLoading || !userDetails) return <Loader />;
 
     return (
-      <Container>
-        <MainTitle>Настройки профиля</MainTitle>
+      <SContainer>
+        <SMainTitle>Настройки профиля</SMainTitle>
         <EditProfileForm
           handleSubmit={this.saveUserInfo}
           details={userDetails}
         />
 
-        <Button width="auto" onClick={signOutUser} secondary>
+        <SButton width="auto" onClick={signOutUser} secondary>
           Выйти из профиля
-        </Button>
-      </Container>
+        </SButton>
+      </SContainer>
     );
   }
 

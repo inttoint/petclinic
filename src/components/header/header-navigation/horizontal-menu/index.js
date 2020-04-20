@@ -2,41 +2,41 @@ import React from 'react';
 import { ReactComponent as ProfileIcon } from '../../../../assets/images/icons/profile.svg';
 import { connect } from 'react-redux';
 import { isUserAuthorizedSelector } from '../../../../redux/selectors';
-import { StyledLink } from '../../../common/links/link.styled';
-import { HeaderMenu } from './horizontal-menu.styled';
-import { ButtonWithIcon } from '../../../common/buttons/button.styled';
+import { SHeaderMenu } from './horizontal-menu.styled';
+import { SButtonWithIcon } from '../../../common/button.styled';
 import { useHistory } from 'react-router-dom';
+import { SLink } from '../../../common/link.styled';
 
 const HorizontalMenu = ({ isUserAuthorized }) => {
   const history = useHistory();
 
   return (
-    <HeaderMenu>
+    <SHeaderMenu>
       <ul>
         <li>
-          <StyledLink to="/about">О нас</StyledLink>
+          <SLink to="/about">О нас</SLink>
         </li>
         <li>
-          <StyledLink to="/services">Услуги</StyledLink>
+          <SLink to="/services">Услуги</SLink>
         </li>
         <li>
-          <StyledLink to="/reviews">Отзывы</StyledLink>
+          <SLink to="/reviews">Отзывы</SLink>
         </li>
         <li>
-          <StyledLink to="/contacts">Контакты</StyledLink>
+          <SLink to="/contacts">Контакты</SLink>
         </li>
         <li>
           {isUserAuthorized ? (
-            <ButtonWithIcon onClick={() => history.push('/users')}>
+            <SButtonWithIcon onClick={() => history.push('/users')}>
               <ProfileIcon />
               Личный кабинет
-            </ButtonWithIcon>
+            </SButtonWithIcon>
           ) : (
-            <StyledLink to="/auth/sign-in">Вход</StyledLink>
+            <SLink to="/auth/sign-in">Вход</SLink>
           )}
         </li>
       </ul>
-    </HeaderMenu>
+    </SHeaderMenu>
   );
 };
 

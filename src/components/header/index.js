@@ -1,15 +1,15 @@
 import React from 'react';
 import HeaderNavigation from './header-navigation';
-import { ImageBackground, InnerShadow } from './header.styled';
+import { SImageBackground, SInnerShadow } from './header.styled';
 
 const Header = ({ backgroundImage, children }) => {
   return (
-    <ImageBackground bg={backgroundImage}>
-      <InnerShadow>
+    <SImageBackground bg={backgroundImage}>
+      <SInnerShadow>
         <HeaderNavigation />
         {children}
-      </InnerShadow>
-    </ImageBackground>
+      </SInnerShadow>
+    </SImageBackground>
   );
 };
 

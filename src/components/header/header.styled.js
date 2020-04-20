@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ImageBackground = styled.div`
+const SImageBackground = styled.div`
   position: relative;
   background: ${({ theme }) => theme.colors.secondaryDarker} top center
     no-repeat;
@@ -24,10 +24,10 @@ const ImageBackground = styled.div`
   }
 `;
 
-const InnerShadow = styled.div`
+const SInnerShadow = styled.div`
   height: 100vh;
   position: relative;
   box-shadow: inset 0 -43px 34px -34px rgba(88, 88, 88, 0.2);
 `;
 
-export { ImageBackground, InnerShadow };
+export { SImageBackground, SInnerShadow };

@@ -5,14 +5,14 @@ import { ReactComponent as SettingIcon } from '../../../assets/images/icons/edit
 import { ReactComponent as MedReportIcon } from '../../../assets/images/icons/medical-history.svg';
 import { ReactComponent as MedHelpIcon } from '../../../assets/images/icons/syringe.svg';
 import {
-  Box,
-  BoxItem,
-  ActionButton,
-  Card,
-  Content,
-  Photo,
-  Row,
-  Text
+  SBox,
+  SBoxItem,
+  SActionButton,
+  SCard,
+  SContent,
+  SPhoto,
+  SRow,
+  SText
 } from './pet-card.styled';
 
 const PetCard = ({ pet: { name, description, age, type } }) => {
@@ -20,36 +20,36 @@ const PetCard = ({ pet: { name, description, age, type } }) => {
   const avatar = type === 'Собака' ? avatarDog : avatarCat;
 
   return (
-    <Card>
-      <Photo>
+    <SCard>
+      <SPhoto>
         <img src={avatar} alt="" />
-      </Photo>
-      <Content>
-        <Text>
-          <Row>
+      </SPhoto>
+      <SContent>
+        <SText>
+          <SRow>
             <h3>{name}</h3>
             <h6>{age}</h6>
-          </Row>
+          </SRow>
           <h6>{description}</h6>
-        </Text>
-        <ActionButton
+        </SText>
+        <SActionButton
           isOpen={isOpen}
           onClick={() => toggleCardActions(!isOpen)}>
           <span />
-        </ActionButton>
-      </Content>
-      <Box isOpen={isOpen}>
-        <BoxItem>
+        </SActionButton>
+      </SContent>
+      <SBox isOpen={isOpen}>
+        <SBoxItem>
           <MedHelpIcon />
-        </BoxItem>
-        <BoxItem>
+        </SBoxItem>
+        <SBoxItem>
           <MedReportIcon />
-        </BoxItem>
-        <BoxItem>
+        </SBoxItem>
+        <SBoxItem>
           <SettingIcon />
-        </BoxItem>
-      </Box>
-    </Card>
+        </SBoxItem>
+      </SBox>
+    </SCard>
   );
 };
 
